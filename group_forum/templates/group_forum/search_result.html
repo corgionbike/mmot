@@ -1,0 +1,37 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans 'Поиск обсуждений' %} {% endblock %}
+
+{% block groupcontent %}
+    <ol class="breadcrumb">
+        <li><a href="{{ forum.get_absolute_url }}">{% trans 'Обсуждения' %}</a></li>
+        <li class="active">{% trans 'Поиск обсуждений' %}</li>
+    </ol>
+    <div>
+        {% if topics %}<h5>{% trans 'По запросу' %} [{{ q }}] {% trans 'всего найдено:' %} {{ topics|length }}</h5>{% endif %}
+        <ul id="topic_list" class="list-group">
+            {% if not topic.hidden or is_user_moderator or user == group_profile.owner %}
+                {% include 'group_forum/topic/topic_list.html' %}
+            {% endif %}
+        </ul>
+    </div>
+    {% if topics.has_other_pages %}
+        <hr>
+        <div class="col-md-12 text-center">
+            {% bootstrap_pagination topics size='small' %}
+        </div>
+    {% endif %}
+
+{#<div class="col-md-4">#}
+{#    <div class="well well-sm">#}
+{#      {% search_form forum.get_search_url %}#}
+{#    </div>#}
+{#</div>#}
+
+
+{% endblock %}
+

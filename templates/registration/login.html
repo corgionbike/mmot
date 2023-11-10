@@ -1,0 +1,31 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block meta %}{% trans 'Авторизация на сайте' %}{% endblock %}
+{% block title %} {% trans 'Авторизация' %} {% endblock %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 top-offset-20">
+        <div class="well">
+            <h3 class="line">{% trans 'Авторизация'|upper %}</h3>
+            <form method="post" action="">
+                {% csrf_token %}
+                {% bootstrap_form form show_label=False %}
+                <button type="submit" class="btn btn-block btn-link btn-border">
+                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> {% trans 'Войти' %}
+                </button>
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+            <a class="text-muted" style="padding: 5px 0px 5px 0px; display: block;"
+               href="{% url 'auth_password_reset' %}">{% trans "Забыли пароль?" %}</a>
+            <div class="bottom-offset-5 line" style="padding-bottom: 5px; text-align: center;">{% trans 'или' %}</div>
+            <a class="btn btn-border btn-block btn-link" href="{% url 'registration_register' %}">
+                <span class="fa fa-user-plus" aria-hidden="true"></span> {% trans "Регистрация" %}
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+
+

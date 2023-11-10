@@ -1,0 +1,15 @@
+{% extends 'errs/base_errs.html' %}
+{% load i18n %}
+{% csrf_token %}
+{% block title %}{% trans 'Страница не найдена' %}{% endblock %}
+{% block meta %}{% trans 'Страница не найдена' %}{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+	    <h3>404</h3>
+	    <h4>{% trans 'Запрашиваемая страница не найдена' %}</h4>
+	    <p class="text-muted">{% trans 'Возможно, неправильно указан путь в адресной строке или страница была удалена.' %}</p>
+	    <p class="text-muted">{% blocktrans %}Возврат на <a href="/">главную страницу</a>{% endblocktrans %}</p>
+    </div>
+{% endblock %}
+

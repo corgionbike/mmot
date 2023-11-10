@@ -1,0 +1,49 @@
+{% extends 'base_content.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block meta %}
+    {% trans "Игровые сообщества. Создавайте свои кланы, отряды, гильдии. Ведите свой клан-форум." %}{% endblock %}
+{% block title %}{% trans 'Группы'|upper %} {% endblock %}
+
+{% block content %}
+    <h1 class="line index-header" role="heading"><span
+            class="fa fa-fort-awesome text-muted"></span> {% trans 'Группы'|upper %}</h1>
+    <div class="top-offset-10">
+        <div class="col-md-8">
+            <ul id="member_list" class="list-group clearfix">
+                {% for group in groups %}
+                    <div class="col-md-6">
+                        {% include 'group/include_group_item.html' %}
+                    </div>
+                {% empty %}
+                    <h3 class="text-center text-muted"><i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                        <br/> {% trans 'Группы не найдены' %}</h3>
+                {% endfor %}
+            </ul>
+            <div class="row">
+                <div class="col-md-12">
+                    {% if groups %}
+                        <span class="label label-default">{% trans 'Всего групп:' %} {{ groups.paginator.count }}</span>{% endif %}
+                </div>
+            </div>
+            {% if groups.has_other_pages %}
+                <hr>
+                <div class="col-md-12 text-center">
+                    {% bootstrap_pagination groups size='small' %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-4">
+            <div class="">
+                {% url 'group_search' as url %}
+                {% search_form url %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,39 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans 'События' %} {% endblock %}
+
+{% block groupcontent %}
+
+<div class="col-md-8">
+
+</div>
+
+<div class="col-md-4">
+    <div class="well well-sm">
+      {% search_form forum.get_search_url %}
+    </div>
+
+    <ul class="nav nav-pills nav-stacked">
+        {% if is_user_member and events.settings.is_member_create or is_user_moderator or user == group_profile.owner %}
+            <li class="well well-sm">
+                {% url 'event_create' group_profile.name as event_create_url %}
+                {% trans 'Запланировать событие' as name %}
+                {% trans 'Запланировать событие' as title %}
+                {% modal_link title=title url=event_create_url name=name cls='btn btn-primary' %}
+            </li>
+        {% endif %}
+    </ul>
+</div>
+
+<script>
+    require(['module_paginator'], function (module_paginator) {
+        return paginator = module_paginator;
+    });
+</script>
+
+{% endblock %}
+

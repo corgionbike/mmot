@@ -1,0 +1,27 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+
+{% block title %}{% trans "Назначить" %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3 top-offset-5">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <div class="col-md-6"><input type="submit" class="btn btn-link btn-block btn-border "
+                                                     value="{% trans 'Сохранить' %}"/></div>
+                        <div class="col-md-6"><a href="{% url 'group_profile' %}"
+                                                 class="btn btn-link btn-block btn-border ">{% trans "Назад" %}</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

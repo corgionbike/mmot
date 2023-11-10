@@ -1,0 +1,35 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+{% load invite_key_tags %}
+{% load group_tags %}
+
+{% block title %}{% trans 'Профайл' %} {{ user }} {% endblock %}
+
+{% block profilecontext %}
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <h3 class="line">{% trans 'Общая информация'|upper %}</h3>
+                {% profile_user_info %}
+            </div>
+            <div class="well">
+                <h3 class="line">{% trans 'Игровые ключи'|upper %}</h3>
+                {% profile_game_invite_list %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="well">
+                <h3 class="line">{% trans 'Группы'|upper %}</h3>
+                {% user_groups_info %}
+            </div>
+            <div class="well">
+                <h3 class="line">{% trans 'Игровые персонажи'|upper %}</h3>
+                {% game_characters_info %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

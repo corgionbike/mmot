@@ -1,0 +1,84 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load static %}
+{% load stream_tags %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+{% if user.is_staff %}
+<div id="toolbar" class="btn-group">
+    <a href="{% url 'refresh_stream_bot' %}" class="btn btn-link btn-border btn-sm">
+        <i class="fa fa-refresh"></i> {% trans 'Обновить бот стримы' %}
+    </a>
+</div>
+{% endif %}
+<table id="stream_live_tbl" class="table table-striped hide"
+       data-pagination="true"
+       data-search="true"
+       data-cookie="true"
+       data-cookie-id-table="saveId"
+       data-classes="table-no-bordered"
+       data-toolbar="#toolbar">
+    {% for stream in live_stream_list %}
+        {% if forloop.first %}
+            <thead>
+            <tr>
+                <th data-field="liveview" data-align="center">{% trans 'Предпросмотр' %}</th>
+                <th data-field="name" data-align="center" data-sortable="true">{% trans 'Наименование' %}</th>
+                <th data-field="user" data-align="center" data-sortable="true">{% trans 'Рестример' %}</th>
+                <th data-field="group" data-align="center" data-sortable="true">{% trans 'Группа' %}</th>
+                <th data-field="game" data-align="center" data-sortable="true">{% trans 'Игра' %}</th>
+                <th data-field="provider" data-align="center" data-sortable="true">{% trans 'Площадка' %}</th>
+                <th data-field="progress" data-align="center" data-sortable="true">{% trans 'Прогресс' %}</th>
+            </tr>
+            </thead>
+        {% endif %}
+        <tr>
+            <td class="text-center">
+                <a href="#" data-toggle="modal" data-title="{% trans 'Предпросмотр канала ' %} {{ stream.user }} "
+                   data-target="#main-modal" data-url="{{ stream.get_liveview_url }}"><span
+                        class="fa fa fa-desktop fa-lg"></span></a>
+            </td>
+            <td class="text-center">
+                <a href="{{ stream.get_absolute_url }}"> {{ stream.name|truncatechars:40 }}</a>
+            </td>
+            <td>
+                {% user_card_link stream.user is_img=False cls="modal-link" %}
+            </td>
+            <td>
+                {% if stream.group %}
+                    {% group_card_link stream.group is_img=False fname=False cls="modal-link" %}
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+            </td>
+            <td>
+                <b>
+                    {% if stream.game %}
+                        <a href="#" class="modal-link" data-toggle="modal" data-target="#main-modal"
+                           data-url="{{ stream.game.get_game_detail_url }}">{{ stream.game }}</a>
+                    {% else %}
+                        {{ stream.game_user }}
+                    {% endif %}
+                </b>
+            </td>
+            <td>
+                {{ stream.get_provider_display|default_if_none:stream.stream_profile.get_provider_display|default:'-' }}
+            </td>
+            {% stream_json_progress stream as json_stream_data %}
+            <td>
+                <span id="stream_live_progress_{{ stream.user }}"
+                      data-progress='{{ json_stream_data|safe }}'>{% stream_progress %}</span>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<script>
+    require(['module_bootstrap_tbl', 'module_progress_bar'], function (table, stream) {
+        table.init('stream_live_tbl');
+        stream.calc_progress(60000, 'stream_live_progress_');
+    });
+</script>
+
+

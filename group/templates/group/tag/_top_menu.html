@@ -1,0 +1,31 @@
+{% load i18n %}
+
+{% if my_group or group_members %}
+    <li class="dropdown hidden-sm">
+        <a href="#" class="dropdown-toggle" id="group_menu" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="true">
+            {% trans 'Мои группы'|upper %}
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="group_menu">
+            {% if my_group %}
+                <li class="dropdown-header">{% trans 'Моя группа' %}</li>
+                <li>
+                    <a href="{{ my_group.get_absolute_url }}"> {{ my_group }}</a>
+                    <a href="{{ my_group.get_profile_url }}"><span class="glyphicon glyphicon-cog"
+                                                                   aria-hidden="true"></span> {% trans 'Настройки' %}
+                    </a>
+                </li>
+                <li class="divider"></li>
+            {% endif %}
+            {% for member in group_members %}
+                <li>
+                    <a href="{{ member.group.get_absolute_url }}"> {{ member.group }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+{% endif %}
+
+
+

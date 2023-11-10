@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load stream_tags %}
+
+{% if user %}
+    {% get_logo_provider user.stream_profile.provider as logo %}
+
+    <li class="dropdown hidden-sm">
+        <a href="#" class="dropdown-toggle" id="stream_menu" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="true">
+            <span class="fa-lg {% if user.stream_preview.status %} fa fa-circle text-danger animated infinite pulse {% else %} {{ logo }} {% endif %}"
+                  aria-hidden="true"></span> {% trans 'Мой стрим'|upper %}
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="stream_menu">
+            <li><a href="{{ user.stream_profile.get_url_my_stream }}"><span
+                    class="fa fa-video-camera fa-lg"></span> {% trans 'Мой канал' %}</a></li>
+            <li><a href="{% url 'stream_profile_manager' %}"><span
+                    class="fa fa-toggle-on"></span> {% trans 'Менеджер' %}</a></li>
+            <li><a href="
+                    {% if not user.stream_preview %}{% url 'stream_preview_create' %}{% else %}{% url 'stream_preview_edit' %}{% endif %}"><span
+                    class="fa fa-bullhorn"></span> {% trans 'Анонс' %}</a></li>
+            <li class="divider"></li>
+            <li><a href="{% url 'stream_profile' %}#stream"><span class="glyphicon glyphicon-cog"
+                                                                  aria-hidden="true"></span> {% trans 'Настройки' %}</a>
+            </li>
+        </ul>
+    </li>
+{% endif %}

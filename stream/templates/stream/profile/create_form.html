@@ -1,0 +1,29 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans "Создать стрим профиль" %}{% endblock %}
+
+{% block profilecontext %}
+    <div class="col-md-6 col-md-offset-3 top-offset-5">
+        <div class="well">
+            <h3 class="line">{% trans "Создать стрим профиль" %}</h3>
+            <form method="post" action="">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <div class="form-group text-muted">
+                    <span class="glyphicon glyphicon-info-sign"></span> <a href="#sid_faq" class="modal-link"
+                                                                           data-toggle="modal" data-target="#main-modal"
+                                                                           data-url="{% url 'faq_sid_player' %}">
+                    {% trans 'Как узнать идентификатор?' %} </a>
+                </div>
+                <hr>
+                <ul class="list-inline">
+                    <li><input type="submit" class="btn btn-sm btn-link btn-border" value="{% trans 'Сохранить' %}"/></li>
+                    <li><a href="#" onclick="window.history.back(); return false;"
+                           class="btn btn-sm btn-link btn-border">{% trans "Назад" %}</a></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+{% endblock %}

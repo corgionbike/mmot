@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load user_profile_tags %}
+
+<a href="#{{ group.name }}" data-toggle="modal"
+   data-target="#main-modal"
+   data-title="{% trans 'Визитка' %} {{ group.name }}"
+   data-url="{{ group.get_group_card_url }}">
+    {% if is_img %}
+        {% img_thumbnail img=group.emblem w=w h=h cls=cls %}
+    {% else %}
+        {% if fname %}
+            {{ group }}
+        {% else %}
+            {{ group.name }}
+        {% endif %}
+    {% endif %}
+</a>

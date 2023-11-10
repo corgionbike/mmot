@@ -1,0 +1,19 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+
+{% block groupcontent %}
+    <h3 class="line">{% trans 'Обзор'|upper %}</h3>
+    <p>{{ group_profile.description|linebreaks|truncatechars:600 }}</p>
+
+    {% if not user_is_member and user != group_profile.owner %}
+        <div class="row text-center">
+            <a href="{{ group_profile.get_group_petition_send_url }}"
+               class="btn btn-link btn-sm btn-border"><span
+                    class="text-primary">{% trans 'Подать заявку на вступление' %}</span></a>
+        </div>
+    {% endif %}
+{% endblock %}

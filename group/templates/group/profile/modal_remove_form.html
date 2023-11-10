@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+
+<div class="row">
+    <div class="well well-sm">
+        <h5 class="text-center text-muted">{% trans 'Вы уверены, что хотите расформировать ' %}{{ group_profile }}?</h5>
+        <form method="post" action="{% url 'group_profile_remove' %}">
+            {% csrf_token %}
+            <ul class="text-center list-inline">
+                <li><input type="submit" class="btn btn-danger btn-border btn-link" value="{% trans 'Удалить' %}"/></li>
+                <li><a href="#" onclick="$('#main-modal').modal('hide'); return false;"
+                       class="btn btn-default btn-border btn-link">{% trans "Отменить" %}</a></li>
+            </ul>
+        </form>
+    </div>
+</div>

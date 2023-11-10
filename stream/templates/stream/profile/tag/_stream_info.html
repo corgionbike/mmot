@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load stream_tags %}
+
+{% get_logo_provider stream.provider as logo %}
+
+<ul class="list-unstyled">
+    <li><b>{% trans 'Провайдер:' %}</b> <span class="{{ logo }}"></span> {{ stream.get_provider_display|default:'-' }}</li>
+    <li><b>{% trans 'Идентификатор:' %}</b> {{ stream.sid|default:'-' }}</li>
+    <li><b> {% trans 'Автоактивация канала:' %}</b>
+        <span  class='fa {% if stream.auto_broadcasting %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+    <li><b>{% trans 'Ссылка на канал:' %}</b> <a id="stream_link" href="https://mmotimes.ru/?stream={{ stream.user }}">http://mmotimes.ru/?stream={{ stream.user }}</a>
+        <button id="btn-copy" data-toggle="tooltip" data-placement="top" title="{% trans 'Скопировать' %}" class="btn btn-link" data-clipboard-target="#stream_link"><span class="fa fa-copy"></span></button>
+    </li>
+    <li>
+        <hr>
+        <a href="{% url 'stream_profile_edit' %}" class="btn btn-sm btn-link  btn-border">
+        <span class="glyphicon glyphicon-edit"></span> {% trans 'Редактировать' %}</a>
+    </li>
+</ul>
+<script>
+    require(['clipboard', 'jquery'], function (module, $) {
+        var clipboard = new module("#btn-copy");
+    });
+</script>

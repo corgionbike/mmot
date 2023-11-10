@@ -1,0 +1,38 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+
+{% block profilecontext %}
+<div class="col-md-3">
+    <div class="well well-sm">
+        {% url 'messages_inbox' as messages_inbox %}
+        {% url 'messages_outbox' as messages_outbox %}
+        {% url 'messages_compose' as messages_compose %}
+        {% url 'messages_trash' as messages_trash %}
+        <ul class="nav nav-pills nav-stacked">
+            <li {% if messages_compose in request.path %} class="active" {% endif %}>
+                <a href="{{ messages_compose }}">
+                    <span class="fa fa-pencil-square-o" aria-hidden="true"></span> {% trans "Написать сообщение" %}
+                </a>
+            </li>
+            <li {% if messages_inbox == request.path %} class="active" {% endif %}>
+                <a href="{{ messages_inbox }}">
+                    <span class="fa fa-inbox" aria-hidden="true"></span> {% trans "Входящие" %}
+                </a>
+            </li>
+            <li {% if messages_outbox == request.path %} class="active" {% endif %}>
+                <a href="{{ messages_outbox }}">
+                    <span class="fa fa-reply" aria-hidden="true"></span> {% trans "Отправленные" %}
+                </a>
+            </li>
+            <li {% if messages_trash == request.path %} class="active" {% endif %}>
+                <a href="{{ messages_trash }}">
+                    <span class="fa fa-trash"></span> {% trans "Корзина" %}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="col-md-9">
+    {% block messages-content %} {% endblock %}
+</div>
+{% endblock %}

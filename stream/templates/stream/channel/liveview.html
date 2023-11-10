@@ -1,0 +1,11 @@
+{% load stream_tags %}
+{% load i18n %}
+
+<div class="embed-responsive embed-responsive-16by9 player-cover">
+    {% player streamer %}
+</div>
+<div class="top-offset-15">
+    <a href="{{ streamer.stream_preview.get_absolute_url }}"
+       class="btn btn-block btn-link btn-border">{% trans 'Перейти на канал' %}</a>
+</div>
+

@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<div class="row">
+    <div class="well well-sm">
+        <h5 class="text-center text-muted">{% trans 'Вы уверены, что хотите удалить этот комментарий?' %}</h5>
+        <form id="ajax-post-remove-form" method="post" action="javascript:void(null);" data-url="{{ post.get_remove_url }}">
+            {% csrf_token %}
+            <ul class="text-center list-inline">
+                <li><input type="submit" class="btn btn-border btn-link" value="{% trans 'Удалить' %}"/></li>
+                <li><a href="#" onclick="$('#main-modal').modal('hide'); return false;" class="btn btn-border btn-link">{% trans "Отменить" %}</a></li>
+            </ul>
+        </form>
+    </div>
+</div>
+
+<script>
+    require(['module_form_ajax'], function(form){
+        form.init("#ajax-post-remove-form");
+    });
+</script>

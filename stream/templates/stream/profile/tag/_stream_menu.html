@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load static %}
+{% load common %}
+
+<div class="btn-group btn-group-sm">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="{% url 'stream_profile_edit' %}">
+        <span class="glyphicon glyphicon-edit"></span> {% trans 'Редактировать стрим профиль' %}</a>
+    </li>
+    <li><a href="{% url 'stream_profile_manager' %}">
+        <span class="fa fa-toggle-on"></span> {% trans 'Менеджер трансляции' %}</a>
+    </li>
+    <li role="separator" class="divider"></li>
+    {% if not user.stream_preview %}
+    <li><a href="{% url 'stream_preview_create' %}" >
+        <span class="glyphicon glyphicon-plus-sign"></span> {% trans 'Создать стрим анонс' %}</a>
+    </li>
+    {% else %}
+    <li><a href="{% url 'stream_preview_edit' %}">
+        <span class="glyphicon glyphicon-edit"></span> {% trans 'Редактировать стрим анонс' %}</a>
+    </li>
+    <li>
+     <a data-toggle="modal" data-target="#main-modal" data-title="{% trans 'Удалить анонс?' %}" data-url="{% url 'stream_preview_remove' %}" href="#">
+        <span class="glyphicon glyphicon-trash"></span> {% trans 'Удалить анонс' %}</a>
+    </li>
+    {% endif %}
+  </ul>
+</div>

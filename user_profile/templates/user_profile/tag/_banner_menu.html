@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+
+{% url 'user_profile' as user_profile_url %}
+{% url 'stream_profile' as stream_profile_url %}
+{% url 'group_profile' as group_profile_url %}
+{% url 'guides_profile' as guides_profile_url %}
+
+<ul class="nav nav-pills">
+    <li {% if user_profile_url in path %} class="active" {% endif %}><a href="{{ user_profile_url }}" >
+        <span class="fa fa-vcard" aria-hidden="true"></span> {% trans 'Мой профайл' %}</a>
+    </li>
+    <li {% if guides_profile_url in path %} class="active" {% endif %} >
+        <a href="{{ guides_profile_url }}"><span class="fa fa-book" aria-hidden="true"></span> {% trans 'Мои гайды' %} </a>
+    </li>
+    {% if user_has_stream_profile %}
+        <li {% if stream_profile_url in path %} class="active"{% endif %}>
+            <a href="{{ stream_profile_url }}" >
+                <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> {% trans 'Стрим профиль' %}</a></li>
+    {% endif %}
+    {% if user_has_group_profile %}
+        <li {% if group_profile_url in path %} class="active" {% endif %} >
+            <a href="{{ group_profile_url }}"><span class="fa fa-users" aria-hidden="true"></span> {{ group_type }} </a></li>
+    {% endif %}
+      <li>
+          <a href="#invites" data-toggle="modal" data-target="#main-modal" data-title="{% trans 'Заявки' %}" data-url="{% url 'group_invite_list' %}">
+          <span class="fa fa-flag"></span> {% trans 'Заявки' %} <span class="badge">{% get_count_invites %}</span>
+          </a>
+      </li>
+    {% service_menu_block %}
+</ul>
+
+
+
+
+

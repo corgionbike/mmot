@@ -1,0 +1,44 @@
+{% load i18n %}
+
+<ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" class="active"><a href="#live" aria-controls="live" role="tab" data-toggle="tab">
+        <span class="mdi mdi-access-point mdi-24px animated infinite pulse"></span>
+        {#                {% trans 'В эфире'|upper %}#}
+        {#                <span class="label label-default">{{ live_stream_list|length }}</span>#}
+    </a>
+    </li>
+    <li role="presentation"><a href="#planned" aria-controls="planned" role="tab" data-toggle="tab">
+        <span class="mdi mdi-calendar-clock mdi-24px"></span>
+        {#                {% trans 'Анонсы'|upper %} <span class="label label-default">{{ planned_stream_list|length }}</span>#}
+    </a>
+    </li>
+
+</ul>
+
+<div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane active" id="live">
+        {% if not live_stream_list|length %}
+            <div class="panel-body">
+                <h3 class="text-center text-muted"><span class="mdi mdi-access-point mdi-24px"></span>
+                    <br/>{% trans 'Эфир пуст'|upper %}</h3>
+            </div>
+        {% else %}
+            <div id="loader" class="text-center"><span
+                    class="fa fa-circle-o-notch fa-spin"></span> {% trans "Загрузка.." %}</div>
+            {% include 'stream/tag/include_live_streams.html' %}
+        {% endif %}
+    </div>
+    <div role="tabpanel" class="tab-pane" id="planned">
+        {% if not planned_stream_list|length %}
+
+            <div class="panel-body">
+                <h3 class="text-center text-muted"><span class="mdi mdi-calendar-clock mdi-24px"></span>
+                    <br/>{% trans 'Анонсы не найдены'|upper %}
+                </h3>
+            </div>
+        {% else %}
+            {% include 'stream/tag/include_planned_streams.html' %}
+        {% endif %}
+    </div>
+</div>

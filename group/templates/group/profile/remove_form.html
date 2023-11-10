@@ -1,0 +1,23 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans "Удалить группу" %}{% endblock %}
+
+{% block content %}
+    <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <input type="submit" class="btn btn-danger btn-block btn-border" value="{% trans 'Да' %}" />
+                </div>
+                <div class="col-md-6">
+                    <a href="#" onclick="window.history.back(); return false;" class="btn btn-default btn-block btn-border">{% trans "Нет" %}</a>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+{% endblock %}

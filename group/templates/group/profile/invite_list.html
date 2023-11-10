@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+<ul id="invite_list" class="list-group">
+    {% include 'group/profile/invite.html' %}
+</ul>
+
+{% if invites.has_other_pages %}
+    <div class="row">
+    <hr>
+        <button id="btn_load_invites" onclick="invite.load(this, {{ invites.paginator.num_pages }}, '{% url 'group_invite_load' %}')"
+                   class="btn btn-md btn-link btn-block btn-border " data-dismiss="alert">
+                   {% trans "Показать еще" %}
+        </button>
+    </div>
+{% endif %}
+<script>
+    require(['module_invite'], function (module_invite) {
+        return invite = module_invite;
+    });
+</script>

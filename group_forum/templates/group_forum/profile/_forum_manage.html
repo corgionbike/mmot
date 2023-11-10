@@ -1,0 +1,26 @@
+{% load i18n %}
+
+<h3 class="line">{% trans 'Настройки форума'|upper %}</h3>
+
+<ul class="list-unstyled">
+    <li><b> {% trans 'Разрешить редактировать посты пользователям:' %}</b>
+        <span class='fa {% if forum.settings.is_member_edit %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+    <li><b> {% trans 'Разрешить создавать обсуждения пользователям:' %}</b>
+        <span class='fa {% if forum.settings.is_member_create %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+    <li class="sr-only"><b> {% trans 'Последний пост сверху:' %}</b>
+        <span class='fa {% if forum.settings.post_ordering %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+    <li><b>{% trans 'Число обсуждений на страницу:' %}</b>
+        <span class="badge">{{ forum.settings.num_topics }}</span>
+    </li>
+    <li><b>{% trans 'Число комментариев на страницу:' %}</b>
+        <span class="badge">{{ forum.settings.num_posts }}</span>
+    </li>
+    <hr>
+    <li>
+        <a class="btn btn-sm btn-link btn-border" href="{{ forum.get_edit_url }}"><span
+                class="glyphicon glyphicon-edit"></span> {% trans 'Редактировать' %}</a>
+    </li>
+</ul>

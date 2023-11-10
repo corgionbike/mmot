@@ -1,0 +1,72 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load static %}
+{% load stream_tags %}
+{% load common %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+<table id="stream_planed_tbl" class="table table-striped hide"
+       data-pagination="true"
+       data-search="true"
+       data-classes="table-no-bordered">
+    {% for stream in planned_stream_list %}
+        {% if forloop.first %}
+            <thead>
+            <tr>
+                <th data-field="name" data-align="center" data-sortable="true">{% trans 'Наименование' %}</th>
+                <th data-field="user" data-align="center" data-sortable="true">{% trans 'Рестример' %}</th>
+                <th data-field="group" data-align="center" data-sortable="true">{% trans 'Группа' %}</th>
+                <th data-field="game" data-align="center" data-sortable="true">{% trans 'Игра' %}</th>
+                <th data-field="provider" data-align="center" data-sortable="true">{% trans 'Площадка' %}</th>
+                <th data-field="start_ts" data-align="center" data-sortable="true">{% trans 'Время до начала' %}</th>
+            </tr>
+            </thead>
+        {% endif %}
+        <tr>
+            <td class="text-center">
+                <a href="#" class="modal-link" data-toggle="modal" data-target="#main-modal"
+                   data-url="{{ stream.get_preview_detail_url }}">{{ stream.name|truncatechars:40 }}</a>
+            </td>
+            <td>
+                {% user_card_link stream.user is_img=False cls="modal-link" %}
+            </td>
+            <td>
+                {% if stream.group %}
+                    {% group_card_link stream.group is_img=False fname=False cls="modal-link" %}
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+            </td>
+            <td>
+                <b>
+                    {% if stream.game %}
+                        <a href="#" class="modal-link" data-toggle="modal" data-target="#main-modal"
+                           data-url="{{ stream.game.get_game_detail_url }}">{{ stream.game }}</a>
+                    {% else %}
+                        {{ stream.game_user }}
+                    {% endif %}
+                </b>
+            </td>
+            <td>
+                {{ stream.get_provider_display|default_if_none:stream.stream_profile.get_provider_display|default:'-' }}
+            </td>
+            <td>
+                {% if not stream.is_postpone %}
+                    {{ stream.start_ts|timeuntil }}
+                {% else %}
+                    <span class="label-danger label"> {% trans 'Стрим отложен' %} </span>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<script>
+    require(['module_bootstrap_tbl'], function (module) {
+        module.init('stream_planed_tbl');
+    });
+</script>
+
+
+

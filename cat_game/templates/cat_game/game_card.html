@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load user_profile_tags %}
+
+
+{% trans 'Описание не найдено' as nodec %}
+{% trans 'нет данных' as nodata %}
+
+<div class="media">
+    <div class="media-left text-center">
+        {% img_thumbnail img=game.logo w=98 h=98 cls='img-circle img-thumbnail media-object' %}
+    </div>
+    <div class="media-body">
+        <p>{{ game.description|default:nodec|safe|linebreaksbr }}</p>
+        <ul class="list-inline text-muted">
+            <li>{% trans 'Разработчик:' %} {{ game.developer|default:nodata }}</li>
+            <li>{% trans 'Платформы:' %} {{ game.platform|default:nodata }}</li>
+        </ul>
+    </div>
+</div>
+

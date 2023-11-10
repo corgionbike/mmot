@@ -1,0 +1,79 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load hreflang %}
+{% get_available_languages as languages %}
+
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"ru-ru" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+    {#    {% hreflang_tags as hreflang %}#}
+    {#    {{ hreflang|safe }}#}
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="avwb8fHC7Ciz7yrJRuHAMtrUxMsV_AEGnOrr4VLXUfs"/>
+    <meta name="yandex-verification" content="7b22c468e68574b5"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="
+    {% block meta %}
+        {% blocktrans %}
+         Портал игровых сервисов. Создайте свой клан сайт по любимой игре.
+         Транслируйте игры друзьям. Читайте наши гайды.
+        {% endblocktrans %}
+    {% endblock %}"/>
+    <meta name="keywords"
+          content="{% trans 'клан банк, клан сайт, создать клан сайт, клан форум, клан стримы, игровые сервисы, трансляции, игры, онлайн игры, mmorpg, mmo, мморпг, ммо, гайды, отряды, группы, кланы, stream' %}"/>
+    <meta name="author" content="mmotimes.ru & Co">
+    <title>{% block title %}{% trans 'Главная'|upper %}{% endblock %} :: MMOTIMES.RU</title>
+    <!-- CSS -->
+    {% block stylesheet %}
+        {% include "include_css.html" %}
+    {% endblock %}
+    <!-- /CSS -->
+</head>
+<body>
+<div class="content-wrapper">
+    <!--  JavaScript -->
+    {% block javascript %}
+        {% include "include_js.html" %}
+    {% endblock %}
+    <!--  /JavaScript -->
+
+    <!--  навигация -->
+    {% block topmenu %}
+        {% include "include_top_menu.html" %}
+    {% endblock %}
+    <!--  /навигация -->
+
+    {% block messange %}
+        <!--  messanges -->
+        <div class="text-center message-box">{% bootstrap_messages %}</div>
+        <!--  /messanges -->
+    {% endblock %}
+    {% block slider %}{% endblock %}
+    {% block profiles %}{% endblock %}
+    {% block group %}{% endblock %}
+{#    <!-- container -->#}
+    <div role="main">
+        {% block content-index %}{% endblock %}
+        {% block content-main %}{% endblock %}
+    </div>
+    <!-- /container -->
+</div>
+{% block footer %}
+    <footer class="footer-wrapper" style="margin-top: 50px">
+        <div class="container">
+            <div class="row">
+                {% include "include_footer.html" %}
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+<!-- modal -->
+{% block modal %}
+    {% include "include_modal.html" %}
+{% endblock %}
+<!-- /modal -->
+
+</body>
+</html>

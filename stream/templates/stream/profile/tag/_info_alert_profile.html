@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<div class="alert alert-danger top-offset-20">
+  <p class="text-center"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+      {% if stream_preview %}
+        {% trans 'Не забудьте создать анонс будущей трансляции, что бы пользователи могли узнать о вашем стриме.' %}
+      {% endif %}
+      {% if stream_archive %}
+        {% trans 'Сохраняйте прошедшие стримы в архиве.' %}
+      {% endif %}
+  </p>
+</div>

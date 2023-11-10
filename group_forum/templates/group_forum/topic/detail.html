@@ -1,0 +1,70 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block groupcontent %}
+
+
+    <ol class="breadcrumb">
+        <li><a href="{{ forum.get_absolute_url }}">{% trans 'Обсуждения' %}</a></li>
+        <li class="active">{{ topic.name }}</li>
+    </ol>
+
+    <div class="well">
+        <ul id="topic_detail_item" class="list-group">
+            {% include 'group_forum/topic/include_item_detail.html' %}
+        </ul>
+    </div>
+
+    <div class="well">
+        <ul id="post_list" class="list-group">
+            {% include 'group_forum/post/post_list.html' %}
+        </ul>
+    </div>
+
+    {% if not topic.closed or is_user_moderator or user == group_profile.owner %}
+        <div class="well-sm">
+            {% include 'group_forum/post/create_form.html' %}
+        </div>
+    {% endif %}
+
+    {% if posts.has_other_pages %}
+        <div class="col-md-12">
+            <hr>
+            <button id="btn_load_topics"
+                    onclick="paginator.load(this, {{ posts.paginator.num_pages }}, '{% url 'post_load' group_profile.name topic.id %}', {{ request.GET.page|default:1 }}, '#post_list')"
+                    class="btn btn-md btn-link btn-block" data-dismiss="alert">
+                {% trans "Показать еще" %}
+            </button>
+        </div>
+
+        <div class="col-md-12 text-center">
+            {% bootstrap_pagination posts size='small' %}
+        </div>
+    {% endif %}
+
+
+
+    {#<div class="col-md-4">#}
+    {#    <ul class="nav nav-pills nav-stacked well">#}
+    {#        <li><a href="#" class="btn btn-primary"#}
+    {#                data-toggle="modal"#}
+    {#                data-target="#main-modal"#}
+    {#                data-title="{% trans 'Оставить комментарий' %}"#}
+    {#                data-url="{% url 'post_create' group_profile.name topic.id %}">#}
+    {#                {% trans 'Оставить комментарий' %}#}
+    {#            </a>#}
+    {#        </li>#}
+    {#    </ul>#}
+    {#</div>#}
+
+    <script>
+        require(['module_paginator'], function (module_paginator) {
+            return paginator = module_paginator;
+        });
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% load i18n %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <ul class="list-inline">
+            <div class="media">
+              <div class="media-left">
+                {% group_card_link group h=68 w=68 cls='img-circle img-thumbnail media-object group-logo' %}
+              </div>
+              <div class="media-body">
+                    <h6 class="media-heading"><a href="{{ group.get_absolute_url }}">{{ group }}</a> </h6>
+                    <ul class="list-unstyled text-muted">
+                        <li>{% trans 'Участников' %}: {{ group.num_members }}</li>
+                        <li>
+                            <span class="{% get_icon_privacy group.privacy %}"></span> {{ group.get_privacy_display }} {% trans 'группа' %}
+                        </li>
+                    </ul>
+              </div>
+            </div>
+        </ul>
+    </li>
+</ul>
+
+
+

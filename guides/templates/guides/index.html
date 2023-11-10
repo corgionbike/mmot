@@ -1,0 +1,93 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load editor_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+{% load guides_tags %}
+{% load cache %}
+{% load thumbnail %}
+{% load static %}
+{% load user_profile_tags %}
+
+{% block meta %}{% trans "Гайды. Руководства по играм." %}{% endblock %}
+{% block title %}{{ title|default:"Гайды"|upper }} {% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% trans 'Гайды'|upper as t %}
+        <h1 class="line index-header" role="heading">
+            <span class="fa {% if not title %} fa-cogs {% else %} fa-filter {% endif %} text-muted"></span> {{ title|upper|default:t }}
+        </h1>
+        <div class="col-md-8 guides_excerpt" itemscope itemtype="http://schema.org/Article">
+            {% for guide in guides %}
+                <h2 itemprop="name">
+                    <a href="#" class="modal-link" data-toggle="modal" data-target="#main-modal"
+                       data-url="{{ guide.game.get_game_detail_url }}">{{ guide.game }}</a>
+                    <span class="fa fa-angle-double-right"></span>
+                    <a href="{{ guide.get_absolute_url }}" style="color: #444444">{{ guide.title }}</a>
+                    {% if guide.status == guide.STATUS.draft %}
+                        <small>[{% trans 'черновик' %}]</small>
+                    {% endif %}
+                </h2>
+                <ul class="list-inline text-muted">
+                    <li>
+                        <time class="glyphicon glyphicon-time" itemprop="datePublished"
+                              datetime="{{ guide.modified|date:"Y-m-d" }}"
+                              title="{% trans 'Дата модификации' %}"></time>
+                        {{ guide.modified|date:"d.m.y" }}
+                    </li>
+                    <li><span
+                            class="fa fa-user-circle"
+                            title="{% trans 'Автор' %}"></span>
+                        <span itemprop="creator">{% user_card_link guide.user is_img=False cls='modal-link' %}
+                        </span>
+                    </li>
+
+                    <li><span class="mdi mdi-eye" title="{% trans 'Просмотры' %}"></span> {% views guide.id %} </li>
+                    <li itemprop="keywords"><span class="mdi mdi-gamepad-variant"></span> <a
+                            href="{% url 'guide_filter' %}?game={{ guide.game.id }}"
+                            title="{% trans 'Поиск по игре' %} {{ guide.game }}">{{ guide.game }}</a>
+                    </li>
+                    {% for tag in guide.tags.all %}
+                        <li itemprop="keywords"><span class="fa fa-tag"></span> <a
+                                href="{% url 'guide_filter' %}?tags={{ tag.name }}"
+                                title="{% trans 'Поиск по тегу' %} {{ tag }}">{{ tag }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="media">
+                    {#                <div class="media-left thumbnail">#}
+                    {#                    {% img_thumbnail img=guide.game.logo w=98 h=98 cls='img-thumbnail media-object img-circle' %}#}
+                    {#                </div>#}
+                    <div class="media-body">
+                    <span itemprop="description">
+                        {{ guide.body.excerpt|safehtml|oembedhtml|safe }}
+                    </span>
+                        {% if guide.body.has_more %}
+                            <a href="{{ guide.get_absolute_url }}"
+                               title="{% trans 'Читать дальше' %} ">{% trans 'Читать дальше' %}
+                                <span class="fa fa-angle-double-right"></span></a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <h2 class="text-center text-muted">{% trans 'Нет гайдов'|upper %}</h2>
+
+            {% endfor %}
+            {% if guides.has_other_pages %}
+                {% bootstrap_pagination guides size='small' %}
+            {% endif %}
+        </div>
+
+        <div class="col-md-4 col-xs-12">
+            {% include 'guides/include_filter.html' %}
+            <div class="well">
+                <a href="{% url 'guide_create' %}" class="btn btn-block btn-sm btn-border btn-link"
+                   title="{% trans 'Добавить гайд' %}">
+                    <span class="mdi mdi-library-plus"></span>
+                    {% trans 'Добавить гайд'|upper %}</a>
+            </div>
+            {% include 'guides/include_ad.html' %}
+        </div>
+    </div>
+{% endblock %}

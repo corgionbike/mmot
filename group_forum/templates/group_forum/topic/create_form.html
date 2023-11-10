@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load user_profile_tags %}
+
+<form id="ajax-topic-form" method="post" action="javascript:void(null);" data-url="{% url 'topic_create' group_profile.name %}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input id="topic-submit" type="submit" class="btn btn-link btn-border btn-block" value="{% trans 'Опубликовать' %}" />
+</form>
+
+<script>
+    require(['module_form_ajax', 'jquery'], function(form, $){
+        $(function () {
+            form.init('#ajax-topic-form');
+        });
+    });
+</script>

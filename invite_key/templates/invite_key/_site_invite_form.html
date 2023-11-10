@@ -1,0 +1,35 @@
+{% load i18n %}
+
+{% if user.is_anonymous %}
+    <section class="invite-key container-fluid">
+        <div class="row">
+            <h1>{% trans 'Пригласительный ключ'|upper %}</h1>
+            <p class="lead">{% trans 'Для регистрации на сайте, Вам понадобится пригласительный ключ. <br /> Количество ключей ограничено!' %}</p>
+            <span class="click-to-copy" data-clipboard-target="#key_label" id="id_copy_key">
+                <h2 id="key_label" style="display: none;"></h2><span id="label-copy-key"
+                                                                     class="hidden label-default label">{% trans 'Нажми для копирования' %}</span>
+            </span>
+            <button id="get_key_btn" data-url="{% url 'invite_site_key_get' %}"
+                    class="btn btn-link btn-border">{% trans 'Получить' %}</button>
+            <script>
+                require(['clipboard', 'jquery', 'module_invite_key_site'], function (module, $) {
+                    var clipboard = new module("#id_copy_key");
+                    var $key = $('#id_copy_key');
+                    var $label_copy_key = $('#label-copy-key');
+                    $key.hover(
+                        function () {
+                            $label_copy_key.removeClass('hidden');
+                        },
+                        function () {
+                            $label_copy_key.addClass('hidden').text('{% trans 'Нажми для копирования' %}');
+                        }
+                    );
+                    clipboard.on('success', function (e) {
+                        $label_copy_key.text('{% trans 'Скопировано' %}');
+                    });
+                });
+            </script>
+
+        </div>
+    </section>
+{% endif %}

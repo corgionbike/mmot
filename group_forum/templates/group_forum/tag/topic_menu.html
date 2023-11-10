@@ -1,0 +1,32 @@
+{% load i18n %}
+
+
+<div class="btn-group" role="group">
+    <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <span class="glyphicon glyphicon-option-horizontal"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        {% if is_edit %}
+        <li>
+            <a id="btn_edit_topic-{{ topic.id }}" href="#edit"
+                    data-toggle="modal"
+                    data-target="#main-modal"
+                    data-title="{% trans 'Редактировать обсуждение' %}"
+                    data-url="{{ topic.get_edit_url }}">
+                <span aria-hidden="true" class="fa fa-pencil"></span> {% trans 'Редактировать' %}
+            </a>
+        </li>
+        {% endif %}
+        {% if is_del %}
+        <li>
+            <a id="btn_remove_topic-{{ topic.id }}" href="#remove"
+                    data-toggle="modal"
+                    data-target="#main-modal"
+                    data-title="{% trans 'Удалить обсуждение?' %}"
+                    data-url="{{ topic.get_remove_url }}">
+                <span aria-hidden="true" class="glyphicon glyphicon-trash"></span> {% trans 'Удалить' %}
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>

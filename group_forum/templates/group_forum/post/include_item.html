@@ -1,0 +1,32 @@
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load group_forum_tags %}
+{% load editor_tags %}
+
+
+<li id="post-{{ post.id }}" class="list-group-item">
+    {% if user == topic.user and forum.settings.is_member_edit or is_user_moderator or user == group_profile.owner %}
+        {% post_menu %}
+    {% endif %}
+    {% quote_menu %}
+    <div class="list-group-item-heading">
+        <ul class="list-inline">
+            <li>{% user_card_link post.user w=38 h=38 %}</li>
+            <li><h6>{{ post.user }}</h6></li>
+            {% if post.user == topic.user %}<li><span class="label label-default">{% trans 'Автор'|upper %}</span></li>{% endif %}
+            <li><a id="{{ post.id }}"></a><a class="text-muted" href="#{{ post.id }}"><span class="fa fa-clock-o"></span> {{ post.created }}</a></li>
+        </ul>
+    </div>
+    <div id="post-text-{{ post.id }}" class="post-content">
+        <div class="post-text">{{ post.body|safehtml|oembedhtml|safe }}</div>
+    </div>
+    <ul class="list-inline text-muted">
+        {% if post.edited_by %}<li><i>{{ post.edited_by }}</i></li>{% endif %}
+    </ul>
+    {% if post.user.userbar %}
+        <hr class="forum_user_bar">
+        <span class="text-muted">{{ post.user.userbar|truncatechars:100|default:"" }}</span>
+    {% endif %}
+</li>
+

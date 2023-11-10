@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% trans 'Не найдено' as nodata %}
+
+<hr class="header">
+{% for archive in archives %}
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="holder.js/128x64">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ archive.name }}</h4>
+            {{ archive.description|default:nodata}}
+      </div>
+    </div>
+{% empty %}
+    <h4 class="text-center text-muted">{{ nodata }}</h4>
+{% endfor %}
+

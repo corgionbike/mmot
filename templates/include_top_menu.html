@@ -1,0 +1,77 @@
+{% load i18n %}
+{% load stream_tags %}
+{% load user_profile_tags %}
+{% load notifications_tags %}
+{% load staticfiles %}
+{% load group_tags %}
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-remove-shadow">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class=""></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img role="logo" src="{% static "img/logo.svg" %}" width="130" height="30"
+                     onerror="this.onerror=null; this.src='{% static "img/logo.png" %}'" alt=""> </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" role="navigation">
+                <li>
+                    <a href="{% url 'stream_index' %}">
+                        {% trans "Стрим-центр"|upper %}
+                        <span class="label label-primary hidden-sm">{% stream_live_count %} {% trans 'В ЭФИРЕ' %} </span></a>
+
+                </li>
+                <li>
+                    <a href="{% url 'guides_index' %}">
+                        {% trans "Гайды"|upper %} </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" role="navigation">
+                {% if user.is_active %}
+                    {% notifications_unread as unread %}
+                    <li id="notify_mark">
+                        <a href="#notice" data-toggle="modal" data-target="#main-modal"
+                           data-title="{% trans 'Уведомления' %}"
+                           data-uid="notice"
+                           title="{% trans 'Уведомления' %}"
+                           data-url="{% url 'notice_all' %}">
+                            <span class="fa fa-bell {% if unread %}text-danger animated infinite tada{% endif %}"
+                                  aria-hidden="true"></span>
+                            <span id="live_notify_badge" class="badge">{{ unread }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'messages_inbox' %}" title="{% trans 'Личные сообщения' %}">
+                            <span class="fa fa-envelope"></span> <span class="badge">{{ messages_inbox_count }}</span>
+                        </a>
+                    </li>
+                    {% group_menu %}
+                    {% if user.stream_profile %}
+                        {% manager_player_menu %}
+                    {% endif %}
+
+                    {% user_menu %}
+
+                {% else %}
+                    <li>
+                        <a href="{% url 'registration_register' %}">
+                            <span class="fa fa-user-plus" aria-hidden="true"></span> {% trans "Регистрация"|upper %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'auth_login' %}">
+                            <span class="glyphicon glyphicon-log-in"
+                                  aria-hidden="true"></span> {% trans "Войти"|upper %}
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

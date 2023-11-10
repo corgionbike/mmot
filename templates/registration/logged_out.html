@@ -1,0 +1,12 @@
+{% extends "base_content.html" %}
+{% load common %}
+{% load i18n %}
+
+{% block content %}
+
+    {% trans 'Выход выполнен успешно!' as msg %}
+    <div class="col-md-6 col-md-offset-3 text-muted text-center">
+        <h4>{{ msg }}</h4>
+    </div>
+
+{% endblock %}

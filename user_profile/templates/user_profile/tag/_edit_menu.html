@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<ul class="list-inline">
+    <li>
+        <a href="{% url 'user_profile_edit' %}" class="set_banner_link">
+             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {% trans 'Редактировать' %}
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'messages_inbox' %}" class="set_banner_link">
+             <span class="fa fa-envelope" aria-hidden="true"></span> {% trans 'Личные сообщения' %}
+        </a>
+    </li>
+</ul>
+
+
+

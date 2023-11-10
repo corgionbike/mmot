@@ -1,0 +1,30 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans 'Участники' %} {% endblock %}
+
+{% block groupcontent %}
+
+    <h3 class="line">{% trans 'Участники'|upper %}</h3>
+        <ul id="member_list" class="list-group clearfix top-offset-20">
+            {% for member in members %}
+                <div class="col-md-4">
+                    {% include 'group/page/include_member_item.html' %}
+                </div>
+            {% empty %}
+                 <h4 class="text-center text-muted"><i class="fa fa-users fa-2x" aria-hidden="true"></i> <br/> {% trans 'Участники не найдены' %}</h4>
+            {% endfor %}
+        </ul>
+
+    {% if members.has_other_pages %}
+        <hr>
+        <div class="col-md-12 text-center">
+            {% bootstrap_pagination members size='small' %}
+        </div>
+    {% endif %}
+
+{% endblock %}
+

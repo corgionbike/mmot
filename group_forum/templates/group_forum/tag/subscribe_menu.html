@@ -1,0 +1,12 @@
+{% load i18n %}
+
+
+<div class="btn-group" role="group">
+    {% if user == topic.user %}
+        {% if topic.send_response %}
+            <a href="{% url 'topic_unsubscribe' group.name topic.id %}" class="btn btn-sm btn-link">{% trans 'Отписаться' %}</a>
+        {% else %}
+            <a href="{% url 'topic_subscribe' group.name topic.id %}" class="btn btn-sm btn-link">{% trans 'Подписаться' %}</a>
+        {% endif %}
+    {% endif %}
+</div>

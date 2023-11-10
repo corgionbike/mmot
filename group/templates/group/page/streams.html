@@ -1,0 +1,15 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+
+
+{% block title %}{% trans 'Трансляции' %} {% endblock %}
+
+{% block groupcontent %}
+    {% trans 'Не найдено' as nodata %}
+    <h3 class="line">{% trans 'Трансляции'|upper %}</h3>
+    {% include 'stream/include_streams_tbl.html' %}
+{% endblock %}
+
+

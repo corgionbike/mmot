@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+
+<div class="editor">
+    <form method="POST" action="{{ action_url }}" >
+        {% csrf_token %}
+        {% bootstrap_form form show_label=False %}
+        <div class="btn-group-action">
+            <button id="post_submit" class="btn btn-link btn-border" type="submit"> {% trans 'Оставить комментарий' %}</button>
+        </div>
+    </form>
+</div>

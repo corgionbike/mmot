@@ -1,0 +1,21 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% load static %}
+
+{% block meta %}
+    {% blocktrans %}
+        Агрегатор стрим трансляций, призванный объединить пользовательские трансляции различных игр.
+        Поддерживаем известные стрим площадки: Twitch.tv, YouTube.com, HitBox.tv.
+    {% endblocktrans %}{% endblock %}
+
+{% block title %}{% trans "Стрим-центр"|upper %}{% endblock %}
+
+{% block content %}
+    {% trans 'Не найдено' as nodata %}
+    <h1 class="line index-header" role="heading"><span
+            class="mdi mdi-access-point"></span> {% trans 'Стрим-центр'|upper %}</h1>
+    <div class="col-md-12">
+        {% include 'stream/include_streams_tbl.html' %}
+    </div>
+{% endblock %}

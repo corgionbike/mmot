@@ -1,0 +1,30 @@
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+<h3 class="line">{% trans 'Модераторы'|upper %}</h3>
+
+<ul class="list-inline">
+    {% for moderator in moderator_list %}
+        <li data-toggle="tooltip" data-placement="top" title="{{ moderator.user }}">
+            {% user_card_link moderator.user %}
+        </li>
+    {% empty %}
+        <div class="row text-center">
+            <h4 class="text-muted"><i class="fa fa-users fa-2x"></i> <br> {% trans 'Нет данных' %}</h4>
+        </div>
+    {% endfor %}
+</ul>
+<hr>
+
+<div class="text-center">
+    <a href="{% url 'group_moderator_add' %}"
+       class="btn btn-sm btn-link  btn-border"
+       role="button">
+        <i class="fa fa-plus-circle"></i> {% trans 'Назначить модератора' %}
+    </a>
+</div>
+

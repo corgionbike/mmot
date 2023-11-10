@@ -1,0 +1,16 @@
+{% load i18n %}
+{% load stream_tags %}
+
+<div id="collapseChat">
+    <div class="chat-hitbox">
+    ​   <iframe height="100%"
+                width="100%"
+                src="https://www.smashcast.tv/embedchat/{{ sid }}"
+                frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+<div style="margin-top: 25px">
+    {% action_chat_btn %}
+</div>
+

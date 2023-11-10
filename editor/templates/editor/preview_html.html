@@ -1,0 +1,9 @@
+{% load i18n %}
+{% load editor_tags %}
+
+
+<div style="min-width: 100%; min-height: 145px;" class="preview_html" >
+    {{ body|safehtml|oembedhtml|safe }}
+</div>
+
+

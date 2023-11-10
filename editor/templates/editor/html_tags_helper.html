@@ -1,0 +1,153 @@
+{% load i18n %}
+<div class="help_holder collapse" id="collapseHtml">
+    <h5>Теги сайта</h5>
+
+    {% if cut %}
+    <dl class="block_semi">
+      <dt>&lt;cut&gt;&lt;/cut&gt;</dt>
+      <dd class="description">Используется только в текстах публикаций, скрывает под кат часть текста, следующую за тегом (будет написано «Читать дальше»).</dd>
+    </dl>
+    {% endif %}
+    {% if video %}
+    <dl class="block_semi">
+          <dt>http://.../*</dt>
+          <dd class="description">Вставка интерактивных элементов: youtube, twitch, instagram.
+          Например: https://www.twitch.tv/videos/162332072 или https://www.youtube.com/watch?v=hpoxhsaM21A</dd>
+    </dl>
+    {% endif %}
+    <h5>Стандартные</h5>
+    <table class="wide">
+      <tbody><tr>
+        <td>
+          <dl class="block_semi">
+            <dt>&lt;h1&gt;&lt;/h1&gt;<br>
+              ...<br>
+              &lt;h6&gt;&lt;/h6&gt;
+            </dt>
+            <dd class="description">Заголовки разного уровня.</dd>
+          </dl>
+          <dl class="block_semi">
+            <dt>&lt;img src="" /&gt;</dt>
+            <dd class="description">Вставка изображения, в атрибуте src нужно указывать полный путь к изображению. Возможно выравнивание картинки атрибутом align.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>&lt;a href="http://..."&gt;Ссылка&lt;/a&gt;</dt>
+            <dd class="description">Вставка ссылки, в атрибуте href указывается желаемый интернет-адрес или якорь (anchor) для навигации по странице.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>&lt;anchor&gt;Example1&lt;/anchor&gt;</dt>
+            <dd class="description">Тег для указания якоря. Для вызова используйте тег вставки ссылок (&lt;a href="#Example1"&gt;Текст&lt;/a&gt;).</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>&lt;b&gt;&lt;/b&gt;<br>
+              &lt;strong&gt;&lt;/strong&gt;</dt>
+            <dd class="description">Выделение важного текста, на странице выделяется жирным начертанием.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>&lt;i&gt;&lt;/i&gt;<br>
+              &lt;em&gt;&lt;/em&gt;</dt>
+            <dd class="description">Выделение важного текста, на странице выделяется курсивом.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;s&gt;&lt;/s&gt;<br>
+              &lt;strike&gt;&lt;/strike&gt;
+            </dt>
+            <dd class="description">Текст между этими тегами будет отображаться как зачеркнутый.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;u&gt;&lt;/u&gt;
+            </dt>
+            <dd class="description">Текст между этими тегами будет отображаться как подчеркнутый.</dd>
+          </dl>
+        </td>
+
+        <td width="5%"></td>
+
+        <td>
+          <dl class="block_semi">
+            <dt>
+              &lt;hr /&gt;
+            </dt>
+            <dd class="description">Тег для вставки горизонтальной линии.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;blockquote&gt;&lt;/blockquote&gt;
+            </dt>
+            <dd class="description">Используйте этот тег для выделения цитат.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;table&gt;&lt;/table&gt;<br>
+              &lt;th&gt;&lt;/th&gt;<br>
+              &lt;td&gt;&lt;/td&gt;<br>
+              &lt;tr&gt;&lt;/tr&gt;
+            </dt>
+            <dd class="description">Набор тегов для создания таблицы. Тег &lt;td&gt; обозначает ячейку таблицы, тег &lt;th&gt; - ячейку в заголовке, &lt;tr&gt; - строчку таблицы. Все содержимое таблицы помещайте в тег &lt;table&gt;.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;sup&gt;&lt;/sup&gt;<br>
+              &lt;sub&gt;&lt;/sub&gt;
+            </dt>
+            <dd class="description">Текст, заключенный в тег &lt;sup&gt; отображается в виде верхнего индекса, &lt;sub&gt; - в виде нижнего.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;abbr title="" &gt;&lt;/abbr&gt;<br>
+              &lt;acronym title="" &gt;&lt;/acronym&gt;
+            </dt>
+            <dd class="description">Тегом &lt;abbr&gt; выделяется аббревиатура, в атрибуте title указывайте её расшифровку. Используйте тег &lt;acronym&gt; для устоявшихся аббревиатур.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;pre&gt;&lt;/pre&gt;
+            </dt>
+            <dd class="description">Текст в теге &lt;pre&gt; не форматируется автоматически.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;nobr&gt;&lt;/nobr&gt;<br>
+
+              &lt;br clear="all|left||right" /&gt;
+            </dt>
+            <dd class="description">Текст, помещенный в тег &lt;nobr&gt;, не переносится на странице; для принудительного переноса текста используйте тег &lt;br /&gt;; для аккуратного выравнивания изображений используйте атрибут clear="all|left||right" в теге &lt;br /&gt;.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;ul&gt;&lt;/ul&gt;<br>
+              &lt;li&gt;&lt;/li&gt;
+            </dt>
+            <dd class="description">Ненумерованный список; каждый элемент списка задается тегом &lt;li&gt;, набор элементов списка помещайте в тег &lt;ul&gt;.</dd>
+          </dl>
+
+          <dl class="block_semi">
+            <dt>
+              &lt;ol&gt;&lt;/ol&gt;<br>
+              &lt;li&gt;&lt;/li&gt;
+            </dt>
+            <dd class="description">Нумерованный список; каждый элемент списка задается тегом &lt;li&gt;, набор элементов списка помещайте в тег &lt;ol&gt;.</dd>
+          </dl>
+        </td>
+      </tr>
+    </tbody></table>
+
+    <div class="text-center">
+      <a class="modal-link" data-toggle="collapse" href="#collapseHtml" aria-expanded="false" aria-controls="collapseHtml">{% trans 'закрыть' %}</a>
+    </div>
+  </div>

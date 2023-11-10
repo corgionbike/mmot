@@ -1,0 +1,34 @@
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load group_forum_tags %}
+
+
+{% get_num_pages topic.num_posts forum.settings.num_posts as num_pages %}
+
+<li id="topic-item-{{ topic.id }}" class="list-group-item {% if topic.sticky %}list-group-item-sticky{% endif %}">
+    {% if user == topic.user and forum.settings.is_member_edit or is_user_moderator or user == group_profile.owner %}
+        <div class="btn-toolbar pull-right">
+            {% topic_menu %}
+        </div>
+    {% endif %}
+    <h5 class="list-group-item-heading">
+        {% if topic.sticky %}<span data-toggle="tooltip" data-placement="top" title="{% trans 'Тема прикреплена' %}" class="fa fa-thumb-tack" aria-hidden="true"></span>{% endif %}
+        {% if topic.hidden %}<span data-toggle="tooltip" data-placement="top" title="{% trans 'Тема скрыта' %}" class="fa fa-eye-slash" aria-hidden="true"></span>{% endif %}
+        {% if topic.closed %}<span data-toggle="tooltip" data-placement="top" title="{% trans 'Темы закрыта' %}" class="fa fa-lock" aria-hidden="true"></span>{% endif %}
+        <span class="mdi mdi-comment-multiple-outline" aria-hidden="true"></span>
+        <a href="{{ topic.get_absolute_url }}" data-url="{{ topic.get_absolute_url }}"> {{ topic.name|truncatechars:50 }}</a>
+    </h5>
+    <p class="list-group-item-text">{{ topic.description|linebreaks|truncatechars:100 }}</p>
+    <ul class="list-inline text-muted">
+        <li class="sr-only">#{{ topic.id }}</li>
+        <li data-toggle="tooltip" data-placement="top" title="{% trans 'Автор' %}"><span class="fa fa-user" aria-hidden="true"></span> {% user_card_link topic.user is_img=False cls="modal-link" %}</li>
+        <li data-toggle="tooltip" data-placement="top" title="{% trans 'Создано' %} {{ topic.created|timesince }} {% trans 'назад' %}"><span class="fa fa-clock-o" aria-hidden="true"></span></li>
+        <li data-toggle="tooltip" data-placement="top" title="{% trans 'Всего постов' %}" ><span class="fa fa-comments-o" aria-hidden="true"></span> {{ topic.num_posts }}</li>
+        {% if topic.last_post %}
+            <li>
+                <a href="{{ topic.get_absolute_url }}?page={{ num_pages }}#{{ topic.last_post.id }}"><span class="fa fa-comment" aria-hidden="true"></span> {% trans 'Последний пост от' %} {{ topic.last_post_user|default_if_none:'-' }} {{ topic.last_post.created|timesince }} {% trans 'назад' %}</a>
+            </li>
+        {% endif %}
+    </ul>
+</li>

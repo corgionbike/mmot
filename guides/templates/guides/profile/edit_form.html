@@ -1,0 +1,30 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load user_profile_tags %}
+
+{% block title %}{% trans "Редактировать гайд" %}{% endblock %}
+{% block profilecontext %}
+<div class="col-md-8">
+    <div class="well">
+        <h4 class="line">{% trans "Редактор"|upper %}</h4>
+        <div class="editor-form">
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form show_label=False %}
+            <hr>
+            <ul class="list-inline">
+                <li><input name="_continue" type="submit" class="btn btn-sm btn-link btn-border" value="{% trans 'Сохранить и продолжить' %}" /></li>
+                <li><input name="_save" type="submit" class="btn btn-sm btn-link btn-border" value="{% trans 'Сохранить' %}" /></li>
+            </ul>
+        </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 pull-right">
+    {% include 'guides/profile/include_info_block.html' %}
+</div>
+{% include 'guides/profile/include_js_form.html' %}
+{% endblock %}
+
+

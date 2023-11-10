@@ -1,0 +1,13 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load common %}
+
+{% block title %}{% trans 'Регистрация провалена!' %}{% endblock %}
+{% block content %}
+
+    {% trans 'Ключ активации аккаунта просрочен!' as msg %}
+    <div class="col-md-6 col-md-offset-3 text-muted text-center">
+        <h4>{{ msg }}</h4>
+    </div>
+
+{% endblock %}

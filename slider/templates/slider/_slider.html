@@ -1,0 +1,62 @@
+{% load i18n %}
+{% load thumbnail %}
+
+{% if sliders|length > 0 %}
+    <div class="container-fluid">
+        <div class="row bottom-offset-50">
+            <!-- The carousel -->
+            <div id="transition-timer-carousel" class="carousel slide transition-timer-carousel" data-ride="carousel">
+                <!-- Timer "progress bar" -->
+                <hr class="transition-timer-carousel-progress-bar animate"/>
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    {% for slide in sliders %}
+                        <li data-target="#transition-timer-carousel" data-slide-to="{{ forloop.counter0 }}"
+                                {% if forloop.first %} class="active" {% endif %}></li>
+                    {% endfor %}
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    {% for slide in sliders %}
+                        <div class="item {% if forloop.first %} active {% endif %}">
+                            {% thumbnail slide.background "1600x400" crop=slide.get_crop_display quality=slide.quality as im %}
+                                <div class="index-slider-slide" style="background-image: url({{ im.url }})"></div>
+                            {% endthumbnail %}
+                            <div class="carousel-caption">
+                                <h2 class="carousel-caption-header">
+                                    {% if slide.is_video %}
+                                        <a href="#" data-toggle="modal" class="slider-link"
+                                           data-title="{{ slide.title }}"
+                                           data-target="#main-modal"
+                                           data-url="{{ slide.get_play_url }}"><span
+                                                class="mdi mdi-play-circle"></span> {{ slide.title }}</a>
+                                    {% else %}
+                                        {{ slide.title }}
+                                    {% endif %}
+                                    {% if slide.staff_preview %}
+                                        <span class="label label-warning">{% trans 'Черновик' %}</span>
+                                    {% endif %}
+                                </h2>
+                                <p class="carousel-caption-text hidden-sm hidden-xs slider-desc">
+                                    {{ slide.description|safe }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#transition-timer-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#transition-timer-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+
+
+            </div>
+        </div>
+    </div>
+    <script>require(['module_carousel']);</script>
+{% endif %}

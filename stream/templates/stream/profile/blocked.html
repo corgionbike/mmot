@@ -1,0 +1,14 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load common %}
+
+{% block title %}{% trans "Стрим профиль заблокирован" %}{% endblock %}
+
+{% block profilecontext %}
+    <div class="col-md-6 col-md-offset-3">
+        {% trans 'Ваш стрим профиль заблокирован!' as msg %}
+        {% info_msg msg 'danger' 'glyphicon glyphicon-ban-circle' %}
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<div class="well well-sm">
+    <form action="{{ url }}" method="GET">
+        <div class="input-group">
+            <input name="q" type="text" class="form-control" placeholder="{% trans 'Поиск...' %}">
+            <span class="input-group-btn">
+        <button class="btn btn-link" id="search-submit" type="submit"><span class="fa fa-search"
+                                                                            aria-hidden="true"></span></button>
+        </span>
+        </div>
+    </form>
+</div>

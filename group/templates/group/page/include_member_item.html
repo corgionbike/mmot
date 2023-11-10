@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load user_profile_tags %}
+
+<ul class="list-group">
+    <li class="list-group-item">
+        {% if user != member.user and user_is_moderator or user_is_owner %}
+            <div class="pull-right">
+                <div class="dropdown">
+                    <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="MenuGroupEdit"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-gear text-muted"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="MenuGroupEdit">
+                        <li>
+                            <a href="{{ member.user.get_group_member_exclude_no_xhr_url }}">{% trans 'Исключить из группы' %}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+        <ul class="list-inline">
+            <li>{% user_card_link member.user h=54 w=54 %}</li>
+            <li>
+                <strong>{{ member.user.username|truncatechars:10 }}</strong>
+            </li>
+        </ul>
+    </li>
+    {#    <div class="text-muted text-left row top-offset-5">#}
+    {#        <div class="col-md-12">#}
+    {#            <span>{% trans 'Последний вход:' %} {{ member.user.last_login|timesince|default_if_none:'-' }}</span>#}
+    {#        </div>#}
+    {#    </div>#}
+
+</ul>
+
+
+

@@ -1,0 +1,24 @@
+{% load i18n %}
+
+<div class="btn-group">
+    <button type="button" class="btn btn-sm btn-link" data-toggle="dropdown" aria-haspopup="true"
+            title="{% trans 'Заголовоки' %}"
+            aria-expanded="false">
+        <span class="fa fa-header"></span> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a role="wysiwyg_header1" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'h1');" tabindex="-1" title="{% trans 'Заголовок H1' %}">
+            <i class="mdi mdi-format-header-1 mdi-18px" title="{% trans 'Заголовок H1' %}"></i>
+        </a>
+        </li>
+        <li><a role="wysiwyg_header2" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'h2');" tabindex="-1" title="{% trans 'Заголовок H2' %}">
+            <i class="mdi mdi-format-header-2 mdi-18px" title="{% trans 'Заголовок H2' %}"></i>
+        </a></li>
+        <li><a role="wysiwyg_header3" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'h3');" tabindex="-1" title="{% trans 'Заголовок H3' %}">
+            <i class="mdi mdi-format-header-3 mdi-18px" title="{% trans 'Заголовок H3' %}"></i>
+        </a></li>
+    </ul>
+</div>

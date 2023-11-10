@@ -1,0 +1,22 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+
+
+{% block title %}{% trans "Тестовая страница" %}{% endblock %}
+
+
+{% block content %}
+
+    {{ user.stream_profile.sid }}
+    {{ user.stream_profile.provider }}
+        {{ user.stream_profile.stream_manage }}
+    {{ user.stream_profile.stream_manage.chat }}
+    {{ user.stream_profile.stream_manage.progress }}
+
+    {{ user.group_profile }}
+    {% is_user_has_group user as g %}
+    {% is_user_has_stream user as s %}
+    {{ s }} {{ g }}
+
+{% endblock %}

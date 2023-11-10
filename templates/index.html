@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load news_tags %}
+{% load invite_key_tags %}
+{% load slider_tags %}
+
+{% block slider %} {% slider %} {% endblock %}
+
+{% block content-index %}
+    <section class="features">
+        <div class="container">
+            {% include 'include_services.html' %}
+        </div>
+    </section>
+
+    {% site_invite_form %}
+
+    <section class="news">
+        <div class="container">
+            <div class="row">
+                {% top_news %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+

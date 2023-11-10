@@ -1,0 +1,32 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load user_profile_tags %}
+
+{% block title %}{% trans "Создать группу" %}{% endblock %}
+
+{% block profilecontext %}
+<div class="col-md-6 col-md-offset-3">
+    <div class="well">
+        <h4>{% trans "Создать группу" %}</h4>
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <hr>
+            <ul class="list-inline">
+                <li><input type="submit" class="btn btn-sm btn-link btn-border" value="{% trans 'Создать' %}" /></li>
+                <li><a href="{% url 'group_profile' %}" class="btn btn-sm btn-link btn-border">{% trans "Назад" %}</a></li>
+            </ul>
+        </form>
+    </div>
+</div>
+
+<script>
+    require(['jquery', 'module_select2'], function ($, select2) {
+        select2.init('#id_game');
+    });
+</script>
+
+{% endblock %}
+
+

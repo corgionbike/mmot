@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load user_profile_tags %}
+
+
+{% trans 'Не найдено' as nodata %}
+
+<div class="media">
+  <div class="media-left media-middle text-center">
+    {% img_thumbnail img=preview.game.logo w=84 h=84 cls='img-circle img-thumbnail media-object' %}
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"></h4>
+      <ul class="list-inline text-muted">
+          <li class="rl"><span class="fa fa-gamepad"></span> {% blocktrans with preview.game|default:preview.game_user|truncatechars:20 as game %} Игра: {{ game }}{% endblocktrans %}</li>
+          <li>
+              {% if not preview.is_postpone  %}
+               <span class="fa fa-clock-o"></span> {% blocktrans with preview.start_ts|date:"G:i d.m.y" as time %} Начало в {{ time }} {% endblocktrans %}
+              {% else %}
+                <span class="label-danger label"> {% trans 'Стрим отложен' %} </span>
+              {% endif %}
+          </li>
+      </ul>
+    <p>{{ preview.description|linebreaksbr }}</p>
+  </div>
+</div>
+

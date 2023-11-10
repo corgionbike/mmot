@@ -1,0 +1,57 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+{% for invite in invites %}
+    <li id="invite_block-{{ invite.id }}" class="list-group-item">
+        <div class="media">
+            <div class="media-left">
+                <a href="{{ invite.group.get_absolute_url }}">
+                    {% img_thumbnail img=invite.group.emblem w=96 h=96 cls='img-circle img-thumbnail media-object' %}
+                </a>
+            </div>
+            <div class="media-body">
+                <h5 class="media-heading">{{ invite.group }}</h5>
+                <ul class="list-inline text-muted">
+                    <li><span class="label label-default">{{ invite.get_type_display }}</span></li>
+                    {#                    <li>#{{ invite.id }}</li>#}
+                    <li><span class="fa fa-clock-o"></span> {{ invite.send_ts|timesince }} {% trans 'назад' %}</li>
+                </ul>
+                {% if invite.description %}
+                    <span>{{ invite.description|safe }}</span>
+                {% endif %}
+                <hr style="margin-top: 5px; margin-bottom: 5px;">
+                <ul class="nav nav-pills">
+                    {% if invite.type == 0 %}
+                        <li class="active">
+                            <button id="btn_approve_invite-{{ invite.pk }}" type="button"
+                                    onclick="invite.call(this, {{ invite.pk }}, '{% url 'group_invite_approve' invite.pk %}', true)"
+                                    class="btn btn-sm btn-link btn-border">
+                                {% trans 'Принять' %}
+                            </button>
+                        </li>
+                    {% else %}
+                        <li class="active">
+                            <button id="btn_approve_invite-{{ invite.pk }}" type="button"
+                                    onclick="invite.call(this, {{ invite.pk }}, '{% url 'group_petition_approve' invite.pk %}', true)"
+                                    class="btn btn-sm btn-link btn-border">
+                                {% trans 'Одобрить' %}
+                            </button>
+                        </li>
+                    {% endif %}
+                    <li>
+                        <button id="btn_reject_invite-{{ invite.pk }}" type="button"
+                                onclick="invite.call(this, {{ invite.pk }}, '{% url 'group_invite_reject' invite.pk %}', false)"
+                                class="btn btn-sm btn-link btn-border">
+                            <span class="text-danger"> {% trans 'Отклонить' %} </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+{% empty %}
+    <h4 class="text-center text-muted"><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
+        <br> {% trans 'Не найдено' %}</h4>
+{% endfor %}

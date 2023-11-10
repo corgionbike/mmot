@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+<div class="row">
+    <div class="well well-sm">
+        <h5 class="text-center text-muted">{% trans 'Вы уверены, что хотите удалить анонс?' %}</h5>
+        <form method="post" action="{% url 'stream_preview_remove' %}">
+            {% csrf_token %}
+            <ul class="text-center list-inline">
+                <li><input type="submit" class="btn btn-border btn-link" value="{% trans 'Удалить' %}"/>
+                </li>
+                <li><a href="#" onclick="$('#main-modal').modal('hide'); return false;"
+                       class="btn btn-link  btn-border">{% trans "Отменить" %}</a></li>
+            </ul>
+        </form>
+    </div>
+</div>

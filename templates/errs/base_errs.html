@@ -1,0 +1,32 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang=ru-ru">
+<head>
+    <meta name="google-site-verification" content="avwb8fHC7Ciz7yrJRuHAMtrUxMsV_AEGnOrr4VLXUfs" />
+    <meta name="yandex-verification" content="7b22c468e68574b5" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block meta %}Ошибка 404{% endblock %}"/>
+    <meta name="keywords" content="клан банк, клан сайт, создать клан сайт, клан форум, клан стримы, игровые сервисы, трансляции, игры, онлайн игры, mmorpg, mmo, мморпг, ммо, гайды, отряды, группы, кланы, stream"/>
+    <meta name="author" content="mmotimes.ru & Co">
+
+    <title>{% block title %}{% endblock %} :: MMOTIMES.RU</title>
+    <!-- CSS -->
+    {% block stylesheet %}
+        {% include "include_css.html" %}
+    {% endblock %}
+    <!-- /CSS -->
+</head>
+<body>
+
+    <!-- container -->
+    <div class="container" role="main">
+        {% block content %}{% endblock %}
+    </div>
+    <!-- /container -->
+
+</body>
+</html>

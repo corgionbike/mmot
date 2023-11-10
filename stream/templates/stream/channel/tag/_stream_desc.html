@@ -1,0 +1,26 @@
+{% load user_profile_tags %}
+{% load i18n %}
+
+
+{% trans 'Не найдено' as nodata %}
+
+<div class="media">
+  <div class="media-left media-middle text-center">
+      <div class="avatar {% is_online_user_css streamer %}">
+        {% user_card_link streamer w=96 h=96 cls='img-circle img-thumbnail media-object' %}
+      </div>
+    <h5>{{ streamer.username }}</h5>
+  </div>
+  <div class="media-body">
+    {% if streamer.stream_preview %}
+    <h4 class="media-heading">{{ streamer.stream_preview.name|default:nodata }}</h4>
+      <ul class="list-inline text-muted">
+          <li class="rl"><span class="fa fa-gamepad"></span> {% blocktrans with streamer.stream_preview.game|default:streamer.stream_preview.game_user as game %} Игра: {{ game }}{% endblocktrans %}</li>
+          <li><span class="fa fa-clock-o"></span>{% blocktrans with streamer.stream_preview.start_ts|timesince  as time %} В эфире: {{ time }} {% endblocktrans %}</li>
+      </ul>
+      <p>{{ streamer.stream_preview.description|linebreaks|default:nodata }}</p>
+    {% else %}
+        <h4 class="text-muted text-center">{% trans 'Описание не найдено' %}</h4>
+    {% endif %}
+  </div>
+</div>

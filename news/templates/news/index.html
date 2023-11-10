@@ -1,0 +1,48 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% load static %}
+{% load bootstrap3 %}
+{% load guides_tags %}
+
+{% block meta %}{% trans 'Новости от портала и игровой индустрии.' %}{% endblock %}
+{% block title %}{% trans "Новости"|upper %}{% endblock %}
+
+{% block content %}
+    <h1 class="line index-header" role="heading">
+        <span class="fa fa-newspaper-o text-muted"></span> {% trans 'Новости'|upper %}</h1>
+    {% for article in news %}
+        <div class="media">
+            <div class="media-left">
+            </div>
+            <div class="media-body">
+                <h2 class="media-heading"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+                <ul class="list-inline text-muted">
+                    <li>
+                        <span class="glyphicon glyphicon-time text-muted"></span> {{ article.start|date:"d.m.y" }}
+                    </li>
+                    <li>
+                        <span class="mdi mdi-eye" title="{% trans 'Просмотры' %}"></span> {% views article.id 'news' %}
+                    </li>
+                    {% if article.staff_preview %}
+                        <li>
+                            <span class="label label-warning">{% trans 'Черновик' %}</span>
+                        </li>
+                    {% endif %}
+                </ul>
+                <div role="article">
+                    {{ article.body.excerpt|safe }}
+                </div>
+                {% if article.body.has_more %}
+                    <a href="{{ article.get_absolute_url }}">{% trans 'Читать дальше' %} <span
+                            class="fa fa-angle-double-right"></span></a>
+                {% endif %}
+            </div>
+        </div>
+    {% empty %}
+        <h2 class="text-muted text-center">{% trans 'Нет новостей' %}</h2>
+    {% endfor %}
+    {% if news.has_other_pages %}
+        {% bootstrap_pagination news size='small' %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+
+{% is_member_in_group user as is_member_in_group %}
+
+<ul class="list-unstyled">
+    <li><b>{% trans 'О себе:' %}</b> {{ user.description|linebreaks|default:'-'|truncatechars:200|default_if_none:'-' }}
+    </li>
+    <li><b>{% trans 'Электронный адрес:' %}</b> {{ user.email }}</li>
+    <li><b>{% trans 'Пригласительный ключ:' %}</b> {{ user.site_invite_key.id|default:'-' }}</li>
+    <li><b> {% trans 'Блокирововать приглашения в группы:' %}</b>
+        <span class='fa {% if user.block_invites %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+    <ul class="list-inline">
+        <hr>
+        <li>
+            <a href="{% url 'user_profile_edit' %}" class="btn btn-sm btn-link  btn-border">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {% trans 'Редактировать' %}
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'auth_password_change' %}" class="btn btn-sm btn-link  btn-border"><span
+                    class="fa fa-key"></span> {% trans 'Сменить пароль' %}
+            </a>
+        </li>
+    </ul>
+</ul>

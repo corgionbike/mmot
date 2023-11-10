@@ -1,0 +1,25 @@
+{% load i18n %}
+<div class="col-md-4">
+    <ul class="list-unstyled">
+        <li><a href="{% url 'news_index' %}">{% trans 'Новости' %}</a></li>
+        <li><a href="{% url 'guides_index' %}">{% trans 'Гайды' %}</a></li>
+        <li><a href="{% url 'stream_index' %}">{% trans 'Стрим-центр' %}</a></li>
+        <li><a href="{% url 'group_list' %}">{% trans 'Группы' %}</a></li>
+        <li><a href="{% url 'faq' %}">{% trans 'FAQ' %}</a></li>
+    </ul>
+</div>
+<div class="col-md-4">
+    <ul class="list-unstyled">
+     <li><a href="{% url 'feedback' %}">{% trans 'Обратная связь' %}</a></li>
+     <li>
+         <a href="#!donations"
+            class="modal-link"
+            data-toggle="modal"
+            data-target="#main-modal"
+            data-url="{% url 'donations' %}"
+            data-title="{% trans 'Помощь сайту' %}">
+            {% trans 'Помощь сайту' %}
+         </a>
+     </li>
+    </ul>
+</div>

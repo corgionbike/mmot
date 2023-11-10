@@ -1,0 +1,29 @@
+{% load i18n %}
+
+{% trans 'Нет подробностей' as NODATA %}
+{% trans 'Объект удален' as NOOBJECT %}
+
+{% for notice in notifications %}
+    <li id="notice_block-{{ notice.slug }}" class="list-group-item" >
+    <ul class="pull-right list-inline">
+        <li>
+            <button id="btn_del_notice-{{ notice.slug }}" onclick="m_notice.del(this, {{ notice.slug }}, '{% url 'notifications:delete' notice.slug %}')"
+               class="btn btn-xs btn-link" type="button">
+                <span aria-hidden="true" class="glyphicon glyphicon-trash"></span>
+            </button>
+        </li>
+    </ul>
+        <h5><span class="fa fa-envelope-o"></span> {{ notice.actor|default_if_none:NOOBJECT }} {{ notice.verb }} </h5>
+        {% if notice.description %}
+            <p>{{ notice.description|safe|default:NODATA|default_if_none:NODATA }}</p>
+        {% endif %}
+        <ul class="list-inline text-muted">
+            <li>#{{ notice.slug }}</li>
+            <li><span class="fa fa-clock-o"></span> {{ notice.timesince }} {% trans 'назад' %}</li>
+        </ul>
+    </li>
+
+{% empty %}
+  <h4 class="text-center text-muted"><i class="fa fa-bell-slash-o fa-2x" aria-hidden="true"></i> <br /> {% trans 'Уведомления не найдены' %}</h4>
+{% endfor %}
+

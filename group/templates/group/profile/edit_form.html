@@ -1,0 +1,35 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+
+{% block title %}{% trans "Редактировать группу" %}{% endblock %}
+
+{% block profilecontext %}
+    <div class="col-md-6 col-md-offset-3 top-offset-5">
+        <div class="well">
+            <p class="text-center">
+                {% img_thumbnail img=form.instance.emblem w=100 h=100 %}
+            </p>
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <hr>
+                <ul class="list-inline">
+                    <li><input type="submit" class="btn btn-sm btn-link btn-border "
+                               value="{% trans 'Отредактировать' %}"/></li>
+                    <li><a href="#" onclick="window.history.back(); return false;"
+                           class="btn btn-sm btn-link btn-border">{% trans "Назад" %}</a></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        require(['jquery', 'module_select2'], function ($, select2) {
+            select2.init('#id_game');
+        });
+    </script>
+
+{% endblock %}

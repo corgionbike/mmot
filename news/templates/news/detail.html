@@ -1,0 +1,35 @@
+{% extends "base_content.html" %}
+{% load editor_tags %}
+{% load i18n %}
+
+
+{% block meta %}{{ article.body.excerpt|striptags }}{% endblock %}
+{% block title %}{% trans "Новости - " %} {{ article.title }} {% endblock %}
+
+{% block content %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'index' %}">{% trans 'Главная' %}</a></li>
+        <li><a href="{% url 'news_index' %}">{% trans 'Новости' %}</a></li>
+        <li class="active">{{ article.title }}</li>
+    </ol>
+    <div class="media">
+        <div class="media-left">
+        </div>
+        <div class="media-body">
+            <h2 class="media-heading">{{ article.title }}</h2>
+            <ul class="list-inline text-muted">
+                <li><span class="glyphicon glyphicon-time text-muted"
+                          title="{% trans 'Создан' %}"></span> {{ article.start|date:"d.m.y" }}</li>
+                <li><span class="mdi mdi-eye" title="{% trans 'Просмотры' %}"></span> {{ views }}</li>
+                {% if article.staff_preview %}
+                    <li>
+                        <span class="label label-warning">{% trans 'Черновик' %}</span>
+                    </li>
+                {% endif %}
+            </ul>
+            <div role="article">
+                {{ article.body.content|oembedhtml|safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

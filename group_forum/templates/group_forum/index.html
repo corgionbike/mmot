@@ -1,0 +1,74 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans 'Обсуждения' %} {% endblock %}
+
+{% block groupcontent %}
+
+    <h3 class="line">{% trans 'Обсуждения'|upper %}</h3>
+    {% if topics_sticky %}
+        <div>
+            <ul id="topic_list_sticky" class="list-group">
+                {% for topic in topics_sticky %}
+                    {% if not topic.hidden or is_user_moderator or user == group_profile.owner %}
+                        {% include 'group_forum/topic/include_item.html' %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <div>
+        {% if topics %}{% include 'group_forum/sort_form.html' %}{% endif %}
+        <ul id="topic_list" class="list-group">
+            {% include 'group_forum/topic/topic_list.html' %}
+        </ul>
+        {% if topics %}
+            <span class="label label-default">{% trans 'Всего обсуждений:' %} {{ topics.paginator.count }}</span>{% endif %}
+    </div>
+    {% if topics.has_other_pages %}
+        <div class="col-md-12">
+            <hr>
+            <button id="btn_load_topics"
+                    onclick="paginator.load(this, {{ topics.paginator.num_pages }}, '{% url 'topic_load' group_profile.name %}', {{ request.GET.page|default:1 }}, '#topic_list')"
+                    class="btn btn-md btn-link btn-block" data-dismiss="alert">
+                {% trans "Показать еще..." %}
+            </button>
+        </div>
+
+        <div class="col-md-12 text-center">
+            {% bootstrap_pagination topics size='small' %}
+        </div>
+    {% endif %}
+
+
+    {#<div class="col-md-4 pull-right">#}
+    {#    <div class="well well-sm">#}
+    {#      {% search_form forum.get_search_url %}#}
+    {#    </div>#}
+    {##}
+    {#    <ul class="nav nav-pills nav-stacked">#}
+    {#        {% if is_user_member and forum.settings.is_member_create or is_user_moderator or user == group_profile.owner %}#}
+    {#            <li class="well well-sm">#}
+    {#                {% url 'topic_create' group_profile.name as topic_create_url %}#}
+    {#                {% trans 'Начать новое обсуждение' as name %}#}
+    {#                {% trans 'Начать обсуждение' as title %}#}
+    {#                {% modal_link title=title url=topic_create_url name=name cls='btn btn-link btn-border' %}#}
+    {#            </li>#}
+    {#        {% endif %}#}
+    {#    </ul>#}
+    {#    {% if is_user_moderator %}#}
+    {#        <div class="alert alert-info text-center" role="alert"><b><span class="fa fa-exclamation-circle"></span> {% trans 'Доступна модерация' %}</b></div>#}
+    {#    {% endif %}#}
+    {#</div>#}
+
+    <script>
+        require(['module_paginator'], function (module_paginator) {
+            return paginator = module_paginator;
+        });
+    </script>
+
+{% endblock %}
+

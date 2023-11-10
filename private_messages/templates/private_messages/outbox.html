@@ -1,0 +1,59 @@
+{% extends "private_messages/base.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+
+{% block title %}{% trans "Отправленные сообщения" %}{% endblock %}
+{% block messages-content %}
+
+    <div class="col-md-12">
+        <div class="well">
+            <h3 class="line">{% trans "Отправленные сообщения"|upper %}</h3>
+            {% if message_list %}
+                <div id="loader" class="text-center"><span
+                        class="fa fa-circle-o-notch fa-spin"></span> {% trans "Загрузка..." %}</div>
+                <table id="outbox_message_tbl" class="table table-striped hide"
+                       data-pagination="true"
+                       data-search="true"
+                       data-cookie="true"
+                       data-cookie-id-table="saveId"
+                       data-classes="table-no-bordered">
+                    <thead>
+                    <tr>
+                        <th data-field="recipient" data-align="center"
+                            data-sortable="true">{% trans "Получатель" %}</th>
+                        <th data-align="center">{% trans "Тема" %}</th>
+                        <th data-field="date" data-align="center" data-sortable="true">{% trans "Отправлено" %}</th>
+                        <th data-align="center">{% trans "Действие" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for message in message_list %}
+                        <tr>
+                            <td>{% user_card_link message.recipient is_img=False cls="modal-link" %}</td>
+                            <td>
+                                <a href="{{ message.get_absolute_url }}">{{ message.subject }}</a>
+                            </td>
+                            <td>{{ message.sent_at }}</td>
+                            <td>
+                                <a class="btn btn-link btn-sm btn-border" title="{% trans "Удалить" %}"
+                                   data-toggle="tooltip" data-placement="top"
+                                   href="{% url 'messages_delete' message.id %}?next={% url 'messages_outbox' %}">
+                                    <span class="fa fa-trash"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4 class="text-center text-muted"><i class="fa fa fa-envelope fa-2x" aria-hidden="true"></i>
+                    <br/> {% trans 'Нет сообщений' %}</h4>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        require(['module_bootstrap_tbl'], function (module) {
+            module.init('outbox_message_tbl');
+        });
+    </script>
+{% endblock %}

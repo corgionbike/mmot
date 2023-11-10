@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<ul class="list-unstyled">
+    <li><b> {% trans 'Временая шкала:' %}</b>
+        <span  class='fa {% if manage.progress %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+    <li><b> {% trans 'Командный счет:' %}</b>
+        <span  class='fa {% if manage.counter %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+    <li><b> {% trans 'Чат:' %}</b>
+        <span  class='fa {% if manage.chat %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+    </li>
+
+    <li>
+        <hr>
+        <a href="{% url 'stream_profile_manager' %}" class="btn btn-sm btn-link  btn-border">
+        <span class="glyphicon glyphicon-edit"></span> {% trans 'Редактировать' %}</a>
+    </li>
+</ul>

@@ -1,0 +1,36 @@
+{% load i18n %}
+<div class="well">
+    <h4 class="line text-muted">{% trans "Фотохостинг"|upper %}</h4>
+    <p>Для загрузки изображений рекомендуем следующие хостинги:</p>
+    <ul class="list-unstyled">
+        <li><a href="https://imgbb.com/" target="_blank"><span class="fa fa-external-link"></span> imgbb.com</a></li>
+        <li><a href="http://www.pixic.ru" target="_blank"><span class="fa fa-external-link"></span> pixic.ru</a></li>
+        <li><a href="http://uploads.ru" target="_blank"><span class="fa fa-external-link"></span> uploads.ru</a></li>
+    </ul>
+</div>
+
+<div class="well">
+    <h4 class="line text-muted">{% trans "О модерации"|upper %}</h4>
+    {% blocktrans %}
+        <p>
+            На сайте действует премодерация: перед публикацией все материалы проходят через заботливые руки
+            модератора.<br><br>
+            С большой вероятностью не пройдут премодерацию:
+        </p>
+        <ul class="sidebar-block__list">
+            <li>рекламные и&nbsp;PR-публикации;</li>
+            <li>новости и&nbsp;анонсы;</li>
+            <li>статьи, ранее опубликованные на других сайтах без указания источника;</li>
+            <li>статьи без правильно расставленных знаков препинания, со&nbsp;смайликами,
+                с обилием восклицательных знаков, неоправданным выделением слов и предложений и другим неуместным
+                форматированием текста;
+            </li>
+            <li>низкокачественные переводы;</li>
+            <li>односложные статьи;</li>
+            <li>статьи, слабо относящиеся к&nbsp;<nobr>игровой тематике</nobr>
+                или не относящиеся к ней вовсе.
+            </li>
+        </ul>
+        <p><b>Для отправки гайда на модерацию - снимите с публикации статус черновика и сохраните.</b></p>
+    {% endblocktrans %}
+</div>

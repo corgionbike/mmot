@@ -1,0 +1,68 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load common %}
+{% load stream_tags %}
+
+{% block meta %}{{ streamer.stream_preview.description|striptags|truncatewords:15 }}{% endblock %}
+{% block title %}{% trans "Канал пользователя" %} {{ streamer.username }}{% endblock %}
+
+{% block content %}
+        {#{% if streamer == user or streamer.stream_preview.status %}#}
+        {% if not streamer.stream_profile.sid and streamer == user %}
+            {% trans 'Не указан идентификатор трансляции!' as msg %}
+            {% info_msg msg=msg status='danger' icon='fa fa-youtube-play' distimes=false %}
+        {% endif %}
+        {% if streamer.stream_preview.is_postpone %}
+            {% trans 'Трансляция отложена!' as msg2 %}
+            {% info_msg msg=msg2 status='danger' distimes=false %}
+        {% endif %}
+        <div class="row">
+            <div id="loader" class="text-center"><span
+                    class="fa fa-circle-o-notch fa-spin"></span> {% trans "Загрузка..." %}</div>
+        </div>
+        <div class="row top-offset-5">
+            <div class="col-md-8">
+                <div class="col-md-12 bottom-offset-20">
+                    <div class="embed-responsive embed-responsive-16by9 player-cover">
+                        {% player %}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    {% stream_desc %}
+                </div>
+            </div>
+            <div class="col-md-4 pull-right hidden-xs hidden-sm">
+                <div class="col-md-12">
+                    {% if streamer == user %}
+                        {% ctrl_stream %}
+                    {% endif %}
+                    {% if streamer.stream_profile.stream_manage.progress %}
+                        <div class="bottom-offset-10">
+                            <h6 class="line text-muted">{% trans "Прогресс"|upper %}</h6>
+                            {% stream_progress_line %}
+                        </div>
+                    {% endif %}
+                    {% if streamer.stream_profile.stream_manage.counter %}
+                        <div class="bottom-offset-10">
+                            <h6 class="line text-muted">{% trans "Командный счет"|upper %}</h6>
+                            {% team_counter %}
+                        </div>
+                    {% endif %}
+                    {% if streamer.stream_profile.stream_manage.chat %}
+                        <div class="bottom-offset-10">
+                            <h6 class="line text-muted">{% trans "Чат"|upper %}</h6>
+                            {% chat %}
+                        </div>
+                    {% endif %}
+                    {% if streamer.stream_profile.stream_manage.archive %}
+                        <div class="bottom-offset-10">
+                            <h6 class="line text-muted">{% trans "Архив"|upper %}</h6>
+                            {% archives %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

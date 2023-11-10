@@ -1,0 +1,37 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load stream_tags %}
+
+{% block title %}{% trans 'Стрим профиль' %}{% endblock %}
+
+{% block profilecontext %}
+    {% if not stream_profile.is_block %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="well">
+                    <h3 class="line">{% trans 'Общая информация'|upper %}</h3>
+                    {% profile_stream_info %}
+                </div>
+                <div class="well">
+                    <h3 class="line">{% trans 'Стрим менеджер'|upper %}</h3>
+                    {% profile_stream_manage_info %}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="well">
+                    <h3 class="line">{% trans 'Анонс'|upper %}</h3>
+                    {% profile_stream_preview_info %}
+                </div>
+                <div class="well">
+                    <h3 class="line">{% trans 'Связанные аккаунты'|upper %}</h3>
+                    {% profile_stream_accounts %}
+                </div>
+            </div>
+
+        </div>
+    {% else %}
+        <h3 class="text-center text-muted">{% trans 'Ваш стрим профиль заблокирован!' %}</h3>
+    {% endif %}
+
+{% endblock %}

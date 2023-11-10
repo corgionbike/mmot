@@ -1,0 +1,14 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load common %}
+
+{% block title %}{% trans "Стрим профиль не найден" %}{% endblock %}
+
+{% block profilecontext %}
+    <div class="col-md-12">
+        {% trans 'Cтрим профиль не найден!' as msg %}
+        {% info_msg msg 'danger' 'glyphicon glyphicon-ban-circle' %}
+    </div>
+{% endblock %}
+
+

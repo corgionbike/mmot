@@ -1,0 +1,35 @@
+{% load i18n %}
+{% load user_profile_tags %}
+
+
+{% if notifications %}
+<div class="row bottom-offset-20">
+    <div class="col-md-12">
+        <button id="btn_del_notice_all" onclick="m_notice.delete_all(this, '{% url 'delete_all' %}')"
+                class="btn btn-xs btn-danger pull-left" type="button">
+               <span aria-hidden="true" class="glyphicon glyphicon-trash"></span> {% trans "Удалить все" %}
+        </button>
+    </div>
+</div>
+{% endif %}
+
+<ul id="notice_list" class="list-group">
+    {% include 'notifications/notice.html' %}
+</ul>
+
+{% if notifications.has_other_pages %}
+
+        <hr>
+        <button id="btn_load_notices" type="button"
+                   onclick="m_notice.load(this, {{ notifications.paginator.num_pages }}, '{% url 'notice_load' %}')"
+                   class="btn btn-md btn-link btn-block">
+                   {% trans "Показать еще" %}
+        </button>
+
+{% endif %}
+
+<script>
+    require(['module_notice'], function (module_notice) {
+        return m_notice = module_notice;
+    });
+</script>

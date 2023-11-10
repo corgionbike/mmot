@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load user_profile_tags %}
+
+<form id="ajax-event-form" method="post" action="javascript:void(null);" data-url="{{ event.get_edit_url }}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input id="event-submit" type="submit" class="btn btn-primary btn-block" value="{% trans 'Отредактировать' %}" />
+</form>
+
+<script>
+    require(['module_form_ajax', 'jquery', 'module_datepicker'], function(form, $, datepicker){
+        $(function () {
+            form.init('#ajax-event-form');
+            datepicker.init("#id_start_ts");
+        });
+    });
+</script>

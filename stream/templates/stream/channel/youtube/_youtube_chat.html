@@ -1,0 +1,10 @@
+{% load i18n %}
+{% load stream_tags %}
+
+<div id="collapseChat">
+    <div class="chat-twitch">
+       <iframe width="100%" height="100%" scrolling="no" frameborder="0" allowfullscreen
+    src="https://www.youtube.com/live_chat?v={{ sid }}&dark_theme=0&embed_domain=mmotimes.ru"></iframe>
+    </div>
+</div>
+{% action_chat_btn %}

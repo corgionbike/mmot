@@ -1,0 +1,26 @@
+{% load i18n %}
+<div class="modal fade" id="main-modal"  role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title"><i class="fa fa-circle-o-notch fa-spin"></i></h2>
+            </div>
+            <div class="modal-body">
+                <div id="modal-error" class="hide text-center row message-box">
+                    <div id="modal-info-alert" class="alert alert-danger" role="alert">
+                        <span>{% trans '500 Ошибка запроса к серверу' %} <i class="fa fa-frown-o"></i></span>
+                    </div>
+                </div>
+                <div id="modal-info" class="hide text-center row message-box bottom-offset-15">
+                    <div id="modal-info-alert" class="alert alert-success" role="alert"></div>
+                </div>
+                <div id="modal-content"><!-- Content --></div>
+            </div>
+{#            <div class="modal-footer">#}
+{#                <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Закрыть' %}</button>#}
+{#            </div>#}
+        </div>
+    </div>
+</div>

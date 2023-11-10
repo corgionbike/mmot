@@ -1,0 +1,49 @@
+{% extends 'base_content.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans 'Поиск участников' %} {% endblock %}
+
+{% block content %}
+<ol class="breadcrumb">
+    <li><a href="{% url 'index' %}">{% trans 'Главная' %}</a></li>
+    <li><a href="{% url 'group_list' %}">{% trans 'Список групп' %}</a></li>
+    <li class="active">{% trans 'Поиск группы' %}</li>
+</ol>
+<div class="col-md-8">
+    <ul id="member_list" class="list-group clearfix">
+        <div class="row">
+            <div class="col-md-12">
+                {% if groups %}<h6>{% trans 'По запросу' %} [{{ q }}] {% trans 'всего найдено:' %} {{ groups|length }}</h6>{% endif %}
+            </div>
+        </div>
+        {% for group in groups %}
+            <div class="col-md-6">
+                {% include 'group/include_group_item.html' %}
+            </div>
+        {% empty %}
+             <h4 class="text-center text-muted"><i class="fa fa-users fa-2x" aria-hidden="true"></i> <br/> {% trans 'Группы не найдены' %}</h4>
+        {% endfor %}
+    </ul>
+    {% if groups.has_other_pages %}
+        <hr>
+        <div class="col-md-12 text-center">
+            {% bootstrap_pagination groups size='small' %}
+        </div>
+    {% endif %}
+</div>
+
+<div class="col-md-4">
+    <ul class="list-unstyled">
+        <li>
+            {% url 'group_search' as url %}
+            {% search_form url %}
+        </li>
+    </ul>
+</div>
+
+
+{% endblock %}
+

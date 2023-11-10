@@ -1,0 +1,27 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans "Настройка форума" %}{% endblock %}
+
+{% block profilecontext %}
+
+    <div class="col-md-6 col-md-offset-3 top-offset-5">
+        <div class="well">
+            <h4>{% trans "Настройки форума" %}</h4>
+            <form method="post" action="">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <hr>
+                <ul class="list-inline">
+                    <li><input type="submit" class="btn btn-sm btn-link btn-border" value="{% trans 'Отредактировать' %}"/></li>
+                    <li><a href="#" onclick="window.history.back(); return false;"
+                           class="btn btn-sm btn-link btn-border">{% trans "Назад" %}</a></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+

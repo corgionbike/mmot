@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load stream_tags %}
+
+<div id="collapseChat">
+    <div class="chat-twitch">
+        <iframe frameborder="0"
+            scrolling="no"
+            id="chat_embed"
+            src="https://www.twitch.tv/{{ sid }}/chat"
+            height="100%"
+            width="100%">
+        </iframe>
+    </div>
+</div>
+{% action_chat_btn %}

@@ -1,0 +1,40 @@
+{% load i18n %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load user_profile_tags %}
+
+<div class="col-md-6 col-xs-12">
+    <div class="pull-left">
+        <div class="text-muted">
+            <span>© {% now "Y" %} MMOTIMES.RU</span> -
+            <span>NO GAMES <span class="mdi mdi-dice-multiple"></span> NO LIVE</span>
+            <span class="label label-primary" title="Beta версия">
+            <span class="fa fa-exclamation-circle"></span> Beta</span>
+
+            <p>{% trans 'Копирование материалов с сайта разрешается только при наличии активной ссылки.' %}</p>
+        </div>
+        <ul class="list-inline">
+            {#            <li>#}
+            {#            {% include 'include_lang_form.html' %}#}
+            {#            </li>#}
+            <li>
+                <span data-toggle="tooltip" title="{% trans 'Временная зона' %} : {% now "G:i O" %}"
+                      class="glyphicon glyphicon-time"></span>
+                <a href="#" class="modal-link" data-toggle="modal" data-target="#main-modal"
+                   data-title='{% trans 'Установить часовой пояс' %}'
+                   data-url="{% url 'get_timezone' %}">{{ TIME_ZONE }}</a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+<div class="col-md-6 pull-right text-left hidden-xs hidden-sm footer-bottom-menu">
+    {% include "include_footer_bottom_menu.html" %}
+    {% include "include_social.html" %}
+</div>
+
+{% include 'include_counter.html' %}
+
+

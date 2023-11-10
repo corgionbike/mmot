@@ -1,0 +1,27 @@
+{% load i18n %}
+{% load stream_tags %}
+{% trans 'Не найдено' as nodata %}
+
+{% if has_preview %}
+<div class="row">
+    <div id='start_ts' class="text-left col-md-6">{{ start_ts|date:"G:i d.m.y" }}</div>
+    <div id='end_ts' class="text-right col-md-6">{{ end_ts|date:"G:i d.m.y" }}</div>
+</div>
+<div class="progress">
+    {% stream_json_progress preview as progress_json %}
+  <div id="progress_bar" data-progress='{{ progress_json|safe }}' class="progress-bar" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0"
+       aria-valuemax="100" style="min-width: 2em; width: {{ progress }}%;">
+    {{ progress }}%
+  </div>
+</div>
+{% else %}
+    <h4 class="text-center text-muted">{{ nodata }}</h4>
+{% endif %}
+
+{% if start_ts %}
+<script>
+    require(['module_progress_bar'], function(module){
+        module.init(60000, "#progress_bar");
+    });
+</script>
+{% endif %}

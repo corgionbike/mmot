@@ -1,0 +1,63 @@
+{% extends "private_messages/base.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+
+{% block title %}{% trans "Входящие сообщения" %}{% endblock %}
+{% block messages-content %}
+    <div class="col-md-12">
+        <div class="well">
+            <h3 class="line">{% trans "Входящие сообщения"|upper %}</h3>
+            {% if message_list %}
+                <div id="loader" class="text-center"><span class="fa fa-circle-o-notch fa-spin"></span> {% trans "Загрузка..." %}</div>
+                <table id="inbox_message_tbl" class="table table-striped hide"
+                       data-pagination="true"
+                       data-search="true"
+                       data-cookie="true"
+                       data-cookie-id-table="saveId"
+                       data-classes="table-no-bordered">
+                    <thead>
+                    <tr>
+                        <th data-field="sender" data-align="center" data-sortable="true">{% trans "Отправитель" %}</th>
+                        <th data-align="center">{% trans "Тема" %}</th>
+                        <th data-field="date" data-align="center" data-sortable="true">{% trans "Получено" %}</th>
+                        <th data-align="center">{% trans "Действие" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for message in message_list %}
+                        <tr {% if message.new %} class="success"{% endif %}>
+                            <td>{% user_card_link message.sender is_img=False cls="modal-link" %}</td>
+                            <td>
+                                {% if message.replied %}<span class="label label-success">{% trans 'Отвечено' %}</span>{% endif %}
+                                {% if message.new %}<span class="label label-primary">{% trans 'Новое' %}</span>{% endif %}
+                                <a href="{{ message.get_absolute_url }}">
+                                    {{ message.subject }}
+                                </a>
+                            <td>{{ message.sent_at }}</td>
+                            <td>
+                                <a class="btn btn-link btn-sm btn-border" href="{% url 'messages_delete' message.id %}" title="{% trans "Удалить" %}" data-toggle="tooltip" data-placement="top">
+                                   <span class="fa fa-trash"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4 class="text-center text-muted"><i class="fa fa fa-inbox fa-2x" aria-hidden="true"></i>
+                    <br/> {% trans 'Нет сообщений' %}</h4>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <script>
+        require(['module_bootstrap_tbl'], function (module) {
+            module.init('inbox_message_tbl');
+        });
+    </script>
+
+{% endblock %}
+
+
+

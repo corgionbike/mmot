@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load user_profile_tags %}
+
+<a href="#{{ user.name }}" data-toggle="modal" {% if is_img == False %} class="{{ cls }}" {% endif %}
+   data-target="#main-modal"
+   data-title="{% trans 'Визитка пользователя' %} {{ user }}"
+   data-url="{{ user.get_user_card_url }}">
+    {% if is_img == True %}
+        {% img_thumbnail img=user.avatar w=w h=h cls=cls %}
+    {% else %}
+        {{ user }}
+    {% endif %}
+</a>

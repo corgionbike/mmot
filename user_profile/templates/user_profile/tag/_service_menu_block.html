@@ -1,0 +1,22 @@
+{% load i18n %}
+
+
+{% if not user_has_stream_profile %}
+    <li class="link_service">
+        <a id="stream_service" href="{% url 'stream_profile_create' %}">
+            <span class="fa fa-plus"> {% trans 'Создать стрим профиль' %}</span>
+        </a>
+    </li>
+{% endif %}
+{% if not user_has_group_profile and not user_member_group %}
+    <li class="link_service">
+        <a id="group_service" href="{% url 'group_profile_create' %}" >
+            <span class="fa fa-plus"> {% trans 'Создать группу' %}</span>
+        </a>
+    </li>
+{% endif %}
+
+
+
+
+

@@ -1,0 +1,6 @@
+<script>
+    require(['jquery', 'module_select2', 'module_autocomplete'], function ($, select2, autocomplete) {
+        select2.init('#id_game');
+        autocomplete.init('#id_tags', '{% url 'guide_autocomplete_tags' %}');
+    });
+</script>

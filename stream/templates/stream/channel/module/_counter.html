@@ -1,0 +1,48 @@
+{% load i18n %}
+
+{% if is_control %}
+<div class="row">
+    <div class="col-md-6 pull-left">
+     <div class="btn-group-xs" role="group">
+        <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-cog"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" onclick="team_counter.call(this, '{% url 'team_count_action' 0 'inc' id %}')"><span class="glyphicon glyphicon-plus-sign"></span> {% trans "Увеличить" %}</a></li>
+          <li><a href="#" onclick="team_counter.call(this, '{% url 'team_count_action' 0 'dec' id %}')"><span class="glyphicon glyphicon-minus-sign"></span> {% trans "Уменьшить" %}</a></li>
+          <li><a href="#" onclick="team_counter.call(this, '{{ counter.get_url_team_count_reset }}')"><span class="glyphicon glyphicon-remove-sign"></span> {% trans "Сбросить" %}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 pull-right text-right">
+     <div class="btn-group-xs" role="group">
+        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-cog"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" onclick="team_counter.call(this, '{% url 'team_count_action' 1 'inc' id %}')"><span class="glyphicon glyphicon-plus-sign"></span> {% trans "Увеличить" %}</a></li>
+          <li><a href="#" onclick="team_counter.call(this, '{% url 'team_count_action' 1 'dec' id %}')"><span class="glyphicon glyphicon-minus-sign"></span> {% trans "Уменьшить" %}</a></li>
+          <li><a href="#" onclick="team_counter.call(this, '{{ counter.get_url_team_count_reset }}')"><span class="glyphicon glyphicon-remove-sign"></span> {% trans "Сбросить" %}</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="row text-center">
+    <div class="col-md-6"><h1><span id="count_red" class="label label-danger">{{ counter.count_red|default:"0" }}</span></h1></div>
+    <div class="col-md-6"><h1><span id="count_blue" class="label label-primary">{{ counter.count_blue|default:"0" }}</span></h1></div>
+</div>
+
+<div class="row text-center">
+    {% if user.is_authenticated %}
+        <a href="#" type="button" class="btn-link btn btn-sm" data-placement="top" data-toggle="tooltip" title="{% trans 'Обновить счет' %}" onclick="team_counter.call(this, '{{counter.get_url_team_count }}')"><span class="glyphicon glyphicon-refresh"></span></a>
+    {% endif %}
+</div>
+<script>
+    require(['module_team_counter'], function(module_team_counter){
+        module_team_counter.init('{{counter.get_url_team_count }}', 30000);
+        return team_counter = module_team_counter;
+    });
+</script>
+
+
+

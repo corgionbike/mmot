@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+{% load group_tags %}
+{% load thumbnail %}
+{% load static %}
+
+{% block meta %}{{ group_profile.description|striptags|truncatewords:30 }}{% endblock %}
+{% block title %} {{ group_profile }} {% endblock %}
+
+{% block group %}
+    {% trans "Статус не указан" as motto %}
+    <div class="container">
+        <div class="row">
+            {% thumbnail group_profile.background "x300" as im %}
+                <div class="cover {% if not group_profile.tile_background %} cover-no-repeat {% else %} cover-default {% endif %}"
+                     style="background-image: url({{ im.url }});">
+            {% empty %}
+                {% static 'img/default-background.png' as im %}
+                <div class="cover cover-default" style="background-image: url({{ im }});">
+            {% endthumbnail %}
+            <div class="col-md-12 text-left header-gr">
+                <div class="col-md-6 bottom-offset-10">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            {% group_card_link group_profile w=84 h=84 cls="img-circle img-thumbnail media-object group-logo" %}
+                        </div>
+                        <div class="media-body">
+                            <h2 class="text-white">{{ group_profile|upper }}
+                                {% if group_profile.owner == user %}
+                                    <a class="set_banner_link" data-toggle="tooltip" data-placement="top"
+                                       href="{% url 'group_profile' %}" role="button" title='{% trans 'Настройка' %}'>
+                                        <span class="fa fa-gear"></span>
+                                    </a>
+                                {% endif %}
+                            </h2>
+                            <span class="text-muted">{{ group_profile.motto|default:motto }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="col-md-12">{% include 'group/tag/_group_tab.html' %}</div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="row top-offset-15">
+                {% block groupcontent %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

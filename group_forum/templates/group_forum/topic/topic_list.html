@@ -1,0 +1,12 @@
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+
+
+{% for topic in topics %}
+    {% include 'group_forum/topic/include_item.html' %}
+{% empty %}
+    <h4 class="text-center text-muted"><i class="mdi mdi-comment-multiple-outline" aria-hidden="true"></i>
+        <br/> {% trans 'Обсуждения не найдены' %}</h4>
+{% endfor %}
+

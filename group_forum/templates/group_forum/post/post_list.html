@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+
+
+{% for post in posts %}
+    {% include 'group_forum/post/include_item.html' %}
+{% empty %}
+    <h4 class="text-center text-muted"><i class="fa fa-comments-o fa-2x" aria-hidden="true"></i>
+        <br/> {% trans 'Комментарии не найдены' %}</h4>
+{% endfor %}
+
+<script>
+    require(['module_post_quote']);
+</script>

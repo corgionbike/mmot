@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+{% load group_tags %}
+{% load thumbnail %}
+{% load static %}
+
+{% block meta %}{{ group_profile.description|striptags|truncatewords:30 }}{% endblock %}
+{% block title %} {{ group_profile }} {% endblock %}
+
+{% block group %}
+    {% trans "Статус не указан" as motto %}
+    <div class="container">
+        <div class="col-md-9">{% block groupcontent %}{% endblock %}</div>
+        <div class="col-md-3 pull-right">
+            <div class="well text-center">
+                <div>
+                    {% group_card_link group_profile w=98 h=98 cls="img-circle img-thumbnail group-logo" %}
+                </div>
+                <h2>
+                    {{ group_profile.name|upper|truncatechars:18 }}
+                </h2>
+                <div>
+                    <span class="text-muted">{{ group_profile.motto|default:motto }}</span>
+                </div>
+                <div class="top-offset-5">
+                    {% if group_profile.owner == user %}
+                        <a data-placement="top" class="btn btn-sm btn-link btn-border btn-block"
+                           href="{% url 'group_profile' %}" role="button">
+                            <span>{% trans 'Редактировать' %}</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% if group_profile.forum.get_absolute_url in request.path %}
+                {% search_form forum.get_search_url %}
+            {% elif group_profile.get_members_url in request.path %}
+                {% search_form group_profile.get_members_search_url %}
+            {% endif %}
+            {% if group_profile.forum.get_absolute_url == request.path %}
+                <ul class="nav nav-pills nav-stacked">
+                    {% if is_user_member and forum.settings.is_member_create or is_user_moderator or user == group_profile.owner %}
+                        <li class="well well-sm">
+                            {% url 'topic_create' group_profile.name as topic_create_url %}
+                            {% trans 'Начать новое обсуждение' as name %}
+                            {% trans 'Начать обсуждение' as title %}
+                            {% modal_link title=title url=topic_create_url name=name cls='btn btn-link btn-border' %}
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            <div class="well">
+                {% include 'group/tag/_group_tab.html' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<div class="pull-right">
+    <a href="{{ post.get_reply_url }}" class="btn btn-link btn-sm"
+            data-toggle="tooltip"
+            data-placement="top"
+{#            data-user="{{ post.user.username }}"#}
+{#            data-created="{{ post.created }}"#}
+            title="{% trans 'Процитировать' %}"
+            id="quote-post-{{ post.id }}">
+        <span class="fa fa-quote-right" aria-hidden="true"></span>
+    </a>
+</div>

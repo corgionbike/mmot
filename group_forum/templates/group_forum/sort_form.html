@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<form name="setSort" action="" method="GET" class="form-inline">
+    <div class="form-group">
+        <span class="fa fa-sort-amount-desc"></span>
+        <label for="order_by">{% trans 'Сортировать по ' %}</label>
+        <select name="order_by" class="form-control input-sm" onchange="document.setSort.submit(); return false;">
+            <option value="-last_post__created" {% if request.GET.order_by == '-last_post__created' %} selected="selected" {% endif %}>{% trans 'последнему посту ' %} </option>
+            <option value="-created" {% if request.GET.order_by == '-created' %} selected="selected" {% endif %}>{% trans 'последней теме ' %} </option>
+        </select>
+    </div>
+</form>

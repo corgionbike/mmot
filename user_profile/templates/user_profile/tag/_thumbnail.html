@@ -1,0 +1,10 @@
+{% load thumbnail %}
+{% load static %}
+
+{% thumbnail img size crop="center" as im %}
+    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="{{ cls }}">
+{% empty %}
+    {% static 'img/upload_placeholder.png' as avatar %}
+    <img alt="avatar" width="{{ w }}" height="{{ h }}" src="{{ avatar }}" class="{{ cls }}">
+{% endthumbnail %}
+

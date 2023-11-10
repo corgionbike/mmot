@@ -1,0 +1,32 @@
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+<h3 class="line">{% trans 'Участники'|upper %} <span class="badge">{{ member_list|length }}</span></h3>
+<ul class="list-inline">
+    {% for member in member_list %}
+        <li data-toggle="tooltip" data-placement="top" title="{{ member.user }}">
+            {% user_card_link member.user %}
+        </li>
+    {% empty %}
+        <div class="row text-center">
+            <h4 class="text-muted"><i class="fa fa-users fa-2x"></i> <br/>{% trans 'Нет данных' %}</h4>
+        </div>
+    {% endfor %}
+    {% if member_list|length > 6 %}
+        <li><a href="{{ group_profile.get_members_url }}"><span data-toggle="tooltip" data-placement="top"
+                                                                title="Показать всех"
+                                                                class="fa fa-angle-double-right fa-lg"></span></a></li>
+    {% endif %}
+</ul>
+<hr>
+<div class="text-center">
+    <a class="btn btn-sm btn-link btn-border" href="{% url 'group_invite_send' %}" role="button">
+        <i class="fa fa-plus-circle"></i> {% trans 'Пригласить пользователя' %}
+    </a>
+</div>
+
+

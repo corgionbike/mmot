@@ -1,0 +1,2771 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-10 19:28+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: .\cat_game\models.py:9 .\cat_game\models.py:25 .\group\models.py:106
+#: .\group\models.py:122 .\group\templates\group\include_group_item.html:17
+#: .\stream\models.py:39 .\user_profile\models.py:19
+msgid "группа"
+msgstr ""
+
+#: .\cat_game\models.py:14
+msgid "игровые группы"
+msgstr ""
+
+#: .\cat_game\models.py:15
+msgid "игровая группа"
+msgstr ""
+
+#: .\cat_game\models.py:22 .\cat_game\models.py:34 .\group\models.py:39
+#: .\invite_key\models.py:35 .\stream\models.py:28 .\stream\models.py:175
+#: .\user_profile\models.py:17
+msgid "игра"
+msgstr ""
+
+#: .\cat_game\models.py:23
+msgid "логотип"
+msgstr ""
+
+#: .\cat_game\models.py:24
+msgid "ссылка на логотип"
+msgstr ""
+
+#: .\cat_game\models.py:27 .\group\models.py:35 .\group\models.py:143
+#: .\slider\models.py:18 .\stream\models.py:34 .\stream\models.py:73
+#: .\stream\models.py:176
+msgid "описание"
+msgstr ""
+
+#: .\cat_game\models.py:33
+msgid "игры"
+msgstr ""
+
+#: .\cat_game\templates\cat_game\game_card.html:5
+#: .\group\templates\group\group_card.html:7
+#: .\stream\templates\stream\channel\tag\_stream_desc.html:21
+msgid "Описание не найдено"
+msgstr ""
+
+#: .\core\models.py:28
+msgid "Дата окончания раньше даты начала."
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:6
+#: .\editor\templates\editor\editor.html:7
+msgid "Жирный"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:9
+#: .\editor\templates\editor\editor.html:10
+msgid "Курсив"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:12
+#: .\editor\templates\editor\editor.html:13
+msgid "По центру"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:15
+#: .\editor\templates\editor\editor.html:16
+msgid "Вставить картинку"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:18
+#: .\editor\templates\editor\editor.html:19
+msgid "Вставить ссылку"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:21
+#: .\editor\templates\editor\editor.html:22
+msgid "Вставить цитату"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:26
+msgid "Вставить видео"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:32
+msgid "Вставить видео с Twitch"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:33
+msgid "Twitch"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:37
+msgid "Вставить видео с Youtube"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:38
+msgid "Youtube"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:42
+msgid "Вставить видео с Hitbox"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:43
+msgid "Hitbox"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:47
+msgid "Вставить видео с Cybergame"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:48
+msgid "Сybergame"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:57
+#: .\stream\templates\stream\tag\include_live_streams.html:18
+msgid "Предпросмотр"
+msgstr ""
+
+#: .\editor\templates\editor\editor.html:60
+#: .\group\templates\group\profile\tag\_group_info.html:23
+#: .\group_forum\templates\group_forum\profile\_forum_manage.html:23
+#: .\group_forum\templates\group_forum\tag\post_menu.html:15
+#: .\group_forum\templates\group_forum\tag\topic_menu.html:16
+#: .\stream\templates\stream\profile\tag\_stream_info.html:18
+#: .\stream\templates\stream\profile\tag\_stream_manage.html:17
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:24
+#: .\user_profile\templates\user_profile\tag\_edit_menu.html:6
+#: .\user_profile\templates\user_profile\tag\_user_info.html:19
+msgid "Редактировать"
+msgstr ""
+
+#: .\feedback\forms.py:32 .\user_profile\forms.py:150
+#, python-format
+msgid "Максимальный размер: %s. Формат: JPG или PNG."
+msgstr ""
+
+#: .\feedback\models.py:9
+msgid "Общие вопросы"
+msgstr ""
+
+#: .\feedback\models.py:10
+msgid "Ошибки на сайте"
+msgstr ""
+
+#: .\feedback\models.py:11
+msgid "Отзывы и предложения"
+msgstr ""
+
+#: .\feedback\models.py:16
+msgid "Открыта"
+msgstr ""
+
+#: .\feedback\models.py:16
+msgid "Закрыта"
+msgstr ""
+
+#: .\feedback\models.py:16
+msgid "В работе"
+msgstr ""
+
+#: .\feedback\models.py:16
+msgid "Отклонена"
+msgstr ""
+
+#: .\feedback\models.py:17 .\group\models.py:37 .\stream\models.py:23
+msgid "статус"
+msgstr ""
+
+#: .\feedback\models.py:18 .\user_profile\models.py:16
+msgid "имя"
+msgstr ""
+
+#: .\feedback\models.py:19
+msgid "категория обращения"
+msgstr ""
+
+#: .\feedback\models.py:20
+msgid "тема"
+msgstr ""
+
+#: .\feedback\models.py:22
+msgid "сообщение"
+msgstr ""
+
+#: .\feedback\models.py:23
+msgid "вложения"
+msgstr ""
+
+#: .\feedback\models.py:27 .\group\models.py:139
+msgid "Заявка"
+msgstr ""
+
+#: .\feedback\models.py:28
+#: .\user_profile\templates\user_profile\tag\_banner_menu.html:23
+#: .\user_profile\templates\user_profile\tag\_banner_menu.html:24
+msgid "Заявки"
+msgstr ""
+
+#: .\feedback\templates\feedback\feedback_form.html:5
+#: .\feedback\templates\feedback\feedback_form.html:6
+#: .\templates\include_footer_bottom_menu.html:7
+msgid "Обратная связь"
+msgstr ""
+
+#: .\feedback\templates\feedback\feedback_form.html:20
+msgid ""
+"\n"
+"                    Пожалуйста, постарайтесь максимально точно описать свой "
+"вопрос или предложение.\n"
+"                    Наиболее полная информация поможет нам оперативно "
+"отреагировать на ваше сообщение.\n"
+"                "
+msgstr ""
+
+#: .\feedback\templates\feedback\feedback_form.html:28
+msgid "Отправить"
+msgstr ""
+
+#: .\feedback\templates\feedback\feedback_form.html:29
+#: .\group\templates\group\profile\create_form.html:18
+#: .\group\templates\group\profile\edit_form.html:21
+#: .\group\templates\group\profile\invite_form.html:19
+#: .\group\templates\group\profile\moderator_add_form.html:19
+#: .\group\templates\group\profile\perms_form.html:18
+#: .\group_forum\templates\group_forum\profile\edit_form.html:18
+#: .\stream\templates\stream\profile\create_form.html:21
+#: .\stream\templates\stream\profile\edit_form.html:20
+#: .\stream\templates\stream\profile\manage_form.html:20
+#: .\stream\templates\stream\profile\preview\create_form.html:20
+#: .\stream\templates\stream\profile\preview\edit_form.html:21
+#: .\templates\registration\password_reset_form.html:26
+#: .\user_profile\templates\user_profile\edit_form.html:21
+msgid "Назад"
+msgstr ""
+
+#: .\feedback\views.py:18
+msgid "Сообщение успешно отправлено!"
+msgstr ""
+
+#: .\group\forms.py:22
+#: .\stream\templates\stream\tag\include_live_streams.html:19
+#: .\stream\templates\stream\tag\include_planned_streams.html:17
+msgid "Наименование"
+msgstr ""
+
+#: .\group\forms.py:23 .\user_profile\forms.py:29 .\user_profile\forms.py:57
+msgid ""
+"Обязательное поле c ограничением 4-15 латинских символов, которыми могут "
+"быть буквы и цифры, первый символ обязательно буква."
+msgstr ""
+
+#: .\group\forms.py:27
+msgid "Введите правильное имя группы."
+msgstr ""
+
+#: .\group\forms.py:29
+msgid "Группа с таким именем уже существует!"
+msgstr ""
+
+#: .\group\forms.py:44
+msgid "Необходимо выбрать игру из списка или указать ее наименование"
+msgstr ""
+
+#: .\group\forms.py:56
+#, python-format
+msgid "Максимальный размер: %s. Формат: GIF, JPG или PNG."
+msgstr ""
+
+#: .\group\forms.py:60
+msgid "Рекомендуемое разрешение 1200х300 px"
+msgstr ""
+
+#: .\group\forms.py:61
+#, python-format
+msgid "Максимальный число знаков %s"
+msgstr ""
+
+#: .\group\forms.py:62 .\stream\forms.py:93
+msgid "Заполняется в случае если игры нет в списке"
+msgstr ""
+
+#: .\group\forms.py:63 .\stream\forms.py:94
+msgid "Игра из списка имеет приоритет отображения над пользовательской игрой"
+msgstr ""
+
+#: .\group\forms.py:70 .\user_profile\forms.py:158
+msgid "Превышен размер загружаемого файла!"
+msgstr ""
+
+#: .\group\forms.py:81
+msgid "Группа с таким именем уже существует."
+msgstr ""
+
+#: .\group\forms.py:88
+msgid "Ник пользователя"
+msgstr ""
+
+#: .\group\forms.py:89
+msgid "Введите ник пользователя для отправки приглашения в группу."
+msgstr ""
+
+#: .\group\forms.py:92
+msgid "Введите правильное имя пользователя!"
+msgstr ""
+
+#: .\group\forms.py:94 .\group\models.py:138
+msgid "Приглашение"
+msgstr ""
+
+#: .\group\forms.py:94
+msgid "Мы приглашаем Вас в группу!"
+msgstr ""
+
+#: .\group\forms.py:103
+msgid "Пользователь не принимает приглашения!"
+msgstr ""
+
+#: .\group\forms.py:105
+msgid "Пользователь не найден!"
+msgstr ""
+
+#: .\group\forms.py:134
+msgid "Права пользователя"
+msgstr ""
+
+#: .\group\models.py:15
+#: .\stream\templates\stream\tag\include_live_streams.html:21
+#: .\stream\templates\stream\tag\include_planned_streams.html:19
+#: .\user_profile\templates\user_profile\user_card.html:8
+msgid "Группа"
+msgstr ""
+
+#: .\group\models.py:16
+msgid "Отряд"
+msgstr ""
+
+#: .\group\models.py:17
+msgid "Команда"
+msgstr ""
+
+#: .\group\models.py:18
+msgid "Клан"
+msgstr ""
+
+#: .\group\models.py:19
+msgid "Гильдия"
+msgstr ""
+
+#: .\group\models.py:20
+msgid "Клуб"
+msgstr ""
+
+#: .\group\models.py:21
+msgid "Легион"
+msgstr ""
+
+#: .\group\models.py:25
+msgid "Закрытая"
+msgstr ""
+
+#: .\group\models.py:26
+msgid "Публичная"
+msgstr ""
+
+#: .\group\models.py:29 .\slider\models.py:17 .\stream\models.py:171
+msgid "название"
+msgstr ""
+
+#: .\group\models.py:30 .\invite_key\models.py:18 .\invite_key\models.py:34
+#: .\stream\models.py:172
+msgid "владелец"
+msgstr ""
+
+#: .\group\models.py:31
+msgid "эмблема"
+msgstr ""
+
+#: .\group\models.py:32
+msgid "фоновое изображение"
+msgstr ""
+
+#: .\group\models.py:33
+msgid "замостить фон"
+msgstr ""
+
+#: .\group\models.py:34 .\group\models.py:146
+msgid "тип"
+msgstr ""
+
+#: .\group\models.py:40
+msgid "игра группы"
+msgstr ""
+
+#: .\group\models.py:41
+msgid "приватность группы"
+msgstr ""
+
+#: .\group\models.py:43
+msgid "блокировка группы"
+msgstr ""
+
+#: .\group\models.py:47
+msgid "кланы"
+msgstr ""
+
+#: .\group\models.py:48
+msgid "клан"
+msgstr ""
+
+#: .\group\models.py:104 .\group\models.py:112
+msgid "участник"
+msgstr ""
+
+#: .\group\models.py:105
+msgid "вступил"
+msgstr ""
+
+#: .\group\models.py:111
+msgid "yчастники"
+msgstr ""
+
+#: .\group\models.py:120 .\group\models.py:128
+msgid "модератор"
+msgstr ""
+
+#: .\group\models.py:121
+msgid "назначен"
+msgstr ""
+
+#: .\group\models.py:127
+msgid "модераторы"
+msgstr ""
+
+#: .\group\models.py:141
+msgid "получатель"
+msgstr ""
+
+#: .\group\models.py:142
+msgid "отправлено"
+msgstr ""
+
+#: .\group\models.py:145
+msgid "группы"
+msgstr ""
+
+#: .\group\models.py:151
+msgid "заявки"
+msgstr ""
+
+#: .\group\models.py:152
+msgid "заявка"
+msgstr ""
+
+#: .\group\templates\group\group_card.html:17
+msgid "Модерация"
+msgstr ""
+
+#: .\group\templates\group\group_card.html:25 .\templates\base_group.html:44
+msgid "Приватность"
+msgstr ""
+
+#: .\group\templates\group\group_card.html:26 .\templates\base_group.html:45
+msgid "Основатель"
+msgstr ""
+
+#: .\group\templates\group\group_card.html:27
+#: .\group\templates\group\tag\_group_info.html:22
+#: .\stream\templates\stream\tag\include_live_streams.html:22
+#: .\stream\templates\stream\tag\include_planned_streams.html:20
+#: .\templates\base_group.html:46
+msgid "Игра"
+msgstr ""
+
+#: .\group\templates\group\group_card.html:28
+#: .\group\templates\group\include_group_item.html:15
+msgid "Участников"
+msgstr ""
+
+#: .\group\templates\group\group_card.html:44
+msgid "Группа является приватной"
+msgstr ""
+
+#: .\group\templates\group\index.html:8
+msgid ""
+"Игровые сообщества. Создавайте свои кланы, отряды, гильдии. Ведите свой клан-"
+"форум."
+msgstr ""
+
+#: .\group\templates\group\index.html:9 .\group\templates\group\index.html:12
+#: .\templates\include_footer_bottom_menu.html:5
+#: .\user_profile\templates\user_profile\index.html:24
+msgid "Группы"
+msgstr ""
+
+#: .\group\templates\group\index.html:26
+#: .\group\templates\group\search_result.html:28
+msgid "Группы не найдены"
+msgstr ""
+
+#: .\group\templates\group\index.html:31
+msgid "Всего групп:"
+msgstr ""
+
+#: .\group\templates\group\page\include_member_item.html:13
+#: .\user_profile\templates\user_profile\user_card.html:44
+msgid "Исключить из группы"
+msgstr ""
+
+#: .\group\templates\group\page\index.html:15
+msgid "Подать заявку на вступление"
+msgstr ""
+
+#: .\group\templates\group\page\members.html:8
+#: .\group\templates\group\profile\tag\_members.html:8
+#: .\group\templates\group\tag\_group_info.html:37
+#: .\group\templates\group\tag\_group_tab.html:22
+#: .\templates\base_group.html:47
+msgid "Участники"
+msgstr ""
+
+#: .\group\templates\group\page\members.html:19
+#: .\group\templates\group\page\search_result.html:27
+msgid "Участники не найдены"
+msgstr ""
+
+#: .\group\templates\group\page\search_result.html:8
+#: .\group\templates\group\search_result.html:8
+msgid "Поиск участников"
+msgstr ""
+
+#: .\group\templates\group\page\search_result.html:13
+msgid "Список участников"
+msgstr ""
+
+#: .\group\templates\group\page\search_result.html:14
+msgid "Поиск участника"
+msgstr ""
+
+#: .\group\templates\group\page\search_result.html:19
+#: .\group\templates\group\search_result.html:20
+#: .\group_forum\templates\group_forum\search_result.html:17
+msgid "По запросу"
+msgstr ""
+
+#: .\group\templates\group\page\search_result.html:19
+#: .\group\templates\group\search_result.html:20
+#: .\group_forum\templates\group_forum\search_result.html:17
+msgid "всего найдено:"
+msgstr ""
+
+#: .\group\templates\group\page\streams.html:7
+#: .\group\templates\group\tag\_group_tab.html:18
+#: .\stream\templates\stream\index.html:8 .\templates\include_services.html:13
+msgid "Трансляции"
+msgstr ""
+
+#: .\group\templates\group\page\streams.html:11
+#: .\group\templates\group\profile\invite.html:52
+#: .\stream\templates\stream\channel\module\_progress_line.html:3
+#: .\stream\templates\stream\channel\module\_stream_archive.html:3
+#: .\stream\templates\stream\channel\tag\_stream_desc.html:5
+#: .\stream\templates\stream\index.html:12
+#: .\stream\templates\stream\preview\stream_card.html:5
+msgid "Не найдено"
+msgstr ""
+
+#: .\group\templates\group\page\streams.html:17
+#: .\stream\templates\stream\index.html:19
+#: .\templates\include_top_menu.html:27
+msgid "В ЭФИРЕ"
+msgstr ""
+
+#: .\group\templates\group\page\streams.html:20
+#: .\stream\templates\stream\index.html:22
+msgid "Запланированные"
+msgstr ""
+
+#: .\group\templates\group\profile\create_form.html:6
+#: .\group\templates\group\profile\create_form.html:11
+#: .\user_profile\templates\user_profile\tag\_service_menu_block.html:14
+msgid "Создать группу"
+msgstr ""
+
+#: .\group\templates\group\profile\create_form.html:17
+#: .\stream\templates\stream\archive\create_form.html:13
+#: .\stream\templates\stream\profile\preview\create_form.html:19
+msgid "Создать"
+msgstr ""
+
+#: .\group\templates\group\profile\edit_form.html:7
+msgid "Редактировать группу"
+msgstr ""
+
+#: .\group\templates\group\profile\edit_form.html:20
+#: .\group_forum\templates\group_forum\post\edit_form.html:9
+#: .\group_forum\templates\group_forum\profile\edit_form.html:17
+#: .\group_forum\templates\group_forum\topic\edit_form.html:8
+#: .\stream\templates\stream\profile\edit_form.html:19
+#: .\stream\templates\stream\profile\manage_form.html:19
+#: .\stream\templates\stream\profile\preview\edit_form.html:20
+#: .\user_profile\templates\user_profile\edit_form.html:20
+msgid "Отредактировать"
+msgstr ""
+
+#: .\group\templates\group\profile\index.html:12
+#: .\stream\templates\stream\profile\index.html:13
+#: .\user_profile\templates\user_profile\index.html:14
+msgid "Общая информация"
+msgstr ""
+
+#: .\group\templates\group\profile\index.html:30
+msgid "Ваша группа заблокирована!"
+msgstr ""
+
+#: .\group\templates\group\profile\invite.html:19
+#: .\group_forum\templates\group_forum\topic\include_item.html:27
+#: .\group_forum\templates\group_forum\topic\include_item.html:31
+#: .\templates\notifications\notice.html:22
+msgid "назад"
+msgstr ""
+
+#: .\group\templates\group\profile\invite.html:30
+msgid "Принять"
+msgstr ""
+
+#: .\group\templates\group\profile\invite.html:37
+msgid "Одобрить"
+msgstr ""
+
+#: .\group\templates\group\profile\invite.html:44
+msgid "Отклонить"
+msgstr ""
+
+#: .\group\templates\group\profile\invite_form.html:7
+#: .\group\templates\group\profile\invite_form.html:12
+msgid "Пригласить участника"
+msgstr ""
+
+#: .\group\templates\group\profile\invite_form.html:18
+msgid "Пригласить"
+msgstr ""
+
+#: .\group\templates\group\profile\invite_list.html:15
+#: .\group_forum\templates\group_forum\topic\detail.html:39
+#: .\templates\notifications\list.html:26
+msgid "Показать еще"
+msgstr ""
+
+#: .\group\templates\group\profile\modal_remove_form.html:7
+msgid "Вы уверены, что хотите расформировать "
+msgstr ""
+
+#: .\group\templates\group\profile\modal_remove_form.html:11
+#: .\group_forum\templates\group_forum\post\remove_form.html:9
+#: .\group_forum\templates\group_forum\tag\post_menu.html:24
+#: .\group_forum\templates\group_forum\tag\topic_menu.html:27
+#: .\group_forum\templates\group_forum\topic\remove_form.html:9
+#: .\stream\templates\stream\profile\modal_remove_form.html:10
+#: .\stream\templates\stream\profile\remove_form.html:14
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:32
+msgid "Удалить"
+msgstr ""
+
+#: .\group\templates\group\profile\modal_remove_form.html:12
+#: .\group_forum\templates\group_forum\post\remove_form.html:10
+#: .\group_forum\templates\group_forum\topic\remove_form.html:10
+#: .\stream\templates\stream\profile\modal_remove_form.html:11
+msgid "Отменить"
+msgstr ""
+
+#: .\group\templates\group\profile\moderator_add_form.html:7
+#: .\group\templates\group\profile\moderator_add_form.html:12
+#: .\group\templates\group\profile\tag\_moderators.html:27
+msgid "Назначить модератора"
+msgstr ""
+
+#: .\group\templates\group\profile\moderator_add_form.html:18
+#: .\group\templates\group\profile\perms_form.html:7
+msgid "Назначить"
+msgstr ""
+
+#: .\group\templates\group\profile\perms_form.html:17
+#: .\stream\templates\stream\profile\create_form.html:20
+msgid "Сохранить"
+msgstr ""
+
+#: .\group\templates\group\profile\remove_form.html:5
+#: .\group\templates\group\profile\tag\_group_info.html:31
+msgid "Удалить группу"
+msgstr ""
+
+#: .\group\templates\group\profile\remove_form.html:14
+msgid "Да"
+msgstr ""
+
+#: .\group\templates\group\profile\remove_form.html:17
+msgid "Нет"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:12
+msgid "Тип:"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:13
+msgid "Приватность:"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:14
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:14
+msgid "Описание:"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:15
+msgid "Статус:"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:16
+msgid "Основная игра:"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:17
+msgid "Ссылка на группу:"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:18
+#: .\stream\templates\stream\profile\tag\_stream_info.html:13
+msgid "Скопировать"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_group_info.html:29
+msgid "Удалить группу?"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_members.html:16
+#: .\group\templates\group\profile\tag\_moderators.html:17
+#: .\group\templates\group\profile\tag\_user_groups_info.html:27
+#: .\group\templates\group\tag\_member_list.html:16
+#: .\invite_key\templates\invite_key\profile\_game_invite_list.html:15
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:41
+#: .\user_profile\templates\user_profile\tag\_game_character_info.html:9
+#: .\user_profile\templates\user_profile\user_card.html:9
+msgid "Нет данных"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_members.html:26
+msgid "Пригласить пользователя"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_moderators.html:8
+msgid "Модераторы"
+msgstr ""
+
+#: .\group\templates\group\profile\tag\_user_groups_info.html:19
+msgid "Выйти из группы"
+msgstr ""
+
+#: .\group\templates\group\search_result.html:12
+#: .\news\templates\news\detail.html:11 .\templates\base.html:20
+msgid "Главная"
+msgstr ""
+
+#: .\group\templates\group\search_result.html:13
+msgid "Список групп"
+msgstr ""
+
+#: .\group\templates\group\search_result.html:14
+msgid "Поиск группы"
+msgstr ""
+
+#: .\group\templates\group\tag\_group_card_link.html:6
+msgid "Визитка"
+msgstr ""
+
+#: .\group\templates\group\tag\_group_info.html:10
+msgid "Тип"
+msgstr ""
+
+#: .\group\templates\group\tag\_group_info.html:14 .\group_events\models.py:67
+#: .\group_forum\models.py:76
+msgid "Описание"
+msgstr ""
+
+#: .\group\templates\group\tag\_group_info.html:18
+msgid "Слоган"
+msgstr ""
+
+#: .\group\templates\group\tag\_group_info.html:31
+msgid "Владелец"
+msgstr ""
+
+#: .\group\templates\group\tag\_group_tab.html:7
+msgid "Обзор"
+msgstr ""
+
+#: .\group\templates\group\tag\_group_tab.html:11
+#: .\group_forum\templates\group_forum\index.html:8
+#: .\group_forum\templates\group_forum\search_result.html:13
+#: .\group_forum\templates\group_forum\topic\detail.html:12
+msgid "Обсуждения"
+msgstr ""
+
+#: .\group\templates\group\tag\_member_list.html:21
+msgid "Показать всех"
+msgstr ""
+
+#: .\group\templates\group\tag\_search_form.html:6
+msgid "Найти..."
+msgstr ""
+
+#: .\group\templates\group\tag\_top_menu.html:6
+msgid "Мои группы"
+msgstr ""
+
+#: .\group\templates\group\tag\_top_menu.html:11
+msgid "Моя группа"
+msgstr ""
+
+#: .\group\templates\group\tag\_top_menu.html:14
+#: .\stream\templates\stream\profile\tag\_top_menu.html:17
+#: .\user_profile\templates\user_profile\tag\_top_menu.html:16
+msgid "Настройки"
+msgstr ""
+
+#: .\group\views.py:36 .\group\views.py:39
+msgid "Группа не доступна для просмотра!"
+msgstr ""
+
+#: .\group\views.py:43 .\group\views.py:73 .\group\views.py:102
+#: .\group\views.py:594 .\group\views.py:617 .\group\views.py:641
+msgid "Группа не найдена!"
+msgstr ""
+
+#: .\group\views.py:57 .\group\views.py:85 .\group\views.py:628
+#: .\group_forum\views.py:29
+msgid "Вы не являетесь участником группы {}"
+msgstr ""
+
+#: .\group\views.py:99 .\group\views.py:614 .\group_forum\views.py:106
+msgid "Необходимо ввести поисковый запрос!"
+msgstr ""
+
+#: .\group\views.py:119
+msgid "У Вас нет собственной группы!"
+msgstr ""
+
+#: .\group\views.py:129
+msgid "У Вас уже есть своя группа!"
+msgstr ""
+
+#: .\group\views.py:136
+msgid "Группа ({}) успешно создана!"
+msgstr ""
+
+#: .\group\views.py:148
+msgid "У вас нет группы!"
+msgstr ""
+
+#: .\group\views.py:153
+msgid "Группа успешно отредактирована!"
+msgstr ""
+
+#: .\group\views.py:165
+msgid "Группа успешно удалена!"
+msgstr ""
+
+#: .\group\views.py:176
+msgid "Вы уже состоите в группе!"
+msgstr ""
+
+#: .\group\views.py:180
+msgid "Группа доступна только по приглашению!"
+msgstr ""
+
+#: .\group\views.py:183 .\group\views.py:205
+msgid "вступил в группу"
+msgstr ""
+
+#: .\group\views.py:184
+msgid "Вы вступили в группу!"
+msgstr ""
+
+#: .\group\views.py:199 .\group\views.py:222
+msgid "Заявка не найдена!"
+msgstr ""
+
+#: .\group\views.py:204
+msgid "Вы вступили в группу {}!"
+msgstr ""
+
+#: .\group\views.py:207
+msgid "Вы уже состоите в группе {}!"
+msgstr ""
+
+#: .\group\views.py:228
+msgid "Заявка одобрена!"
+msgstr ""
+
+#: .\group\views.py:230
+msgid "{} уже состоит в группе!"
+msgstr ""
+
+#: .\group\views.py:244 .\group\views.py:547
+msgid "Приглашение не найдено!"
+msgstr ""
+
+#: .\group\views.py:249
+msgid "отклонил приглашение"
+msgstr ""
+
+#: .\group\views.py:250
+msgid "Вы отклонили приглашение в группу {}."
+msgstr ""
+
+#: .\group\views.py:253
+msgid "отклонил заявку"
+msgstr ""
+
+#: .\group\views.py:254
+msgid "Вы отклонили заявку на вступление."
+msgstr ""
+
+#: .\group\views.py:268
+msgid "отклонил приглашение в группу!"
+msgstr ""
+
+#: .\group\views.py:269
+msgid "Приглашение отклонено!"
+msgstr ""
+
+#: .\group\views.py:294 .\group\views.py:310
+msgid "К сожалению, {} Вас исключил из {}."
+msgstr ""
+
+#: .\group\views.py:295 .\group\views.py:311 .\group\views.py:480
+msgid "исключение!"
+msgstr ""
+
+#: .\group\views.py:297
+msgid "Пользователь исключен!"
+msgstr ""
+
+#: .\group\views.py:300 .\group\views.py:316
+msgid "Пользователь не состоит в группе!"
+msgstr ""
+
+#: .\group\views.py:313
+msgid "{} успешно исключен из группы {}!"
+msgstr ""
+
+#: .\group\views.py:329
+msgid "покинул группу!"
+msgstr ""
+
+#: .\group\views.py:332
+msgid "Вы успешно вышли из группы {}!"
+msgstr ""
+
+#: .\group\views.py:334
+msgid "Вы не состоите в группе {}!"
+msgstr ""
+
+#: .\group\views.py:339
+msgid "Для просмотра заявления перейдите в свой <a href='{}'>профиль</a>."
+msgstr ""
+
+#: .\group\views.py:350
+msgid "Отклонено!"
+msgstr ""
+
+#: .\group\views.py:355
+msgid "Пользователь {} желает вступить в группу."
+msgstr ""
+
+#: .\group\views.py:358
+msgid "желает вступить в группу!"
+msgstr ""
+
+#: .\group\views.py:359
+msgid "Запрос на вступление в группу отправлен!"
+msgstr ""
+
+#: .\group\views.py:367
+msgid "повторно отправил запрос на вступление в группу!"
+msgstr ""
+
+#: .\group\views.py:369
+msgid "Запрос на вступление в группу отправлен повторно!"
+msgstr ""
+
+#: .\group\views.py:374
+msgid "Повторная отправка запроса возможна через {}"
+msgstr ""
+
+#: .\group\views.py:387 .\group\views.py:397
+msgid "У Вас не хватает прав!"
+msgstr ""
+
+#: .\group\views.py:401
+msgid "Нельзя отправить приглашение самому себе!"
+msgstr ""
+
+#: .\group\views.py:404
+msgid "Пользователь уже числится в вашей группе!"
+msgstr ""
+
+#: .\group\views.py:411
+msgid "приглашает Вас в свои ряды!"
+msgstr ""
+
+#: .\group\views.py:412
+msgid "Приглашение отправлено!"
+msgstr ""
+
+#: .\group\views.py:420
+msgid "повторно приглашает Вас в свои ряды!"
+msgstr ""
+
+#: .\group\views.py:422
+msgid "Приглашение отправлено повторно!"
+msgstr ""
+
+#: .\group\views.py:427
+msgid "Повторная отправка приглашения возможна через {}"
+msgstr ""
+
+#: .\group\views.py:443
+msgid "Превышено максимальное количество модераторов!"
+msgstr ""
+
+#: .\group\views.py:454
+msgid "{} назначен модератором!"
+msgstr ""
+
+#: .\group\views.py:456
+msgid "назначение модератором!"
+msgstr ""
+
+#: .\group\views.py:459
+msgid "Группа модераторов не найдена!"
+msgstr ""
+
+#: .\group\views.py:481
+msgid "К сожалению, Вас исключили из группы модераторов!"
+msgstr ""
+
+#: .\group\views.py:482
+msgid "Пользователь исключен из группы модераторов!"
+msgstr ""
+
+#: .\group\views.py:485
+msgid "Пользователь не является модератором группы!"
+msgstr ""
+
+#: .\group\views.py:542
+msgid "Приглашение успешно удалено!"
+msgstr ""
+
+#: .\group\views.py:574
+msgid "Права успешно отредактированы!"
+msgstr ""
+
+#: .\group_events\models.py:10
+msgid "Прямой эфир"
+msgstr ""
+
+#: .\group_events\models.py:11
+msgid "Всякое разное"
+msgstr ""
+
+#: .\group_events\models.py:12
+msgid "Вечеринка"
+msgstr ""
+
+#: .\group_events\models.py:13
+msgid "Важная встреча"
+msgstr ""
+
+#: .\group_events\models.py:20 .\group_events\models.py:70
+#: .\group_forum\models.py:84
+msgid "Закрыть"
+msgstr ""
+
+#: .\group_events\models.py:23
+msgid "событие группы"
+msgstr ""
+
+#: .\group_events\models.py:24
+msgid "события групп"
+msgstr ""
+
+#: .\group_events\models.py:51
+msgid "Число событий на страницу"
+msgstr ""
+
+#: .\group_events\models.py:52
+msgid "Разрешено редактирование события"
+msgstr ""
+
+#: .\group_events\models.py:53
+msgid "Разрешено создавать события"
+msgstr ""
+
+#: .\group_events\models.py:56
+msgid "Настройка события группы"
+msgstr ""
+
+#: .\group_events\models.py:57
+msgid "Настройки событий групп"
+msgstr ""
+
+#: .\group_events\models.py:65
+msgid "Тип события"
+msgstr ""
+
+#: .\group_events\models.py:66 .\group_forum\models.py:75
+msgid "Тема"
+msgstr ""
+
+#: .\group_events\models.py:69
+msgid "Начало"
+msgstr ""
+
+#: .\group_events\models.py:71 .\group_forum\models.py:86
+msgid "Скрыть"
+msgstr ""
+
+#: .\group_events\models.py:76
+#: .\group_events\templates\group_events\index.html:8
+msgid "События"
+msgstr ""
+
+#: .\group_events\models.py:77
+msgid "Событие"
+msgstr ""
+
+#: .\group_events\templates\group_events\index.html:25
+#: .\group_events\templates\group_events\index.html:26
+msgid "Запланировать событие"
+msgstr ""
+
+#: .\group_forum\forms.py:13
+msgid "Опишите тему обсуждения подробнее..."
+msgstr ""
+
+#: .\group_forum\forms.py:38 .\group_forum\forms.py:52
+msgid "Здесь можно оставить свой комментарий..."
+msgstr ""
+
+#: .\group_forum\forms.py:69
+msgid "Число обсуждений на страницу"
+msgstr ""
+
+#: .\group_forum\forms.py:70
+msgid "Число комментариев на страницу"
+msgstr ""
+
+#: .\group_forum\forms.py:71
+msgid "Разрешить редактировать посты пользователям"
+msgstr ""
+
+#: .\group_forum\forms.py:72
+msgid "Разрешить создавать обсуждения пользователям"
+msgstr ""
+
+#: .\group_forum\models.py:16
+msgid "Закрыть форум"
+msgstr ""
+
+#: .\group_forum\models.py:19
+msgid "форум"
+msgstr ""
+
+#: .\group_forum\models.py:20
+msgid "форумы"
+msgstr ""
+
+#: .\group_forum\models.py:59
+msgid "Число обсуждений"
+msgstr ""
+
+#: .\group_forum\models.py:60
+msgid "Число комментариев"
+msgstr ""
+
+#: .\group_forum\models.py:61
+msgid "Разрешено редактирование посты"
+msgstr ""
+
+#: .\group_forum\models.py:62
+msgid "Разрешено создавать темы"
+msgstr ""
+
+#: .\group_forum\models.py:63
+msgid "Последний пост сверху"
+msgstr ""
+
+#: .\group_forum\models.py:66
+msgid "настройки форума"
+msgstr ""
+
+#: .\group_forum\models.py:67
+msgid "настройки форумов"
+msgstr ""
+
+#: .\group_forum\models.py:78
+msgid "Последний комментарий"
+msgstr ""
+
+#: .\group_forum\models.py:85
+msgid "Закрепить"
+msgstr ""
+
+#: .\group_forum\models.py:88
+msgid "подписаться на обсуждение"
+msgstr ""
+
+#: .\group_forum\models.py:93
+msgid "обсуждения"
+msgstr ""
+
+#: .\group_forum\models.py:94
+msgid "обсуждение"
+msgstr ""
+
+#: .\group_forum\models.py:130
+msgid "Новый комментарий в вашей теме \"{}\""
+msgstr ""
+
+#: .\group_forum\models.py:146
+msgid "Комментарий"
+msgstr ""
+
+#: .\group_forum\models.py:151
+msgid "пост"
+msgstr ""
+
+#: .\group_forum\models.py:152
+msgid "посты"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\email_new_post.html:1
+#, python-format
+msgid ""
+"\n"
+"<p>\n"
+"    Добрый день %(user)s, в теме обсуждения \"%(topic)s\" был добавлен новый "
+"комментарий. <br/>\n"
+"    <a href=\"%(protocol)s://%(domain)s%(url)s\">%(protocol)s://%(domain)s%"
+"(url)s</a>\n"
+"</p>\n"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\index.html:31
+msgid "Всего обсуждений:"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\index.html:38
+msgid "Показать еще..."
+msgstr ""
+
+#: .\group_forum\templates\group_forum\index.html:57
+msgid "Начать новое обсуждение"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\index.html:58
+msgid "Начать обсуждение"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\index.html:64
+msgid "Доступна модерация"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\post\include_editor.html:10
+msgid "Оставить комментарий"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\post\include_item.html:17
+#: .\group_forum\templates\group_forum\topic\include_item.html:26
+msgid "Автор"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\post\post_list.html:10
+msgid "Комментарии не найдены"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\post\remove_form.html:5
+msgid "Вы уверены, что хотите удалить этот комментарий?"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\profile\_forum_manage.html:3
+#: .\group_forum\templates\group_forum\profile\edit_form.html:11
+msgid "Настройки форума"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\profile\_forum_manage.html:6
+msgid "Разрешить редактировать посты пользователям:"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\profile\_forum_manage.html:9
+msgid "Разрешить создавать обсуждения пользователям:"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\profile\_forum_manage.html:12
+msgid "Последний пост сверху:"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\profile\_forum_manage.html:15
+msgid "Число обсуждений на страницу:"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\profile\_forum_manage.html:18
+msgid "Число комментариев на страницу:"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\profile\edit_form.html:5
+msgid "Настройка форума"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\search_result.html:8
+#: .\group_forum\templates\group_forum\search_result.html:14
+msgid "Поиск обсуждений"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\sort_form.html:6
+msgid "Сортировать по "
+msgstr ""
+
+#: .\group_forum\templates\group_forum\sort_form.html:8
+msgid "последнему посту "
+msgstr ""
+
+#: .\group_forum\templates\group_forum\sort_form.html:9
+msgid "последней теме "
+msgstr ""
+
+#: .\group_forum\templates\group_forum\tag\post_menu.html:13
+msgid "Редактировать пост"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\tag\post_menu.html:22
+msgid "Удалить пост?"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\tag\quote_menu.html:9
+msgid "Процитировать"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\tag\subscribe_menu.html:7
+msgid "Отписаться"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\tag\subscribe_menu.html:9
+msgid "Подписаться"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\tag\topic_menu.html:14
+msgid "Редактировать обсуждение"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\tag\topic_menu.html:25
+msgid "Удалить обсуждение?"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\create_form.html:8
+msgid "Опубликовать"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\include_item.html:17
+#: .\group_forum\templates\group_forum\topic\include_item_detail.html:21
+msgid "Тема прикреплена"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\include_item.html:18
+#: .\group_forum\templates\group_forum\topic\include_item_detail.html:22
+msgid "Тема скрыта"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\include_item.html:19
+#: .\group_forum\templates\group_forum\topic\include_item_detail.html:23
+msgid "Темы закрыта"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\include_item.html:27
+msgid "Создано"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\include_item.html:28
+msgid "Всего постов"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\include_item.html:31
+msgid "Последний пост от"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\remove_form.html:5
+msgid "Вы уверены, что хотите удалить тему со всеми комментариями?"
+msgstr ""
+
+#: .\group_forum\templates\group_forum\topic\topic_list.html:10
+msgid "Обсуждения не найдены"
+msgstr ""
+
+#: .\group_forum\views.py:202
+msgid "У вас нет прав для просмотра темы!"
+msgstr ""
+
+#: .\group_forum\views.py:206
+msgid "Обсуждение не найдено!"
+msgstr ""
+
+#: .\group_forum\views.py:351
+msgid "Отредактировано {} ({})"
+msgstr ""
+
+#: .\group_forum\views.py:378 .\stream\views.py:169
+msgid "Настройки успешно обновлены!"
+msgstr ""
+
+#: .\group_forum\views.py:391
+msgid "Вы успешно отписались от обсуждения \"{}\""
+msgstr ""
+
+#: .\group_forum\views.py:402
+msgid "Вы успешно подписались на обсуждение \"{}\""
+msgstr ""
+
+#: .\invite_key\models.py:11
+msgid "Погашен"
+msgstr ""
+
+#: .\invite_key\models.py:12
+msgid "Активен"
+msgstr ""
+
+#: .\invite_key\models.py:19 .\invite_key\models.py:36
+msgid "состояние"
+msgstr ""
+
+#: .\invite_key\models.py:24
+msgid "Пригласительные ключи"
+msgstr ""
+
+#: .\invite_key\models.py:25
+#: .\invite_key\templates\invite_key\_site_invite_form.html:9
+#: .\user_profile\forms.py:76
+msgid "Пригласительный ключ"
+msgstr ""
+
+#: .\invite_key\models.py:33
+msgid "игровой ключ"
+msgstr ""
+
+#: .\invite_key\models.py:41
+msgid "Игровые ключики"
+msgstr ""
+
+#: .\invite_key\models.py:42
+msgid "Игровой ключ"
+msgstr ""
+
+#: .\invite_key\templates\invite_key\_site_invite_form.html:10
+msgid ""
+"Для регистрации на сайте, Вам понадобится пригласительный ключ. <br /> "
+"Количество ключей ограничено!"
+msgstr ""
+
+#: .\invite_key\templates\invite_key\_site_invite_form.html:12
+#: .\invite_key\templates\invite_key\_site_invite_form.html:25
+msgid "Нажми для копирования"
+msgstr ""
+
+#: .\invite_key\templates\invite_key\_site_invite_form.html:14
+msgid "Получить"
+msgstr ""
+
+#: .\invite_key\templates\invite_key\_site_invite_form.html:29
+msgid "Скопировано"
+msgstr ""
+
+#: .\invite_key\templates\invite_key\profile\_game_invite_list.html:8
+msgid "Показать"
+msgstr ""
+
+#: .\invite_key\views.py:15
+msgid "Ключи закончились!"
+msgstr ""
+
+#: .\mmotimes\settings.py:186
+msgid "RU"
+msgstr ""
+
+#: .\mmotimes\settings.py:187
+msgid "EN"
+msgstr ""
+
+#: .\news\models.py:19 .\news\templates\news\detail.html:12
+#: .\news\templates\news\index.html:9 .\news\templates\news\index.html:12
+#: .\templates\include_footer_bottom_menu.html:3
+msgid "Новости"
+msgstr ""
+
+#: .\news\models.py:20
+msgid "Новость"
+msgstr ""
+
+#: .\news\templates\news\_top_news.html:4
+msgid "Новое на портале"
+msgstr ""
+
+#: .\news\templates\news\_top_news.html:13
+#: .\news\templates\news\detail.html:24 .\news\templates\news\index.html:24
+#: .\slider\templates\slider\_slider.html:28
+msgid "Черновик"
+msgstr ""
+
+#: .\news\templates\news\_top_news.html:25 .\news\templates\news\index.html:37
+msgid "Нет новостей"
+msgstr ""
+
+#: .\news\templates\news\detail.html:7
+msgid "Новости - "
+msgstr ""
+
+#: .\news\templates\news\index.html:8
+msgid "Новости от портала MMOTIMES.RU"
+msgstr ""
+
+#: .\news\templates\news\index.html:32
+msgid "Подробнее"
+msgstr ""
+
+#: .\news\views.py:31
+msgid "Новость не найдена или недоступна!"
+msgstr ""
+
+#: .\slider\models.py:8
+msgid "center"
+msgstr ""
+
+#: .\slider\models.py:9
+msgid "top"
+msgstr ""
+
+#: .\slider\models.py:10
+msgid "bottom"
+msgstr ""
+
+#: .\slider\models.py:11
+msgid "right"
+msgstr ""
+
+#: .\slider\models.py:12
+msgid "left"
+msgstr ""
+
+#: .\slider\models.py:19
+msgid "фон"
+msgstr ""
+
+#: .\slider\models.py:20
+msgid "обрезка"
+msgstr ""
+
+#: .\slider\models.py:21
+msgid "качество"
+msgstr ""
+
+#: .\slider\models.py:25
+msgid "Слайды"
+msgstr ""
+
+#: .\slider\models.py:26
+msgid "Слайд"
+msgstr ""
+
+#: .\stream\forms.py:38
+msgid "Запрещено создавать и редактировать анонс задним числом!"
+msgstr ""
+
+#: .\stream\forms.py:46
+msgid "Может быть проверен на сервере стрим провайдера."
+msgstr ""
+
+#: .\stream\forms.py:47
+msgid "Задержка может составлять 5 мин."
+msgstr ""
+
+#: .\stream\forms.py:53 .\stream\forms.py:122
+msgid "Идентификатор {0} не найден на сервере {1}!"
+msgstr ""
+
+#: .\stream\forms.py:55
+msgid "Необходимо ввести идентификатор!"
+msgstr ""
+
+#: .\stream\forms.py:88
+msgid "Дайте небольшое описание предстоящей трансляции..."
+msgstr ""
+
+#: .\stream\forms.py:91
+msgid "Максимальный число символов: {}, минимальное - {}"
+msgstr ""
+
+#: .\stream\forms.py:92 .\stream\forms.py:167
+#, python-format
+msgid "Максимальный число символов: %s"
+msgstr ""
+
+#: .\stream\forms.py:95 .\stream\forms.py:96
+msgid "Заполняется из стрим профиля, если оставить пустым"
+msgstr ""
+
+#: .\stream\forms.py:97
+msgid "От имени выбранной группы будет вестись трансляция"
+msgstr ""
+
+#: .\stream\forms.py:107
+msgid "Необходимо выбрать игру из списка или указать ее наименование!"
+msgstr ""
+
+#: .\stream\forms.py:111 .\stream\forms.py:115
+msgid ""
+"Необходимо ввести идентификатор и выбрать провайдера или оставить поля "
+"пустыми!"
+msgstr ""
+
+#: .\stream\forms.py:140
+msgid "Дата окончания трансляции раньше или равна дате начала!"
+msgstr ""
+
+#: .\stream\forms.py:173
+msgid "Запись не можеть быть из будущего!"
+msgstr ""
+
+#: .\stream\forms.py:184
+msgid "Провайдер не поддерживается!"
+msgstr ""
+
+#: .\stream\forms.py:193
+msgid "Трасляция активна"
+msgstr ""
+
+#: .\stream\forms.py:194
+msgid "Трасляция отключена"
+msgstr ""
+
+#: .\stream\management\commands\broadcasting.py:40
+msgid "трансляция активирована автоматически!"
+msgstr ""
+
+#: .\stream\management\commands\broadcasting.py:48
+msgid "трансляция остановлена автоматически!"
+msgstr ""
+
+#: .\stream\models.py:24 .\stream\models.py:70
+msgid "идентификатор"
+msgstr ""
+
+#: .\stream\models.py:26 .\stream\models.py:72 .\stream\models.py:178
+msgid "провайдер"
+msgstr ""
+
+#: .\stream\models.py:27
+msgid "наименование"
+msgstr ""
+
+#: .\stream\models.py:30
+msgid "игра пользователя"
+msgstr ""
+
+#: .\stream\models.py:31
+msgid "ссылка на превью"
+msgstr ""
+
+#: .\stream\models.py:32
+msgid "начало"
+msgstr ""
+
+#: .\stream\models.py:33
+msgid "окончание"
+msgstr ""
+
+#: .\stream\models.py:36
+msgid "отсрочить трансляцию"
+msgstr ""
+
+#: .\stream\models.py:37 .\stream\models.py:74
+msgid "стример"
+msgstr ""
+
+#: .\stream\models.py:45
+msgid "стрим анонсы"
+msgstr ""
+
+#: .\stream\models.py:46
+msgid "стрим анонс"
+msgstr ""
+
+#: .\stream\models.py:56
+msgid "Дата окончания раньше или равна дате начала!"
+msgstr ""
+
+#: .\stream\models.py:76
+msgid "блокировка стрим профиля"
+msgstr ""
+
+#: .\stream\models.py:77
+msgid "автоактивация канала"
+msgstr ""
+
+#: .\stream\models.py:78
+msgid "анонс трансляции"
+msgstr ""
+
+#: .\stream\models.py:84
+msgid "стрим профиля"
+msgstr ""
+
+#: .\stream\models.py:85
+msgid "стрим профиль"
+msgstr ""
+
+#: .\stream\models.py:112
+msgid "Имя красной команды"
+msgstr ""
+
+#: .\stream\models.py:113
+msgid "Имя синей команды"
+msgstr ""
+
+#: .\stream\models.py:114
+msgid "счет красных"
+msgstr ""
+
+#: .\stream\models.py:115
+msgid "счет синих"
+msgstr ""
+
+#: .\stream\models.py:116 .\stream\models.py:120 .\stream\models.py:121
+#: .\stream\models.py:158
+msgid "командный счетчик"
+msgstr ""
+
+#: .\stream\models.py:155
+msgid "чат"
+msgstr ""
+
+#: .\stream\models.py:156
+msgid "линия прогресса"
+msgstr ""
+
+#: .\stream\models.py:157
+msgid "архив"
+msgstr ""
+
+#: .\stream\models.py:159
+msgid "стрим профайл"
+msgstr ""
+
+#: .\stream\models.py:163
+msgid "стрим менеджеры"
+msgstr ""
+
+#: .\stream\models.py:164
+msgid "стрим менеджер"
+msgstr ""
+
+#: .\stream\models.py:174
+msgid "ссылка на запись"
+msgstr ""
+
+#: .\stream\models.py:177
+msgid "время записи"
+msgstr ""
+
+#: .\stream\models.py:182 .\stream\models.py:183
+msgid "стрим архив"
+msgstr ""
+
+#: .\stream\templates\stream\archive\create_form.html:5
+msgid "Создать архивную запись"
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:8
+msgid "Канал пользователя"
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:15
+msgid "Не указан идентификатор трансляции!"
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:19
+msgid "Трансляция отложена!"
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:23
+#: .\stream\templates\stream\index.html:27
+msgid "Загрузка..."
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:43
+#: .\stream\templates\stream\tag\include_live_streams.html:24
+msgid "Прогресс"
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:49
+msgid "Командный счет"
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:55
+msgid "Чат"
+msgstr ""
+
+#: .\stream\templates\stream\channel\index.html:61
+msgid "Архив"
+msgstr ""
+
+#: .\stream\templates\stream\channel\liveview.html:8
+msgid "Перейти на канал"
+msgstr ""
+
+#: .\stream\templates\stream\channel\module\_counter.html:10
+#: .\stream\templates\stream\channel\module\_counter.html:21
+msgid "Увеличить"
+msgstr ""
+
+#: .\stream\templates\stream\channel\module\_counter.html:11
+#: .\stream\templates\stream\channel\module\_counter.html:22
+msgid "Уменьшить"
+msgstr ""
+
+#: .\stream\templates\stream\channel\module\_counter.html:12
+#: .\stream\templates\stream\channel\module\_counter.html:23
+msgid "Сбросить"
+msgstr ""
+
+#: .\stream\templates\stream\channel\module\_counter.html:37
+msgid "Обновить счет"
+msgstr ""
+
+#: .\stream\templates\stream\channel\module\_ctrl_stream.html:11
+msgid "Активировать канал"
+msgstr ""
+
+#: .\stream\templates\stream\channel\tag\_chat_btn.html:4
+msgid "Показать чат"
+msgstr ""
+
+#: .\stream\templates\stream\channel\tag\_chat_btn.html:7
+msgid "Cкрыть чат"
+msgstr ""
+
+#: .\stream\templates\stream\channel\tag\_stream_desc.html:16
+#: .\stream\templates\stream\preview\stream_card.html:14
+#, python-format
+msgid " Игра: %(game)s"
+msgstr ""
+
+#: .\stream\templates\stream\channel\tag\_stream_desc.html:17
+#, python-format
+msgid " В эфире: %(time)s "
+msgstr ""
+
+#: .\stream\templates\stream\index.html:6
+msgid ""
+"Агрегатор стрим трансляций, призванный объединить пользовательские "
+"трансляции различных игр. Поддерживаем известные стрим площадки: Twitch.tv, "
+"YouTube.com, HitBox.tv."
+msgstr ""
+
+#: .\stream\templates\stream\preview\stream_card.html:17
+#, python-format
+msgid " Начало в %(time)s "
+msgstr ""
+
+#: .\stream\templates\stream\preview\stream_card.html:19
+#: .\stream\templates\stream\tag\include_planned_streams.html:56
+msgid "Стрим отложен"
+msgstr ""
+
+#: .\stream\templates\stream\profile\blocked.html:5
+msgid "Стрим профиль заблокирован"
+msgstr ""
+
+#: .\stream\templates\stream\profile\blocked.html:9
+#: .\stream\templates\stream\profile\index.html:31
+msgid "Ваш стрим профиль заблокирован!"
+msgstr ""
+
+#: .\stream\templates\stream\profile\create_form.html:5
+#: .\stream\templates\stream\profile\create_form.html:10
+#: .\user_profile\templates\user_profile\tag\_service_menu_block.html:7
+msgid "Создать стрим профиль"
+msgstr ""
+
+#: .\stream\templates\stream\profile\create_form.html:16
+#: .\stream\templates\stream\profile\edit_form.html:16
+msgid "Как узнать идентификатор?"
+msgstr ""
+
+#: .\stream\templates\stream\profile\edit_form.html:5
+#: .\stream\templates\stream\profile\edit_form.html:11
+#: .\stream\templates\stream\profile\tag\_stream_menu.html:11
+msgid "Редактировать стрим профиль"
+msgstr ""
+
+#: .\stream\templates\stream\profile\index.html:5
+#: .\user_profile\templates\user_profile\tag\_banner_menu.html:16
+msgid "Стрим профиль"
+msgstr ""
+
+#: .\stream\templates\stream\profile\index.html:17
+msgid "Стрим менеджер"
+msgstr ""
+
+#: .\stream\templates\stream\profile\index.html:24
+#: .\stream\templates\stream\profile\tag\_top_menu.html:15
+msgid "Анонс"
+msgstr ""
+
+#: .\stream\templates\stream\profile\manage_form.html:6
+#: .\stream\templates\stream\profile\manage_form.html:12
+msgid "Настройки канала"
+msgstr ""
+
+#: .\stream\templates\stream\profile\modal_remove_form.html:6
+msgid "Вы уверены, что хотите удалить анонс?"
+msgstr ""
+
+#: .\stream\templates\stream\profile\null.html:5
+msgid "Стрим профиль не найден"
+msgstr ""
+
+#: .\stream\templates\stream\profile\null.html:9 .\stream\views.py:93
+msgid "Cтрим профиль не найден!"
+msgstr ""
+
+#: .\stream\templates\stream\profile\preview\create_form.html:7
+#: .\stream\templates\stream\profile\preview\create_form.html:13
+msgid "Создать анонс"
+msgstr ""
+
+#: .\stream\templates\stream\profile\preview\edit_form.html:8
+#: .\stream\templates\stream\profile\preview\edit_form.html:14
+msgid "Редактировать анонс"
+msgstr ""
+
+#: .\stream\templates\stream\profile\remove_form.html:5
+msgid "Удалить анонс стрима"
+msgstr ""
+
+#: .\stream\templates\stream\profile\remove_form.html:17
+#: .\templates\registration\password_change_form.html:21
+#: .\templates\registration\password_reset_confirm.html:26
+msgid "Отмена"
+msgstr ""
+
+#: .\stream\templates\stream\profile\stream_archive.html:6
+msgid "Стрим архивы"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_info_alert_profile.html:6
+msgid ""
+"Не забудьте создать анонс будущей трансляции, что бы пользователи могли "
+"узнать о вашем стриме."
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_info_alert_profile.html:9
+msgid "Сохраняйте прошедшие стримы в архиве."
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_info.html:7
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:11
+msgid "Провайдер:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_info.html:8
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:12
+msgid "Идентификатор:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_info.html:9
+msgid "Автоактивация канала:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_info.html:12
+msgid "Ссылка на канал:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_manage.html:4
+msgid "Временая шкала:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_manage.html:7
+msgid "Командный счет:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_manage.html:10
+msgid "Чат:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_menu.html:14
+msgid "Менеджер трансляции"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_menu.html:19
+msgid "Создать стрим анонс"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_menu.html:23
+msgid "Редактировать стрим анонс"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_menu.html:26
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:30
+msgid "Удалить анонс?"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_menu.html:27
+msgid "Удалить анонс"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:7
+msgid "-"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:13
+msgid "Название:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:15
+msgid "Игра:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:16
+msgid "Начало:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:16
+msgid "через"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:17
+msgid "Окончание:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:18
+msgid "Трансляция отложена:"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_stream_preview_info.html:44
+msgid "Добавить анонс"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_top_menu.html:9
+msgid "Мой стрим"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_top_menu.html:13
+msgid "Мой канал"
+msgstr ""
+
+#: .\stream\templates\stream\profile\tag\_top_menu.html:14
+msgid "Менеджер"
+msgstr ""
+
+#: .\stream\templates\stream\tag\include_live_streams.html:20
+#: .\stream\templates\stream\tag\include_planned_streams.html:18
+msgid "Рестример"
+msgstr ""
+
+#: .\stream\templates\stream\tag\include_live_streams.html:23
+#: .\stream\templates\stream\tag\include_planned_streams.html:21
+msgid "Площадка"
+msgstr ""
+
+#: .\stream\templates\stream\tag\include_live_streams.html:30
+msgid "Предпросмотр канала "
+msgstr ""
+
+#: .\stream\templates\stream\tag\include_planned_streams.html:22
+msgid "Время до начала"
+msgstr ""
+
+#: .\stream\templatetags\stream_tags.py:32
+msgid "Плеер не найден!"
+msgstr ""
+
+#: .\stream\views.py:32
+msgid "Стрим профиль уже создан!"
+msgstr ""
+
+#: .\stream\views.py:41
+msgid "Стрим профиль успешно создан!"
+msgstr ""
+
+#: .\stream\views.py:56
+msgid "Стрим профиль успешно отредактирован!"
+msgstr ""
+
+#: .\stream\views.py:72
+msgid "У Вас не создан профиль трансляций!"
+msgstr ""
+
+#: .\stream\views.py:85
+msgid "Стрим профиль успешно удален!"
+msgstr ""
+
+#: .\stream\views.py:96 .\stream\views.py:142 .\stream\views.py:161
+#: .\stream\views.py:198
+msgid "Канал пользователя {} заблокирован!"
+msgstr ""
+
+#: .\stream\views.py:99
+msgid "Анонс стрима уже создан!"
+msgstr ""
+
+#: .\stream\views.py:112
+msgid "Стрим анонс успешно создан!"
+msgstr ""
+
+#: .\stream\views.py:125
+msgid "Анонс стрима успешно удален!"
+msgstr ""
+
+#: .\stream\views.py:151
+msgid "Анонс стрима успешно отредактирован!"
+msgstr ""
+
+#: .\stream\views.py:195 .\stream\views.py:210
+msgid "Канал не найден!"
+msgstr ""
+
+#: .\stream\views.py:202
+msgid "У вас нет запланированных трансляций!"
+msgstr ""
+
+#: .\stream\views.py:204
+msgid "Пользователь не запланировал трансляцию!"
+msgstr ""
+
+#: .\templates\base.html:17
+msgid ""
+"Портал игровых сервисов. Создайте свой клан сайт по любимой игре. "
+"Транслируйте игры друзьям."
+msgstr ""
+
+#: .\templates\base.html:18
+msgid ""
+"клан банк, клан сайт, создать клан сайт, клан форум, клан стримы, игровые "
+"сервисы, трансляции, игры, онлайн игры, mmorpg, mmo, мморпг, ммо, гайды, "
+"отряды, группы, кланы, stream"
+msgstr ""
+
+#: .\templates\base_group.html:12
+msgid "Статус не указан"
+msgstr ""
+
+#: .\templates\base_group.html:31
+msgid "Настройка"
+msgstr ""
+
+#: .\templates\base_profiles.html:20
+msgid "Последний вход"
+msgstr ""
+
+#: .\templates\donations.html:3
+msgid ""
+"Если желаете помочь сайту, Вы можете сделать добровольное пожертвование на "
+"развитие и поддержку портала."
+msgstr ""
+
+#: .\templates\donations.html:17
+msgid "Благодарим за помощь!"
+msgstr ""
+
+#: .\templates\errs\404.html:4 .\templates\errs\404.html:5
+msgid "Страница не найдена"
+msgstr ""
+
+#: .\templates\errs\404.html:10
+msgid "Запрашиваемая страница не найдена"
+msgstr ""
+
+#: .\templates\errs\404.html:11
+msgid ""
+"Возможно, неправильно указан путь в адресной строке или страница была "
+"удалена."
+msgstr ""
+
+#: .\templates\errs\404.html:12
+msgid "Возврат на <a href=\"/\">главную страницу</a>"
+msgstr ""
+
+#: .\templates\faq\index.html:6
+msgid "FAQ. Часто задаваемые вопросы."
+msgstr ""
+
+#: .\templates\faq\index.html:7 .\templates\faq\index.html:11
+msgid "Часто задаваемые вопросы"
+msgstr ""
+
+#: .\templates\faq\index.html:14 .\templates\faq\index.html:20
+msgid "Как запланировать стрим трансляцию?"
+msgstr ""
+
+#: .\templates\faq\index.html:15 .\templates\faq\index.html:38
+msgid "Как активировать стрим канал для пользователей?"
+msgstr ""
+
+#: .\templates\faq\index.html:16 .\templates\faq\index.html:50
+msgid "Зачем указывать свой часовой пояс?"
+msgstr ""
+
+#: .\templates\faq\index.html:17 .\templates\faq\index.html:57
+msgid "Как вступить в группу?"
+msgstr ""
+
+#: .\templates\include_footer.html:15
+msgid "Язык"
+msgstr ""
+
+#: .\templates\include_footer.html:16
+msgid "Язык сайта"
+msgstr ""
+
+#: .\templates\include_footer.html:25
+msgid "Временная зона"
+msgstr ""
+
+#: .\templates\include_footer.html:26
+msgid "Установить часовой пояс"
+msgstr ""
+
+#: .\templates\include_footer_bottom_menu.html:4
+#: .\templates\include_top_menu.html:26
+msgid "Стрим-центр"
+msgstr ""
+
+#: .\templates\include_footer_bottom_menu.html:6
+msgid "FAQ"
+msgstr ""
+
+#: .\templates\include_footer_bottom_menu.html:15
+#: .\templates\include_footer_bottom_menu.html:16
+msgid "Помощь сайту"
+msgstr ""
+
+#: .\templates\include_modal.html:13
+msgid "500 Ошибка запроса к серверу"
+msgstr ""
+
+#: .\templates\include_services.html:4
+msgid "Наши сервисы"
+msgstr ""
+
+#: .\templates\include_services.html:15
+msgid ""
+"\n"
+"                    Агрегатор стрим трансляций, призванный объединить "
+"пользовательские трансляции различных игр.\n"
+"                    Поддерживаем известные стрим площадки: <br/> Twitch.tv, "
+"YouTube.com, HitBox.tv.\n"
+"                "
+msgstr ""
+
+#: .\templates\include_services.html:31
+msgid "Сообщества"
+msgstr ""
+
+#: .\templates\include_services.html:33
+msgid ""
+"\n"
+"                    Создавайте свои кланы, отряды или гильдии. Ведите свой "
+"личный гильд-форум.\n"
+"                "
+msgstr ""
+
+#: .\templates\include_set_time_zone.html:9
+msgid "Текущая временая зона:"
+msgstr ""
+
+#: .\templates\include_set_time_zone.html:12
+msgid "Временая зона"
+msgstr ""
+
+#: .\templates\include_top_menu.html:31
+msgid "Гайды"
+msgstr ""
+
+#: .\templates\include_top_menu.html:39 .\templates\include_top_menu.html:41
+msgid "Уведомления"
+msgstr ""
+
+#: .\templates\include_top_menu.html:49
+#: .\user_profile\templates\user_profile\tag\_edit_menu.html:11
+msgid "Личные сообщения"
+msgstr ""
+
+#: .\templates\include_top_menu.html:63
+#: .\templates\registration\activation_email.html:6
+#: .\templates\registration\login.html:29
+#: .\templates\registration\registration_complete.html:5
+#: .\templates\registration\registration_form.html:7
+msgid "Регистрация"
+msgstr ""
+
+#: .\templates\include_top_menu.html:68 .\templates\registration\login.html:22
+msgid "Войти"
+msgstr ""
+
+#: .\templates\notifications\list.html:10
+msgid "Удалить все"
+msgstr ""
+
+#: .\templates\notifications\notice.html:3
+msgid "Нет подробностей"
+msgstr ""
+
+#: .\templates\notifications\notice.html:4
+msgid "Объект удален"
+msgstr ""
+
+#: .\templates\notifications\notice.html:27
+msgid "Уведомления не найдены"
+msgstr ""
+
+#: .\templates\registration\activate.html:5
+msgid "Регистрация провалена!"
+msgstr ""
+
+#: .\templates\registration\activate.html:8
+msgid "Ключ активации аккаунта просрочен!"
+msgstr ""
+
+#: .\templates\registration\activation_complete.html:5
+msgid "Регистрация завершена"
+msgstr ""
+
+#: .\templates\registration\activation_complete.html:8
+msgid "Аккаунт успешно активирован!"
+msgstr ""
+
+#: .\templates\registration\activation_email.html:11
+#, python-format
+msgid ""
+"\n"
+"        Вы зарегистрировали учетную запись на %(site_name)s.\n"
+"        Если вы этого не делали, пожалуйста, проигнорируйте это письмо, и "
+"ваш адрес будет удален из наших записей.\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\activation_email.html:17
+#, python-format
+msgid ""
+"\n"
+"        Чтобы активировать учетную запись, пожалуйста, перейдите по ссылке в "
+"течении %(expiration_days)s дней:\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\activation_email.html:24
+msgid "Ссылка для активации аккаунта здесь!"
+msgstr ""
+
+#: .\templates\registration\activation_email.html:28
+#, python-format
+msgid ""
+"\n"
+"        С уважением, команда %(site_name)s.\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:3
+#, python-format
+msgid ""
+"\n"
+"    Вы (или кто-то притворяется вами) попросили зарегистрировать учетную "
+"запись на %(site_name)s.\n"
+"    Если это не вы, пожалуйста, проигнорируйте это письмо, и ваш адрес будет "
+"удален из наших записей.\n"
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:7
+#, python-format
+msgid ""
+"\n"
+"    Чтобы активировать учетную запись, пожалуйста, перейдите по ссылке в "
+"течении %(expiration_days)s дней:\n"
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:13
+#, python-format
+msgid ""
+"\n"
+"    С уважением, команда %(site_name)s.\n"
+msgstr ""
+
+#: .\templates\registration\activation_email_subject.txt:1
+msgid "Account activation on"
+msgstr ""
+
+#: .\templates\registration\logged_out.html:7
+#: .\templates\registration\logout.html:7
+msgid "Выход выполнен успешно!"
+msgstr ""
+
+#: .\templates\registration\login.html:5
+msgid "Авторизация на сайте mmotimes.ru"
+msgstr ""
+
+#: .\templates\registration\login.html:6
+msgid "Авторизация"
+msgstr ""
+
+#: .\templates\registration\login.html:26
+msgid "Забыли пароль?"
+msgstr ""
+
+#: .\templates\registration\login.html:27
+msgid "или"
+msgstr ""
+
+#: .\templates\registration\password_change_done.html:5
+#: .\templates\registration\password_change_done.html:7
+msgid "Пароль успешно изменен!"
+msgstr ""
+
+#: .\templates\registration\password_change_form.html:5
+#: .\templates\registration\password_reset_done.html:5
+#: .\templates\registration\password_reset_form.html:6
+msgid "Сброс пароля"
+msgstr ""
+
+#: .\templates\registration\password_change_form.html:20
+msgid "Изменить пароль"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:4
+msgid "Сброс пароля завершен"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:9
+msgid "Ваш пароль сброшен!"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:10
+msgid "Теперь вы можете"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:10
+msgid "авторизоваться"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:6
+msgid "Подтвердите сброс пароля"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:10
+msgid "Введите новый пароль ниже, чтобы сбросить старый пароль."
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:25
+msgid "Установить новый пароль"
+msgstr ""
+
+#: .\templates\registration\password_reset_done.html:9
+msgid ""
+"Проверь свой почтовый ящик: мы только что отправили тебе инструкции по "
+"сбросу пароля. Если наше письмо не придет в течении двух часов, обратись в "
+"нашу службу поддержки."
+msgstr ""
+
+#: .\templates\registration\password_reset_done.html:10
+msgid "Сообщение отправлено!"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:3
+msgid "Приветствуем, "
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:4
+#, python-format
+msgid ""
+"\n"
+"Вы получили это письмо, потому что от вас поступила заявка на сброс пароля "
+"на сайте %(domain)s.\n"
+"Если вы не хотите сбрасывать пароль, пожалуйста, игнорируйте это сообщение!\n"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:8
+msgid ""
+"\n"
+"Для сброса пароля, пожалуйста, перейдите по ссылке или скопируйте ее в ваш "
+"браузер:\n"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:13
+msgid "Ваше имя пользователя, если вы забыли:"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:16
+msgid "С уважением"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:16
+msgid "администрация сайта"
+msgstr ""
+
+#: .\templates\registration\password_reset_form.html:10
+msgid ""
+"Сообщи нам адрес электронной почты, и мы отправим инструкции по сбросу "
+"пароля. Если ты не можешь вспомнить имя пользователя или адрес электронной "
+"почты, обратись в службу поддержки."
+msgstr ""
+
+#: .\templates\registration\password_reset_form.html:25
+msgid "Сбросить пароль"
+msgstr ""
+
+#: .\templates\registration\registration_closed.html:5
+msgid "Регистрация недоступна"
+msgstr ""
+
+#: .\templates\registration\registration_closed.html:9
+msgid "Извините, регистрация на сайте недоступна!"
+msgstr ""
+
+#: .\templates\registration\registration_complete.html:9
+msgid "На ваш почтовый ящик отправлено письмо с кодом активации аккаунта."
+msgstr ""
+
+#: .\templates\registration\registration_form.html:6
+msgid "Регистрация на сайте mmotimes.ru"
+msgstr ""
+
+#: .\templates\registration\registration_form.html:25
+msgid "Пользовательское соглашение."
+msgstr ""
+
+#: .\templates\registration\registration_form.html:27
+msgid "Зарегистрироваться"
+msgstr ""
+
+#: .\templates\test.html:6
+msgid "Тестовая страница"
+msgstr ""
+
+#: .\templates\thanks.html:5
+msgid "Благодарность"
+msgstr ""
+
+#: .\templates\thanks.html:9
+msgid "Благодарим Вас за пожертвование в пользу нашего сайта"
+msgstr ""
+
+#: .\user_profile\admin.py:16
+msgid "Personal info"
+msgstr ""
+
+#: .\user_profile\admin.py:17
+msgid "Permissions"
+msgstr ""
+
+#: .\user_profile\admin.py:19
+msgid "Important dates"
+msgstr ""
+
+#: .\user_profile\forms.py:28 .\user_profile\forms.py:56
+msgid "Имя пользователя"
+msgstr ""
+
+#: .\user_profile\forms.py:32 .\user_profile\forms.py:60
+msgid "Введите правильное имя пользователя."
+msgstr ""
+
+#: .\user_profile\forms.py:34 .\user_profile\forms.py:46
+#: .\user_profile\forms.py:87
+msgid "Пользователь с таким именем уже существует."
+msgstr ""
+
+#: .\user_profile\forms.py:37 .\user_profile\forms.py:65
+msgid "Пароль"
+msgstr ""
+
+#: .\user_profile\forms.py:38 .\user_profile\forms.py:66
+msgid "Минимум 6 максимум 12 символов."
+msgstr ""
+
+#: .\user_profile\forms.py:62
+msgid "Пользователь с таким логином уже существует"
+msgstr ""
+
+#: .\user_profile\forms.py:72
+msgid "Я прочитал и согласен с Пользовательским соглашением"
+msgstr ""
+
+#: .\user_profile\forms.py:73
+msgid "Вы должны согласиться с правилами регистрации"
+msgstr ""
+
+#: .\user_profile\forms.py:85
+msgid "Пользователь с таким именем запрещен."
+msgstr ""
+
+#: .\user_profile\forms.py:96
+msgid "Вы ввели неверный ключ!"
+msgstr ""
+
+#: .\user_profile\forms.py:98
+msgid "Этот ключ уже погашен!"
+msgstr ""
+
+#: .\user_profile\forms.py:124 .\user_profile\forms.py:135
+msgid "Новый пароль"
+msgstr ""
+
+#: .\user_profile\forms.py:151 .\user_profile\forms.py:152
+#, python-format
+msgid "Максимальное число знаков %s"
+msgstr ""
+
+#: .\user_profile\forms.py:164
+msgid "Логин или email"
+msgstr ""
+
+#: .\user_profile\forms.py:164
+msgid "Оба поля могут быть чувствительны к регистру."
+msgstr ""
+
+#: .\user_profile\models.py:18
+msgid "пользовательский профиль"
+msgstr ""
+
+#: .\user_profile\models.py:23
+msgid "игровые персонажи"
+msgstr ""
+
+#: .\user_profile\models.py:24
+msgid "игровой персонаж"
+msgstr ""
+
+#: .\user_profile\models.py:31
+msgid "аватар"
+msgstr ""
+
+#: .\user_profile\models.py:32
+msgid "о себе"
+msgstr ""
+
+#: .\user_profile\models.py:33
+msgid "не принимать приглашения в группы"
+msgstr ""
+
+#: .\user_profile\models.py:34
+msgid "подпись на форуме"
+msgstr ""
+
+#: .\user_profile\models.py:38
+msgid "пользователи"
+msgstr ""
+
+#: .\user_profile\models.py:39
+msgid "профиль пользователя"
+msgstr ""
+
+#: .\user_profile\models.py:79
+msgid "Количество архивных стрим записей"
+msgstr ""
+
+#: .\user_profile\models.py:83
+msgid "Настройки профилей"
+msgstr ""
+
+#: .\user_profile\models.py:84
+msgid "Настройки профиля"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\edit_form.html:7
+msgid "Редактировать профиль"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\index.html:7
+msgid "Профайл"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\index.html:18
+msgid "Игровые ключи"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\index.html:28
+msgid "Игровые персонажи"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_banner_menu.html:12
+msgid "Мой профайл"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_game_character_info.html:15
+msgid "Создать персонажа"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_top_menu.html:18
+msgid "Выйти"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_user_card_link.html:6
+msgid "Визитка пользователя"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_user_info.html:9
+msgid "О себе:"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_user_info.html:10
+msgid "Электронный адрес:"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_user_info.html:11
+msgid "Пригласительный ключ:"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_user_info.html:12
+msgid "Блокирововать приглашения в группы:"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\tag\_user_info.html:23
+msgid "Сменить пароль"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\user_card.html:10
+msgid "неизвестен"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\user_card.html:37
+msgid "Написать сообщение"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\user_card.html:49
+msgid "Удалить из модераторов"
+msgstr ""
+
+#: .\user_profile\templates\user_profile\user_card.html:55
+msgid "Пригласить в свою группу"
+msgstr ""
+
+#: .\user_profile\views.py:33
+msgid "Профиль успешно отредактирован!"
+msgstr ""

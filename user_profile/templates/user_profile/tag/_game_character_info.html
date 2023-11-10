@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<ul class="list-unstyled list-inline">
+    {% for character in characters %}
+        <li>
+            <i class="fa fa-universal-access fa-2x"></i> {{ character.name }}
+        </li>
+    {% empty %}
+        <h4 class="text-muted text-center"><i class="fa fa-user-times fa-2x" aria-hidden="true"></i>
+            <br> {% trans 'Нет данных' %}</h4>
+    {% endfor %}
+    {% if characters|length < 0 %}
+        <hr>
+        <div class="text-center">
+            <a class="btn btn-sm btn-link btn-border" href="#" role="button">
+                <i class="fa fa-plus-circle"></i> {% trans 'Создать персонажа' %}
+            </a>
+        </div>
+    {% endif %}
+</ul>

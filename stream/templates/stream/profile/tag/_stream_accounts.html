@@ -1,0 +1,10 @@
+{% load i18n %}
+{% load user_profile_tags %}
+{% load stream_tags %}
+
+<ul class="list-unstyled">
+  <li><h3><span class="mdi mdi-twitch mdi-24px"></span> {% trans 'Twitch.tv' %}
+      <a href="{% url 'connect_twitch' %}" class="btn btn-link btn-sm btn-border pull-right">{% trans 'Привязать' %}</a></h3>
+  </li>
+</ul>
+

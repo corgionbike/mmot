@@ -1,0 +1,33 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load group_tags %}
+{% load group_forum_tags %}
+
+{% block title %}{{ group_profile }}{% endblock %}
+
+{% block profilecontext %}
+    {% if not group_profile.is_block %}
+    <div class="col-md-6">
+        <div class="well">
+            <h3 class="line">{% trans 'Общая информация'|upper %}</h3>
+            {% profile_group_info %}
+        </div>
+        <div class="well">
+            {% forum_info %}
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="well">
+            {% members_info %}
+        </div>
+        <div class="well">
+            {% moderators_info %}
+        </div>
+    </div>
+
+    {% else %}
+        <h4 class="text-center text-muted">{% trans 'Ваша группа заблокирована!' %}</h4>
+    {% endif %}
+
+{% endblock %}

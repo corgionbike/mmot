@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+{% block profiles %}
+
+    <div class="profile_banner">
+        <div class="container">
+            <div class="row profile_wrapper">
+                <div class="col-md-6">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                {% img_thumbnail img=user.avatar w=96 h=96 cls='media-object img-circle img-thumbnail' %}
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="set_banner_name media-heading">{{ user.username }}</h2>
+                            <span>{% trans 'Последний вход' %}: {{ user.last_login|default:'-' }}</span>
+                            {% profile_edit_menu %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_banner_menu">
+        <div class="container bottom-offset-20">
+            {% profile_banner_menu %}
+        </div>
+    </div>
+    <div class="container">
+        {% block profilecontext %}{% endblock %}
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

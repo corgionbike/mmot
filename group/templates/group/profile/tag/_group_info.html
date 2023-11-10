@@ -1,0 +1,42 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+<ul class="list-unstyled">
+    <li class="text-center">
+        {% img_thumbnail img=group.emblem w=96 h=96 %}
+        <h5><a href="{{ group.get_absolute_url }}">{{ group.name }}</a></h5>
+    </li>
+    <li><b>{% trans 'Тип:' %}</b> {{ group.get_type_display }}</li>
+    <li><b>{% trans 'Приватность:' %}</b> {{ group.get_privacy_display }}</li>
+    <li><b>{% trans 'Описание:' %}</b> {{ group.description|linebreaks|truncatechars:200 }}</li>
+    <li><b>{% trans 'Статус:' %}</b> {{ group.motto|default:'не указан' }}</li>
+    <li><b>{% trans 'Основная игра:' %}</b> {{ group.game|default:group.game_group }}</li>
+    <li><b>{% trans 'Ссылка на группу:' %}</b> <a id="group_link" href="https://{{ host }}/?group={{ group.name }}">http://{{ host }}/?group={{ group.name }}</a>
+        <button id="btn-copy" data-toggle="tooltip" data-placement="top" title="{% trans 'Скопировать' %}"
+                class="btn btn-link" data-clipboard-target="#group_link"><span class="fa fa-copy"></span></button>
+    </li>
+    <ul class="list-inline">
+        <hr>
+        <li><a href="{% url 'group_profile_edit' %}" class="btn btn-sm btn-link  btn-border">
+            <span class="glyphicon glyphicon-edit"></span> {% trans 'Редактировать' %}</a>
+        </li>
+        <li>
+            <a data-toggle="modal"
+               data-target="#main-modal"
+               class="btn btn-sm btn-link  btn-border"
+               data-title="{% trans 'Удалить группу?' %}"
+               data-url="{% url 'group_profile_remove' %}" href="#">
+                <span class="glyphicon glyphicon-trash"></span> {% trans 'Удалить группу' %}
+            </a>
+        </li>
+    </ul>
+</ul>
+
+<script>
+    require(['clipboard', 'jquery'], function (module, $) {
+        var clipboard = new module("#btn-copy");
+    });
+</script>
+

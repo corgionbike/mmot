@@ -1,0 +1,66 @@
+{% extends "base_content.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+{% load editor_tags %}
+{% load cache %}
+{% load guides_tags %}
+
+{% block meta %}{{ guide.body.excerpt|truncatewords:15|striptags }}{% endblock %}
+{% block title %}{% trans "Гайд - "|upper %}{{ guide.game.name }}: {{ guide.title }} {% endblock %}
+
+{% block content %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'index' %}">{% trans 'Главная' %}</a></li>
+        <li><a href="{% url 'guides_index' %}">{% trans 'Гайды' %}</a></li>
+        <li class="active">{{ guide.title }}</li>
+    </ol>
+    <div class="col-md-8" itemscope itemtype="http://schema.org/Article">
+        <div class="media">
+            <div class="media-body">
+                <h2 class="media-heading" itemprop="name">
+                    <a href="#" class="modal-link" data-toggle="modal" data-target="#main-modal"
+                       data-url="{{ guide.game.get_game_detail_url }}">{{ guide.game }}</a>
+                    <span class="fa fa-angle-double-right"></span>
+                    {{ guide.title }}
+                    {% if guide.status == guide.STATUS.draft %}
+                        <small>[{% trans 'черновик' %}]</small>
+                    {% endif %}
+                </h2>
+                <ul class="list-inline text-muted">
+                    <li>
+                        <time class="glyphicon glyphicon-time" itemprop="datePublished"
+                              datetime="{{ guide.modified|date:"Y-m-d" }}"
+                              title="{% trans 'Дата модификации' %}"></time>
+                        {{ guide.modified|date:"d.m.y" }}</li>
+                    <li><span
+                            class="fa fa-user-circle"
+                            title="{% trans 'Автор' %}"></span> <span
+                            itemprop="creator">{% user_card_link guide.user is_img=False cls='modal-link' %}
+                    </span>
+                    </li>
+
+                    <li><span class="mdi mdi-eye" title="{% trans 'Просмотры' %}"></span> {{ views }}</li>
+                    <li itemprop="keywords"><span class="mdi mdi-gamepad-variant"></span> <a
+                            href="{% url 'guide_filter' %}?game={{ guide.game.id }}"
+                            title="{% trans 'Поиск по игре' %} {{ guide.game }}">{{ guide.game }}</a>
+                    </li>
+                    {% for tag in tags %}
+                        <li itemprop="keywords"><span class="fa fa-tag"></span>
+                            <a href="{% url 'guide_search_by_tag' %}?search={{ tag.name }}"
+                               title="{% trans 'Поиск по тегу' %} {{ tag }}">{{ tag }}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+                <div role="article" class="guide_post" itemprop="articleBody">
+                    {{ guide.body.content|safehtml|oembedhtml|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        {% more_read guide.game.id guide.id %}
+        {% include 'guides/include_ad.html' %}
+    </div>
+
+{% endblock %}

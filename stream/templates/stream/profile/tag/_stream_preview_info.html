@@ -1,0 +1,51 @@
+{% load i18n %}
+{% load user_profile_tags %}
+{% load stream_tags %}
+
+{% get_logo_provider preview.provider as logo %}
+{% trans '-' as nodata %}
+
+{% if preview %}
+    <ul class="list-unstyled">
+        <li><b>{% trans 'Провайдер:' %}</b> <span
+                class="{{ logo }}"></span> {{ preview.get_provider_display|default:'По умолчанию' }}</li>
+        <li><b>{% trans 'Идентификатор:' %}</b> {{ preview.sid|default:'По умолчанию' }}</li>
+        <li><b>{% trans 'Название:' %}</b> {{ preview.name|default:'-'|truncatechars:100 }}</li>
+        <li><b>{% trans 'Описание:' %}</b> {{ preview.description|linebreaksbr|default:'-'|truncatechars:200 }}</li>
+        <li><b>{% trans 'Игра:' %}</b> {{ preview.game|default:preview.game_user }}</li>
+        <li><b>{% trans 'Начало:' %}</b> {{ preview.start_ts|date:'d.m.y G:i' }}
+            ({% trans 'через' %} {{ preview.start_ts|timeuntil }})
+        </li>
+        <li><b>{% trans 'Окончание:' %}</b> {{ preview.end_ts|date:'d.m.y G:i' }}</li>
+        <li><b>{% trans 'Трансляция отложена:' %}</b> <span
+                class='fa {% if preview.is_postpone %} fa-check-square-o {% else %} fa-square-o {% endif %}'></span>
+        </li>
+        <li>
+            <hr>
+            <ul class="list-inline">
+                <li>
+                    <a href="{% url 'stream_preview_edit' %}" class="btn btn-sm btn-link  btn-border">
+                        <span class="glyphicon glyphicon-edit"></span> {% trans 'Редактировать' %}</a>
+                </li>
+                <li>
+                    <a href="#remove" class="btn btn-sm btn-link  btn-border"
+                       data-toggle="modal"
+                       data-target="#main-modal"
+                       data-title="{% trans 'Удалить анонс?' %}"
+                       data-url="{% url 'stream_preview_remove' %}">
+                        <span class="glyphicon glyphicon-trash"></span> {% trans 'Удалить' %}</a>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+{% else %}
+
+    <div class="row text-center">
+        <h4 class="text-muted"><span class="fa fa-play-circle-o fa-2x"></span> <br/>{% trans 'Нет данных' %}</h4>
+        <hr>
+        <a class="btn btn-sm btn-link  btn-border" href="{% url 'stream_preview_create' %}">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> {% trans 'Добавить анонс' %}
+        </a>
+    </div>
+{% endif %}

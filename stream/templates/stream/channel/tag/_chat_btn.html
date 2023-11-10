@@ -1,0 +1,11 @@
+{% load i18n %}
+
+<a style="display: none;" id="btn_show_chat" class="btn btn-sm btn-link btn-block" role="button">
+    {% trans "Показать чат"|upper %}
+</a>
+<a id="btn_hide_chat" href="javascript:void(0);" class="btn btn-sm btn-link btn-block" role="button">
+    <span class="fa fa-chevron-up"></span> {% trans "Cкрыть чат"|upper %}
+</a>
+<script>
+    require(['module_chat_btn']);
+</script>

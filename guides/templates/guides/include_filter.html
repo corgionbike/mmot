@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+<div class="well">
+    <h4 class="line text-muted"><span class="fa fa-filter"></span> {% trans "Фильтр"|upper %}</h4>
+    <form id="form-filter-guides" method="GET" action="{% url 'guide_filter' %}" enctype="multipart/form-data">
+        {#        {% csrf_token %}#}
+        {% bootstrap_form form show_label=False %}
+        <hr>
+        <input type="submit" title="{% trans 'Отфильтровать' %}" class="btn btn-sm btn-link btn-border btn-block"
+               value="{% trans 'Отфильтровать' %}"/>
+    </form>
+</div>
+
+<script>
+    require(['module_select2', 'module_autocomplete'], function (select2, autocomplete) {
+        select2.init('#id_game');
+        autocomplete.init('#id_tags', '{% url 'guide_autocomplete_tags' %}');
+    });
+</script>

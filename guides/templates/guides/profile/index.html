@@ -1,0 +1,90 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+
+
+{% block title %}{% trans 'Мои гайды' %}{% endblock %}
+
+{% block profilecontext %}
+    <div class="col-md-12">
+        <div class="well">
+            <h3 class="line">{% trans "Мои гайды"|upper %}</h3>
+            {% if guide_list %}
+                <div id="toolbar" class="btn-group">
+                    <a href="{% url 'guide_create' %}" class="btn btn-link">
+                        <i class="fa fa-plus-circle"></i> {% trans 'Добавить гайд' %}
+                    </a>
+                </div>
+                <div id="loader" class="text-center"><span
+                        class="fa fa-circle-o-notch fa-spin"></span> {% trans "Загрузка..." %}</div>
+                <table id="guides_tbl" class="table table-striped hide"
+                       data-pagination="true"
+                       data-search="true"
+                       data-cookie="true"
+                       data-cookie-id-table="saveId"
+                       data-classes="table-no-bordered"
+                       data-toolbar="#toolbar">
+                    <thead>
+                    <tr>
+                        <th data-field="title" data-align="center" data-sortable="true">{% trans "Название" %}</th>
+                        <th data-field="game" data-align="center" data-sortable="true">{% trans "Игра" %}</th>
+                        <th data-field="modified" data-align="center"
+                            data-sortable="true">{% trans "Модифицирован" %}</th>
+                        <th data-field="status" data-align="center" data-sortable="true">{% trans "Статус" %}</th>
+                        <th data-align="center">{% trans "Действие" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for guide in guide_list %}
+                        <tr>
+                            <td>
+                                {% if guide.status == guide.STATUS.draft or guide.status == guide.STATUS.moderation %}
+                                    {{ guide.title }}
+                                {% else %}
+                                    <a href="{{ guide.get_detail_url }}">{{ guide.title }}</a>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="#" class="modal-link" data-toggle="modal" data-target="#main-modal"
+                                   data-url="{{ guide.game.get_game_detail_url }}">{{ guide.game }}</a>
+                            </td>
+                            <td>{{ guide.modified }}</td>
+                            <td>{{ guide.status }}</td>
+                            <td>
+                                {% if guide.status == guide.STATUS.draft %}
+                                    <a class="btn btn-link btn-sm" title="{% trans "Редактировать" %}"
+                                       data-toggle="tooltip" data-placement="top" href="{{ guide.get_edit_url }}">
+                                        <span class="fa fa-edit"></span>
+                                    </a>
+                                    <a data-toggle="modal"
+                                       data-target="#main-modal"
+                                       class="btn btn-link btn-sm"
+                                       data-title="{% trans 'Удалить гайд?' %}"
+                                       data-url="{{ guide.get_remove_url }}" href="#">
+                                        <span title="{% trans "Удалить" %}" data-toggle="tooltip" data-placement="top"
+                                              class="fa fa-trash"></span>
+                                    </a>
+                                {% else %}
+                                    <span class="fa fa-ban"></span> <span>{% trans 'Заблокировано' %}</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="row text-center">
+                    <a href="{% url 'guide_create' %}" class="btn btn-link btn-border btn-sm">
+                        <i class="fa fa-plus-circle"></i> {% trans 'Добавить гайд' %}
+                    </a>
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        require(['module_bootstrap_tbl'], function (module) {
+            module.init('guides_tbl');
+        });
+    </script>
+
+{% endblock %}

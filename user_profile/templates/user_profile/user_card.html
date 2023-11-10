@@ -1,0 +1,61 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+{% trans 'Группа' as nogroup %}
+{% trans 'Нет данных' as nodesc %}
+{% trans 'неизвестен' as nologin %}
+
+<div class="media">
+    <div class="media-left media-middle text-center">
+        <div class="avatar {% is_online_user_css member %}">
+            <a href="#{{ member }}" class="thumbnail">
+                {% img_thumbnail img=member.avatar w=96 h=96 cls='img-circle img-thumbnail media-object' %}
+            </a>
+        </div>
+    </div>
+    <div class="media-body">
+        <h5 class="media-heading">{{ member.username }}</h5>
+        <ul class="list-unstyled">
+            {% if member.description %}
+                <li>{{ member.description|linebreaks }}</li>
+            {% else %}
+                <li><h5 class="text-muted">{{ nodesc }}</h5></li>
+            {% endif %}
+{#            <li><span class="text-muted">{% trans 'Последний вход:' %} {{ member.last_login|timesince|default_if_none:nologin }} {% trans 'назад' %}</span></li>#}
+        </ul>
+    </div>
+</div>
+<hr class="user_card_hr">
+<ul id="user_action_btn" class="nav nav-sm nav-pills">
+    {% if user.is_active and user != member %}
+        <li>
+            <a href="{% url 'messages_compose_to' member.username %}" data-is_ajax='false'>
+                <span class="fa fa-pencil-square-o" aria-hidden="true"></span> {% trans "Написать сообщение" %}</a>
+        </li>
+    {% endif %}
+
+    {% if user != member and is_user_owner_current_group and is_member_group %}
+        <li>
+            <a href="{{ member.get_group_member_exclude_url }}">
+                <span class="fa fa-user-times"></span> {% trans "Исключить из группы" %}</a>
+        </li>
+        {% if is_member_moderator_group %}
+            <li>
+                <a href="{% url "group_moderator_exclude" group.id member.id %}" data-is_ajax='true'>
+                <span class="fa fa-user-times"></span> {% trans "Удалить из модераторов" %}</a>
+            </li>
+        {% endif %}
+    {% elif user.is_active and user != member and is_user_has_group and not is_member_group and not is_member_has_group %}
+        <li>
+            <a href="{% url 'group_invite_send_to' member.username %}" data-toggle="modal" data-is_ajax='false'>
+            <span class="fa fa-user-circle-o" ></span> {% trans "Пригласить в свою группу" %}</a>
+        </li>
+    {% endif %}
+</ul>
+
+<script>
+    require(['module_user_card'], function(module){module.init();});
+</script>
+

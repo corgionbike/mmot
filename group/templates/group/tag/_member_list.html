@@ -1,0 +1,23 @@
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+
+<ul class="list-inline">
+    {% for member in member_list %}
+        <li data-toggle="tooltip" data-placement="top" title="{{ member.user }}">
+            {% user_card_link member.user %}
+        </li>
+    {% empty %}
+        <div class="row text-center">
+            <h4 class="text-muted">{% trans 'Нет данных' %}</h4>
+        </div>
+    {% endfor %}
+
+{% if member_list|length > 5 %}
+    <li><a href="{{ group_profile.get_members_url }}"><span data-toggle="tooltip" data-placement="top" title="{% trans  'Показать всех' %}" class="fa fa-angle-double-right fa-lg"></span></a></li>
+{% endif %}
+</ul>

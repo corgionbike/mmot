@@ -1,0 +1,9 @@
+<script>
+
+    require(['jquery', {% if html %} 'module_mmot_html_editor'{% else %} 'module_mmot_bbcode_editor' {% endif %}], function($, editor){
+        editor.init('{{ textarea_id }}');
+        console.debug(editor);
+        return mmotWYG = editor;
+    });
+
+</script>

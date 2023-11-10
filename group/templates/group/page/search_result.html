@@ -1,0 +1,45 @@
+{% extends 'base_group.html' %}
+{% load i18n %}
+{% load group_tags %}
+{% load user_profile_tags %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans 'Поиск участников' %} {% endblock %}
+
+{% block groupcontent %}
+
+    <ol class="breadcrumb">
+        <li><a href="{{ group_profile.get_members_url }}">{% trans 'Список участников' %}</a></li>
+        <li class="active">{% trans 'Поиск участника' %}</li>
+    </ol>
+    <ul id="member_list" class="list-group clearfix">
+        <div class="row">
+            <div class="col-md-12">
+            {% if members %}<h5>{% trans 'По запросу' %} [{{ q }}] {% trans 'всего найдено:' %} {{ members|length }}</h5>{% endif %}
+            </div>
+        </div>
+        {% for member in members %}
+            <div class="col-md-6">
+                {% include 'group/page/include_member_item.html' %}
+            </div>
+        {% empty %}
+             <h4 class="text-center text-muted well"><i class="fa fa-users fa-2x" aria-hidden="true"></i> <br/> {% trans 'Участники не найдены' %}</h4>
+        {% endfor %}
+    </ul>
+    {% if members.has_other_pages %}
+        <hr>
+        <div class="col-md-12 text-center">
+            {% bootstrap_pagination members size='small' %}
+        </div>
+    {% endif %}
+
+
+{#<div class="col-md-4">#}
+{#    <div class="well well-sm">#}
+{#        {% search_form group_profile.get_members_search_url %}#}
+{#    </div>#}
+{#</div>#}
+
+
+{% endblock %}
+

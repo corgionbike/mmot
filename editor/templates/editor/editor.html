@@ -1,0 +1,72 @@
+{% load i18n %}
+{% include 'editor/include_js.html' %}
+<div class="editor" id="editor_{{ textarea_id }}">
+    {% include 'editor/html_tags_helper.html' %}
+
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group" id="edit_btn_{{ textarea_id }}">
+            <a class="btn btn-sm btn-link" role="wysiwyg_bold" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'b');" tabindex="-1" title="{% trans 'Жирный' %}">
+                <i class="fa fa-bold" title="{% trans 'Жирный' %}"></i>
+            </a>
+            <a class="btn btn-sm btn-link" role="wysiwyg_italic" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'i');" tabindex="-1" title="{% trans 'Курсив' %}">
+                <i class="fa fa-italic" title="{% trans 'Курсив' %}"></i>
+            </a>
+            <a class="btn btn-sm btn-link" role="wysiwyg_underline" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 's');" tabindex="-1" title="{% trans 'Зачеркнутый' %}">
+                <i class="fa fa-underline" title="{% trans 'Зачеркнутый' %}"></i>
+            </a>
+            <a class="btn btn-sm btn-link" role="wysiwyg_center" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'center');" tabindex="-1" {% trans 'По центру' %}>
+                <i class="fa fa-align-center" title="{% trans 'По центру' %}"></i>
+            </a>
+
+            {% include 'editor/include_header_btn.html' %}
+
+            <a class="btn btn-sm btn-link" role="wysiwyg_paragraph" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'p');" tabindex="-1" title="{% trans 'Параграф' %}">
+                <i class="fa fa-paragraph" title="{% trans 'Параграф' %}"></i>
+            </a>
+            <a class="btn btn-sm btn-link" role="wysiwyg_image" href="#"
+               onclick="return mmotWYG.insertImage(this);" tabindex="-1" {% trans 'Вставить картинку' %}>
+                <i class="fa fa-image" title="{% trans 'Вставить картинку' %}"></i>
+            </a>
+            <a class="btn btn-sm btn-link" role="wysiwyg_link" href="#" onclick="return mmotWYG.insertLink(this);"
+               tabindex="-1" title="{% trans 'Вставить ссылку' %}">
+                <i class="fa fa-link" title="{% trans 'Вставить ссылку' %}"></i>
+            </a>
+            <a class="btn btn-sm btn-link" role="wysiwyg_quote" href="#"
+               onclick="return mmotWYG.insertTagWithText(this, 'blockquote');" tabindex="-1"
+               title="{% trans 'Вставить цитату' %}">
+                <i class="fa fa-quote-right" title="{% trans 'Вставить цитату' %}"></i>
+            </a>
+            <a class="btn btn-sm btn-link" role="wysiwyg_list" href="#" onclick="return mmotWYG.insertList(this);"
+               tabindex="-1" {% trans 'Список' %}>
+                <i class="fa fa-list" title="{% trans 'Список' %}"></i>
+            </a>
+            {% if cut %}
+                <a class="btn btn-sm btn-link" role="wysiwyg_cut" href="#"
+                   onclick="return mmotWYG.insertTagWithText(this, 'cut');" tabindex="-1" title="{% trans 'Кат' %}">
+                    <i class="fa fa-scissors" title="{% trans 'Кат' %}"></i>
+                </a>
+            {% endif %}
+
+        </div>
+        <div class="btn-group pull-right" role="group">
+            {% if html %}
+                <a role="button" data-toggle="collapse" href="#collapseHtml" aria-expanded="false"
+                   aria-controls="collapseHtml" class="btn btn-sm btn-link">{% trans 'html тэги' %}</a>
+            {% endif %}
+            <a id="preview_submit_{{ textarea_id }}" class="btn btn-sm btn-link" data-url="{{ preview_url }}"
+               href="#" onclick="return mmotWYG.showPreview(this);">
+                <i class="fa fa-eye" title="{% trans 'Предпросмотр' %}"></i>
+            </a>
+            <a id="edit_submit_{{ textarea_id }}" class="btn btn-sm btn-link" href="#"
+               onclick="return mmotWYG.showEdit(this);">
+                <i class="fa fa-code" title="{% trans 'Редактировать' %}"></i>
+            </a>
+        </div>
+    </div>
+    <div id="text_preview_{{ textarea_id }}" class="hidden" style="word-wrap: break-word;"></div>
+</div>

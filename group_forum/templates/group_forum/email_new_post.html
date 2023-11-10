@@ -1,0 +1,6 @@
+{% load i18n %}{% blocktrans with url=topic.get_absolute_url %}
+<p>
+    Добрый день {{ user }}, в теме обсуждения "{{ topic }}" был добавлен новый комментарий. <br/>
+    <a href="{{ protocol }}://{{ domain }}{{ url }}">{{ protocol }}://{{ domain }}{{ url }}</a>
+</p>
+{% endblocktrans %}

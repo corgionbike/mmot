@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load user_profile_tags %}
+
+{% if form %}
+    <div class="alert alert-info" role="alert">
+    <form method="POST" action="{% url 'stream_channel_ctrl' %}" onchange="this.submit(); return false;">
+        {% csrf_token %}
+        {% bootstrap_form_errors form layout='inline' %}
+        <div class="form-group" style="margin-bottom: 0px">
+            <b><span class="fa fa-toggle-on"></span> {% trans 'Активировать канал' %}</b>
+            <div class="material-switch pull-right">
+                {{ form.status }}
+                <label for="{{ form.status.id_for_label }}" class="label-danger"></label>
+            </div>
+        </div>
+    </form>
+    </div>
+{% endif %}

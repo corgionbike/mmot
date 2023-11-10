@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<div class="row">
+    <div class="well well-sm">
+        <h5 class="text-center text-muted">{% trans 'Вы уверены, что хотите удалить тему со всеми комментариями?' %}</h5>
+        <form id="ajax-form" method="post" action="javascript:void(null);" data-url="{{ topic.get_remove_url }}">
+            {% csrf_token %}
+            <ul class="text-center list-inline">
+                <li><input type="submit" class="btn text-danger btn-link btn-border" value="{% trans 'Удалить' %}"/></li>
+                <li><a href="#" onclick="$('#main-modal').modal('hide'); return false;" class="btn btn-link btn-border">{% trans "Отменить" %}</a></li>
+            </ul>
+        </form>
+    </div>
+</div>
+<script>
+    require(['jquery','module_form_ajax'], function($, form){
+        $(function () {
+            form.init();
+        });
+    });
+</script>

@@ -1,0 +1,16 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load user_profile_tags %}
+
+
+<form id="ajax-post-form-{{ post.id }}" method="post" action="javascript:void(null);" data-url="{{ post.get_edit_url }}">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input id="topic-submit" type="submit" class="btn btn-link btn-border btn-block" value="{% trans 'Отредактировать' %}" />
+</form>
+
+<script>
+    require(['jquery', 'module_form_ajax'], function($, form){
+        form.init('#ajax-post-form-{{ post.id }}');
+    });
+</script>

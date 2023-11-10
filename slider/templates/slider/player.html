@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load editor_tags %}
+
+<div class="embed-responsive embed-responsive-16by9 player-cover">
+    {{ slide.link|oembedhtml|safe }}
+</div>
+
+<p class="top-offset-20">
+    {{ slide.description }}
+</p>
+

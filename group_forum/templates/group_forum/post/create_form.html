@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load user_profile_tags %}
+{% load group_forum_tags %}
+
+<div class="col-md-1 hidden-sm">{% user_card_link user %}</div>
+
+{% url 'post_create' group_profile.name topic.id as action_url%}
+{% url 'bbcode_preview' as preview_url %}
+
+<div class="col-md-11">
+    {% include 'group_forum/post/include_editor.html' %}
+</div>

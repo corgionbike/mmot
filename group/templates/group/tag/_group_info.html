@@ -1,0 +1,42 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+
+
+<div class="col-md-6">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h6 class="list-group-item-heading">{% trans 'Тип' %}</h6>
+            <p class="list-group-item-text">{{ group_profile.get_type_display }}</p>
+        </li>
+        <li class="list-group-item">
+            <h6 class="list-group-item-heading">{% trans 'Описание' %}</h6>
+            <p class="list-group-item-text">{{ group_profile.description|linebreaks|truncatechars:200 }}</p>
+        </li>
+        <li class="list-group-item">
+            <h6 class="list-group-item-heading">{% trans 'Слоган' %}</h6>
+            <p class="list-group-item-text">{{ group_profile.motto|default:'-' }}</p>
+        </li>
+        <li class="list-group-item">
+            <h6 class="list-group-item-heading">{% trans 'Игра' %}</h6>
+            <p class="list-group-item-text">{{ group_profile.game|default:group_profile.game_group }}</p>
+        </li>
+    </ul>
+</div>
+
+<div class="col-md-6">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h6 class="list-group-item-heading">{% trans 'Владелец' %}</h6>
+            <p class="list-group-item-text text-center">
+                {% user_card_link group_profile.owner w=96 h=96 %}
+            </p>
+        </li>
+        <li class="list-group-item">
+            <h6 class="list-group-item-heading">{% trans 'Участники' %} <span
+                    class="badge">{{ group_profile.group_members.count }}</span></h6>
+            {% member_list 8 %}
+        </li>
+    </ul>
+</div>

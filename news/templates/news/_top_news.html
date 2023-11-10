@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load guides_tags %}
+
+<div class="col-md-6">
+    <h1>{% trans 'Новости'|upper %}</h1>
+    {% for article in news %}
+        <div class="media">
+            <div class="media-body">
+                <ul class="list-inline text-muted">
+                    <li><span class="glyphicon glyphicon-time"
+                              title="{% trans 'Создан' %}" ></span> {{ article.start|date:"d.m.y G:i" }}</li>
+                    <li><span class="mdi mdi-eye" title="{% trans 'Просмотры' %}"></span> {% views article.id 'news' %} </li>
+                    {% if article.staff_preview %}
+                        <li>
+                            <span class="label label-warning">{% trans 'Черновик' %}</span>
+                        </li>
+                    {% endif %}
+                </ul>
+                <a href="{{ article.get_absolute_url }}" role="link">
+                    <h2 class="media-heading">
+                        {{ article.title }} <span class="fa fa-angle-double-right"></span>
+                    </h2>
+                </a>
+            </div>
+        </div>
+    {% empty %}
+        <h5 class="text-muted">{% trans 'Нет новостей' %}</h5>
+    {% endfor %}
+</div>

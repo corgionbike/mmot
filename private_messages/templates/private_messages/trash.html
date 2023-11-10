@@ -1,0 +1,60 @@
+{% extends "private_messages/base.html" %}
+{% load i18n %}
+{% load user_profile_tags %}
+{% block title %}{% trans "Удаленные сообщения" %}{% endblock %}
+{% block messages-content %}
+
+    <div class="col-md-12">
+        <div class="well">
+            <h3 class="line">{% trans "Удаленные сообщения"|upper %}</h3>
+            {% if message_list %}
+                <div id="loader" class="text-center"><span
+                        class="fa fa-circle-o-notch fa-spin"></span> {% trans "Загрузка..." %}</div>
+                <table id="trash_message_tbl" class="table table-striped hide"
+                       data-pagination="true"
+                       data-search="true"
+                       data-cookie="true"
+                       data-cookie-id-table="saveId"
+                       data-classes="table-no-bordered">
+                    <thead>
+                    <tr>
+                        <th data-field="sender" data-align="center" data-sortable="true">{% trans "Отправитель" %}</th>
+                        <th data-align="center">{% trans "Тема" %}</th>
+                        <th data-field="date" data-align="center" data-sortable="true">{% trans "Дата" %}</th>
+                        <th data-align="center">{% trans "Действие" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for message in message_list %}
+                        <tr>
+                            <td>{% user_card_link message.sender is_img=False cls="modal-link" %}</td>
+                            <td>
+                                {{ message.subject }}
+                            </td>
+                            <td>{{ message.sent_at }}</td>
+                            <td><a class="btn btn-sm btn-link btn-border" title="{% trans "Восстановить" %}" data-toggle="tooltip"
+                                   data-placement="top" href="{% url 'messages_undelete' message.id %}">
+                                <span class="fa fa-recycle"></span>
+                            </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4 class="text-center text-muted"><i class="fa fa fa-trash fa-2x" aria-hidden="true"></i>
+                    <br/> {% trans 'Нет сообщений' %}</h4>
+            {% endif %}
+            <p class="text-center text-muted"><span
+                    class="fa fa-warning"></span> {% trans "Сообщения в корзине очищаются каждые 7 дней, не полагайтесь на эту функцию для длительного хранения." %}
+                {% if message_list %}<a href="{% url 'clear_trash' %}">{% trans 'Очистить корзину' %}</a>{% endif %}
+            </p>
+        </div>
+    </div>
+
+    <script>
+        require(['module_bootstrap_tbl'], function (module) {
+            module.init('trash_message_tbl');
+        });
+    </script>
+{% endblock %}

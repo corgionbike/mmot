@@ -1,0 +1,51 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load user_profile_tags %}
+{% load group_tags %}
+{% load editor_tags %}
+
+
+{% trans "Описание не найдено" as nodesc %}
+
+{% if group.privacy == 1 or user_is_member or user_is_owner %}
+    <div class="media">
+        <div class="media-left text-center media-middle">
+            <a href="{{ group.get_absolute_url }}">
+                {% img_thumbnail img=group.emblem w=92 h=92 cls='img-circle img-thumbnail media-object' %}
+            </a>
+            <p>
+                {% if user_is_moderator %}
+                    <span class="label label-primary"><span class="fa fa-exclamation-circle"></span> {% trans 'Модерация' %}</span>
+                {% endif %}
+            </p>
+        </div>
+        <div class="media-body">
+            <table class="table table-no-bordered text-center" style="margin-bottom: 0px;">
+            <thead class="text-muted">
+                <tr>
+                    <th class="text-center">{% trans 'Приватность' %}</th>
+                    <th class="text-center">{% trans 'Основатель' %}</th>
+                    <th class="text-center">{% trans 'Игра' %}</th>
+                    <th class="text-center">{% trans 'Участников' %}</th>
+                </tr>
+            </thead>
+                <tr>
+                    <td><span class="{% get_icon_privacy group.privacy %}"></span> {{ group.get_privacy_display }}</td>
+                    <td>{{ group.owner }}</td>
+                    <td>
+                        {{ group.game.name|default:group.game_group|truncatechars:20 }}
+                    </td>
+                    <td><span class="badge">{{ group.num_members }}</span></td>
+                </tr>
+            </table>
+            <div class="text-muted well-sm well">{{ group.description|default:nodesc|truncatechars:300 }}</div>
+        </div>
+    </div>
+{% else %}
+    <h4 class="text-center text-muted"><span class="fa fa-eye-slash fa-2x"></span><br/> {% trans 'Группа является приватной' %}</h4>
+{% endif %}
+
+<script>
+    require(['module_group_card']);
+</script>
+

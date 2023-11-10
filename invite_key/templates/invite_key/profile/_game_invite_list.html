@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<ul class="list-unstyled">
+{% for invite in invites %}
+    <li>
+        <b>{{ invite.game }}:</b>
+        <a role="button" data-toggle="collapse" href="#key-{{ invite.game|slugify }}" aria-expanded="false" aria-controls="key_{{ invite.game }}">
+        {% trans 'Показать' %}
+        </a>
+        <div class="collapse" id="key-{{ invite.game|slugify }}">
+            <h5>{{ invite.key }}</h5>
+        </div>
+    </li>
+{% empty %}
+    <h4 class="text-muted text-center"><i class="fa fa-gamepad fa-2x" aria-hidden="true"></i> <br> {% trans 'Нет данных' %}</h4>
+{% endfor %}
+</ul>

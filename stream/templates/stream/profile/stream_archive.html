@@ -1,0 +1,31 @@
+{% extends "base_profiles.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% load common %}
+
+{% block title %}{% trans "Стрим архивы" %}{% endblock %}
+
+{% block profilecontext %}
+
+<div class="row">
+{% for a in archives %}
+      <div class="col-sm-4 col-md-2">
+        <div class="thumbnail">
+          <img src="holder.js/200x100" alt="logo">
+          <div class="caption">
+            <h3 class="text-center">{{ a.name }}</h3>
+            <div class="text-muted">{{ a.description|default:'Нет описания'}}</div>
+              <div class="col-md-12">
+                    <a href="#" class="btn btn-sm btn-primary" role="button"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="#" class="btn btn-sm btn-danger" role="button"><span class="glyphicon glyphicon-remove-circle"></span></a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+{% empty  %}
+    {% info_msg 'Архивные записи не найдены!' %}
+{% endfor %}
+</div>
+{% endblock %}
+

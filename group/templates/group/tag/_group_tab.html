@@ -1,0 +1,28 @@
+{% load i18n %}
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li {% if group_profile.get_absolute_url == request.path %} class="active" {% endif %} >
+            <a href="{{ group_profile.get_absolute_url }}"><i class="fa fa-info-circle"
+                                                              aria-hidden="true"></i> {% trans 'Обзор'|upper %}</a>
+        </li>
+        <li {% if group_profile.forum.get_absolute_url in request.path %} class="active" {% endif %} >
+            <a href="{{ group_profile.forum.get_absolute_url }}"><i class="mdi mdi-forum"
+                                                                    aria-hidden="true"></i> {% trans 'Форум'|upper %}
+            </a>
+        </li>
+        {#        <li>#}
+        {#            <a href="{{ group_profile.events_profile.get_absolute_url }}"><i class="fa fa-calendar" aria-hidden="true"></i> {% trans 'События'|upper %}</a>#}
+        {#        </li>#}
+        <li {% if group_profile.get_streams_url in request.path %} class="active" {% endif %} >
+            <a href="{{ group_profile.get_streams_url }}"><i class="mdi mdi-access-point"
+                                                             aria-hidden="true"></i> {% trans 'Трансляции'|upper %}</a>
+        </li>
+        <li {% if group_profile.get_members_url in request.path %} class="active" {% endif %} >
+            <a href="{{ group_profile.get_members_url }}"><i class="fa fa-users"
+                                                             aria-hidden="true"></i> {% trans 'Участники'|upper %}</a>
+        </li>
+    </ul>
+
+
+
+
+

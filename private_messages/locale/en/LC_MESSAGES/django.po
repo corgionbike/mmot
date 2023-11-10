@@ -1,0 +1,429 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-10 19:28+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\private_messages\admin.py:21
+msgid "group"
+msgstr ""
+
+#: .\private_messages\admin.py:22
+msgid "Creates the message optionally for all users or a group of users."
+msgstr ""
+
+#: .\private_messages\admin.py:30
+msgid "All users"
+msgstr ""
+
+#: .\private_messages\admin.py:49 .\private_messages\models.py:87
+msgid "Message"
+msgstr ""
+
+#: .\private_messages\admin.py:56
+msgid "Date/time"
+msgstr ""
+
+#: .\private_messages\apps.py:7
+msgid "Приватные сообщения"
+msgstr "Private messages"
+
+#: .\private_messages\fields.py:22
+msgid "Получатели"
+msgstr "Recipients"
+
+#: .\private_messages\fields.py:50
+#, python-format
+msgid "The following usernames are incorrect: %(users)s"
+msgstr ""
+
+#: .\private_messages\forms.py:20 .\private_messages\models.py:51
+#: .\private_messages\templates\private_messages\outbox.html:21
+#: .\private_messages\templates\private_messages\view.html:18
+msgid "Получатель"
+msgstr "Recipient"
+
+#: .\private_messages\forms.py:21
+msgid "Несколько пользователей вводятся через запятую c учетом регистра"
+msgstr "Multiple users separated by commas c sensitive"
+
+#: .\private_messages\forms.py:22 .\private_messages\models.py:47
+#: .\private_messages\templates\private_messages\inbox.html:21
+#: .\private_messages\templates\private_messages\outbox.html:22
+#: .\private_messages\templates\private_messages\trash.html:21
+#: .\private_messages\templates\private_messages\view.html:12
+msgid "Тема"
+msgstr "Subject"
+
+#: .\private_messages\forms.py:23 .\private_messages\models.py:48
+msgid "Сообщение"
+msgstr "Message"
+
+#: .\private_messages\management.py:9
+msgid "Message Received"
+msgstr ""
+
+#: .\private_messages\management.py:9
+msgid "you have received a message"
+msgstr ""
+
+#: .\private_messages\management.py:10
+msgid "Message Sent"
+msgstr ""
+
+#: .\private_messages\management.py:10
+msgid "you have sent a message"
+msgstr ""
+
+#: .\private_messages\management.py:11
+msgid "Message Replied"
+msgstr ""
+
+#: .\private_messages\management.py:11
+msgid "you have replied to a message"
+msgstr ""
+
+#: .\private_messages\management.py:12
+msgid "Reply Received"
+msgstr ""
+
+#: .\private_messages\management.py:12
+msgid "you have received a reply to a message"
+msgstr ""
+
+#: .\private_messages\management.py:13
+msgid "Message Deleted"
+msgstr ""
+
+#: .\private_messages\management.py:13
+msgid "you have deleted a message"
+msgstr ""
+
+#: .\private_messages\management.py:14
+msgid "Message Recovered"
+msgstr ""
+
+#: .\private_messages\management.py:14
+msgid "you have undeleted a message"
+msgstr ""
+
+#: .\private_messages\models.py:49
+#: .\private_messages\templates\private_messages\inbox.html:20
+#: .\private_messages\templates\private_messages\trash.html:20
+#: .\private_messages\templates\private_messages\view.html:14
+msgid "Отправитель"
+msgstr "Sender"
+
+#: .\private_messages\models.py:53
+msgid "Родительское сообщение"
+msgstr "Parental messages"
+
+#: .\private_messages\models.py:54
+msgid "sent at"
+msgstr ""
+
+#: .\private_messages\models.py:55
+msgid "read at"
+msgstr ""
+
+#: .\private_messages\models.py:56
+msgid "replied at"
+msgstr ""
+
+#: .\private_messages\models.py:57
+msgid "Sender deleted at"
+msgstr ""
+
+#: .\private_messages\models.py:58
+msgid "Recipient deleted at"
+msgstr ""
+
+#: .\private_messages\models.py:88
+msgid "Messages"
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_deleted\full.txt:1
+#, python-format
+msgid "You have deleted the message '%(message)s'."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_deleted\notice.html:1
+#, python-format
+msgid ""
+"You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_received\full.txt:1
+#, python-format
+msgid ""
+"%(message_sender)s has sent you a message:\n"
+"\n"
+"%(message)s\n"
+"\n"
+"%(message_body)s\n"
+"\n"
+"http://%(current_site)s%(message_url)s"
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_received\notice.html:2
+#, python-format
+msgid ""
+"You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
+"from %(message_sender)s."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_received\short.txt:1
+#: .\private_messages\templates\notification\messages_reply_received\short.txt:1
+#, python-format
+msgid "%(notice)s by %(message_sender)s"
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_recovered\full.txt:1
+#, python-format
+msgid "You have recovered the message '%(message)s'."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_recovered\notice.html:1
+#, python-format
+msgid ""
+"You have recovered the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_replied\full.txt:1
+#, python-format
+msgid ""
+"You have replied to '%(message_parent_msg)s' from %(message_recipient)s."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_replied\notice.html:2
+#, python-format
+msgid ""
+"You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</a> "
+"from %(message_recipient)s."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_reply_received\full.txt:1
+#, python-format
+msgid ""
+"%(message_sender)s replied to '%(message_parent_msg)s':\n"
+"\n"
+"%(message)s\n"
+"\n"
+"%(message_body)s\n"
+"\n"
+"http://%(current_site)s%(message_url)s"
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_reply_received\notice.html:2
+#, python-format
+msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_sent\full.txt:1
+#, python-format
+msgid "You have sent the message '%(message)s' to %(message_recipient)s."
+msgstr ""
+
+#: .\private_messages\templates\notification\messages_sent\notice.html:2
+#, python-format
+msgid ""
+"You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to %"
+"(message_recipient)s."
+msgstr ""
+
+#: .\private_messages\templates\private_messages\base.html:14
+msgid "Написать сообщение"
+msgstr "Write a message"
+
+#: .\private_messages\templates\private_messages\base.html:19
+msgid "Входящие"
+msgstr "Inbox"
+
+#: .\private_messages\templates\private_messages\base.html:24
+msgid "Отправленные"
+msgstr "Sent"
+
+#: .\private_messages\templates\private_messages\base.html:29
+msgid "Корзина"
+msgstr "Trash"
+
+#: .\private_messages\templates\private_messages\compose.html:4
+msgid "Написать новое сообщение"
+msgstr "Write new message"
+
+#: .\private_messages\templates\private_messages\compose.html:8
+msgid "Новое сообщение"
+msgstr "New message"
+
+#: .\private_messages\templates\private_messages\compose.html:13
+msgid "Отправить"
+msgstr "Send"
+
+#: .\private_messages\templates\private_messages\inbox.html:5
+#: .\private_messages\templates\private_messages\inbox.html:9
+msgid "Входящие сообщения"
+msgstr "Incoming messages"
+
+#: .\private_messages\templates\private_messages\inbox.html:11
+#: .\private_messages\templates\private_messages\outbox.html:12
+#: .\private_messages\templates\private_messages\trash.html:11
+msgid "Загрузка..."
+msgstr "Loading..."
+
+#: .\private_messages\templates\private_messages\inbox.html:22
+msgid "Получено"
+msgstr "Received"
+
+#: .\private_messages\templates\private_messages\inbox.html:23
+#: .\private_messages\templates\private_messages\outbox.html:24
+#: .\private_messages\templates\private_messages\trash.html:23
+msgid "Действие"
+msgstr "Action"
+
+#: .\private_messages\templates\private_messages\inbox.html:31
+msgid "Отвечено"
+msgstr "Answer"
+
+#: .\private_messages\templates\private_messages\inbox.html:32
+msgid "Новое"
+msgstr "New"
+
+#: .\private_messages\templates\private_messages\inbox.html:38
+#: .\private_messages\templates\private_messages\outbox.html:36
+#: .\private_messages\templates\private_messages\view.html:32
+msgid "Удалить"
+msgstr "Delete"
+
+#: .\private_messages\templates\private_messages\inbox.html:48
+#: .\private_messages\templates\private_messages\outbox.html:46
+#: .\private_messages\templates\private_messages\trash.html:44
+msgid "Нет сообщений"
+msgstr "No messages"
+
+#: .\private_messages\templates\private_messages\new_message.html:3
+#, python-format
+msgid ""
+"Hello %(recipient)s,\n"
+"\n"
+"you received a private message from %(sender)s with\n"
+"the following contents:"
+msgstr ""
+
+#: .\private_messages\templates\private_messages\new_message.html:11
+#, python-format
+msgid "Sent from %(site_url)s"
+msgstr ""
+
+#: .\private_messages\templates\private_messages\new_message.html:12
+msgid "Inbox"
+msgstr ""
+
+#: .\private_messages\templates\private_messages\new_message.html:13
+msgid "Reply"
+msgstr ""
+
+#: .\private_messages\templates\private_messages\outbox.html:5
+#: .\private_messages\templates\private_messages\outbox.html:10
+msgid "Отправленные сообщения"
+msgstr "Sent messages"
+
+#: .\private_messages\templates\private_messages\outbox.html:23
+msgid "Отправлено"
+msgstr "Sent"
+
+#: .\private_messages\templates\private_messages\trash.html:4
+#: .\private_messages\templates\private_messages\trash.html:9
+msgid "Удаленные сообщения"
+msgstr "Deleted messages"
+
+#: .\private_messages\templates\private_messages\trash.html:22
+msgid "Дата"
+msgstr "Date"
+
+#: .\private_messages\templates\private_messages\trash.html:34
+msgid "Восстановить"
+msgstr "Recover"
+
+#: .\private_messages\templates\private_messages\trash.html:47
+msgid ""
+"Сообщения в корзине очищаются каждые 7 дней, не полагайтесь на эту функцию "
+"для длительного хранения."
+msgstr ""
+"Messages in the basket are cleaned every 7 days, do not rely on this "
+"functionFor long-term storage."
+
+#: .\private_messages\templates\private_messages\trash.html:48
+msgid "Очистить корзину"
+msgstr ""
+
+#: .\private_messages\templates\private_messages\view.html:5
+#: .\private_messages\templates\private_messages\view.html:10
+msgid "Просмотр сообщения"
+msgstr "View message"
+
+#: .\private_messages\templates\private_messages\view.html:16
+msgid "Оправлено"
+msgstr "Sent"
+
+#: .\private_messages\templates\private_messages\view.html:27
+msgid "Ответить"
+msgstr "Answer"
+
+#: .\private_messages\utils.py:29
+#, python-format
+msgid ""
+"%(sender)s писал:\n"
+"%(body)s"
+msgstr ""
+
+#: .\private_messages\utils.py:40
+#, python-format
+msgid ""
+"%(sender)s писал(а):\n"
+"%(body)s"
+msgstr ""
+
+#: .\private_messages\utils.py:69
+#, python-format
+msgid "Re%(prefix)s: %(subject)s"
+msgstr ""
+
+#: .\private_messages\utils.py:76
+#, python-format
+msgid "New Message: %(subject)s"
+msgstr ""
+
+#: .\private_messages\views.py:62
+#, fuzzy
+#| msgid "Сообщение успешно отправлено!"
+msgid "Корзина успешно очищена!"
+msgstr "Message sent successfully!"
+
+#: .\private_messages\views.py:85 .\private_messages\views.py:124
+msgid "Сообщение успешно отправлено!"
+msgstr "Message sent successfully!"
+
+#: .\private_messages\views.py:104 .\private_messages\views.py:202
+#, python-format
+msgid "Re: %(subject)s"
+msgstr ""
+
+#: .\private_messages\views.py:165
+msgid "Сообщение успешно удалено!"
+msgstr "Message deleted successfully!"
+
+#: .\private_messages\views.py:193
+msgid "Сообщение успешно восстановлено!"
+msgstr "Message successfully restored!"

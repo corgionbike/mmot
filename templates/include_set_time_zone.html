@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+<form name="setTz" action="{% url 'set_timezone' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <input name="next" type="hidden" value="{{ next }}">
+        <label for="timezone">{% trans 'Текущая временая зона:' %}</label>
+        <div class="input-group">
+            <div class="input-group-addon"><span data-toggle="tooltip"
+                                                 title="{% trans 'Временая зона' %} : {% now "G:i O" %}"
+                                                 class="glyphicon glyphicon-time"></span>
+            </div>
+            <select id="id_timezone" style="width: 100%" name="timezone" class="form-control"
+                    onchange="document.setTz.submit(); return false;">
+                {% for tz in TIME_ZONES_LIST %}
+                    <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected="selected"{% endif %}>{{ tz }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</form>
+<script>
+    require(['jquery', 'module_select2'], function ($, select2) {
+        select2.init('#id_timezone', {dropdownParent: $('#main-modal')});
+    });
+</script>
